@@ -1,0 +1,143 @@
+1. Data Binding
+   -------------
+
+	Angular data binding is a mechanism that synchronizes data between the component and the view. There are several types of data binding in Angular:
+
+   Types of Data Binding
+   -----------------------
+
+	1. Interpolation: One-way binding from component to view, using {{ }} syntax.
+
+	2. Property Binding: One-way binding from component to view, using [property]="value" syntax.
+
+	3. Event Binding: One-way binding from view to component, using (event) = "handler()" syntax.
+
+	4. Two-way Binding: Two-way binding between component and view, using [(ngModel)]="value" syntax.
+
+
+Benefits
+------------
+
+	- Automatic updates: Angular updates the view automatically when the component data changes.
+
+	- Decoupling: Data binding helps to decouple the component logic from the view, making it easier to maintain and update.
+
+
+Examples
+---------
+	- Interpolation: <p>{{ title }}</p>
+	- Property Binding: <img [src]="imageUrl">
+	- Event Binding: <button (click)="onClick()">Click</button>
+	- Two-way Binding: <input [(ngModel)]="name">
+
+Data binding is a powerful feature in Angular that simplifies the development process and improves application performance.
+
+
+
+1.1 Property Binding
+--------------------
+
+	Property binding is a technique in Angular that allows you to bind a property of a DOM element to a property of a component.
+
+Syntax
+-------
+	The syntax for property binding is [property]="expression".
+
+	Example
+	--------
+	<img [src]="imageUrl">
+
+
+   In this example, the src property of the img element is bound to the imageUrl property of the component.
+
+	Benefits
+	---------
+		1. Dynamic updates: When the component property changes, the DOM element property is updated automatically.
+		2. Decoupling: Property binding helps to decouple the component logic from the DOM, making it easier to maintain and update.
+
+	Common Use Cases
+	------------------
+		1. Binding attributes: [src], [href], [disabled], etc.
+		2. Binding styles: [style.color], [style.background], etc.
+		3. Binding classes: [class.active], [class.disabled], etc.
+
+	Property binding is a powerful feature in Angular that simplifies the development process and improves application performance.
+
+1.2 Event Binding
+------------------
+	Event Binding
+
+		Event binding is a technique in Angular that allows you to bind a component method to a DOM event.
+
+	Syntax
+	--------
+		The syntax for event binding is (event)="method()".
+
+	Example
+	-------
+
+		<button (click)="onClick()">Click</button>
+
+
+	In this example, the onClick() method of the component is called when the button is clicked.
+
+	Benefits
+	--------
+		1. Handling user interactions: Event binding allows you to handle user interactions, such as clicks, keyboard input, and more.
+		2. Decoupling: Event binding helps to decouple the component logic from the DOM, making it easier to maintain and update.
+
+	Common Events
+	--------------
+		1. Click: (click)="method()"
+		2. Input: (input)="method()"
+		3. Submit: (submit)="method()"
+		4. Keydown: (keydown)="method()"
+		5. Mouseover: (mouseover)="method()"
+
+	Example Component Method
+	-------------------------
+		onClick() {
+			console.log('Button clicked!');
+		}
+
+
+	Event binding is a powerful feature in Angular that allows you to handle user interactions and respond to events in your application.
+
+
+
+1.5 Two-way Binding
+--------------------
+
+	Two-way binding is a technique in Angular that allows you to bind a property of a DOM element to a property of a component, and vice versa.
+
+Syntax
+------
+	The syntax for two-way binding is [(ngModel)]="property".
+
+Example
+-------
+
+	<input [(ngModel)]="name">
+
+
+	In this example, the name property of the component is bound to the input field. When the user types something in the input field, the name property is updated automatically.
+
+Benefits
+--------
+	1. Automatic updates: Two-way binding ensures that the component property and DOM element are always in sync.
+	2. Simplified code: Two-way binding reduces the amount of code needed to handle user input and update the component property.
+
+Requirements
+-------------
+	1. FormsModule: To use two-way binding, you need to import the FormsModule in your Angular module.
+
+
+	import { FormsModule } from '@angular/forms';
+
+	@NgModule({
+		imports: [FormsModule]
+	})
+
+
+	Two-way binding is a powerful feature in Angular that simplifies the development process and improves application performance.
+

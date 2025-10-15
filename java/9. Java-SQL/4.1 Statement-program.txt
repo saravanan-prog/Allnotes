@@ -1,0 +1,163 @@
+Step 1: Make Sure MySQL is Running & You Have a Database
+
+        Open your MySQL server (e.g., MySQL Workbench or command line)
+        Make sure the MySQL service is running
+        Create a database and a table if you don’t have one yet, for example:
+
+
+        CREATE DATABASE school;
+        USE school;
+
+        CREATE TABLE students (
+            id INT PRIMARY KEY,
+            name VARCHAR(50),
+            grade CHAR(1)
+        );
+
+        INSERT INTO students VALUES (1, 'Rahul', 'A'), (2, 'Priya', 'B');
+
+Step 2: Write Java Code to Connect to MySQL
+--------------------------------------------
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.sql.SQLException;
+
+public class DBConnectionExample {
+    public static void main(String[] args) {
+
+        // Database credentials
+        String url = "jdbc:mysql://localhost:3306/mydatabase"; // Change to your DB name
+        String username = "root";
+        String password = "your_password";
+
+        try {
+           
+
+            // Create connection
+            Connection conn = DriverManager.getConnection(url, username, password);
+
+            // Create statement
+            Statement stmt = conn.createStatement();
+
+            // Execute query
+            ResultSet rs = stmt.executeQuery("SELECT * FROM employees");
+
+            // Process results
+            while (rs.next()) {
+                System.out.println("Employee ID: " + rs.getInt("employee_id"));
+                System.out.println("Name: " + rs.getString("first_name"));
+            }
+
+            // Close resources
+            rs.close();
+            stmt.close();
+            conn.close();
+
+        } catch (ClassNotFoundException e) {
+            System.out.println("JDBC Driver not found.");
+            e.printStackTrace();
+        } catch (SQLException e) {
+            System.out.println("Database connection error.");
+            e.printStackTrace();
+        }
+    }
+}
+
+
+INSERT RECORD
+--------------
+
+    import java.sql.Connection;
+    import java.sql.DriverManager;
+    import java.sql.Statement;
+    import java.sql.SQLException;
+
+    public class InsertWithStatement {
+        public static void main(String[] args) {
+            // DB connection details
+            String url = "jdbc:mysql://localhost:3306/mydatabase"; // Change to your DB name
+            String username = "root";
+            String password = "your_password";
+
+            try {
+                
+
+                // 1. Create connection
+                Connection conn = DriverManager.getConnection(url, username, password);
+
+                // 2. Create statement
+                Statement stmt = conn.createStatement();
+
+                // 3. Define INSERT query
+                String insertQuery = "INSERT INTO employees (employee_id, first_name, department, salary) " +
+                                    "VALUES (202, 'Bob', 'HR', 55000)";
+
+                // 5. Execute INSERT query
+                int rowsAffected = stmt.executeUpdate(insertQuery);
+
+                // 6. Show result
+                System.out.println(rowsAffected + " row(s) inserted.");
+
+                // 7. Close resources
+                stmt.close();
+                conn.close();
+
+            } catch (ClassNotFoundException e) {
+                System.out.println("MySQL JDBC driver not found.");
+                e.printStackTrace();
+            } catch (SQLException e) {
+                System.out.println("Database error:");
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+
+DELETE RECORD
+-------------
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.sql.SQLException;
+
+public class DeleteWithStatement {
+    public static void main(String[] args) {
+        /* Database connection details */
+        String url = "jdbc:mysql://localhost:3306/mydatabase";  // Replace with your DB details
+        String username = "root";
+        String password = "your_password";
+
+        try {
+            
+            // Create connection
+            Connection conn = DriverManager.getConnection(url, username, password);
+
+            // Create statement
+            Statement stmt = conn.createStatement();
+
+            // DELETE query: delete employee with employee_id = 202
+            String deleteQuery = "DELETE FROM employees WHERE employee_id = 202";
+
+            // Execute DELETE
+            int rowsDeleted = stmt.executeUpdate(deleteQuery);
+
+            System.out.println(rowsDeleted + " row(s) deleted.");
+
+            // Close resources
+            stmt.close();
+            conn.close();
+
+        } catch (ClassNotFoundException e) {
+            System.out.println("JDBC Driver not found.");
+            e.printStackTrace();
+        } catch (SQLException e) {
+            System.out.println("Database error:");
+            e.printStackTrace();
+        }
+    }
+}

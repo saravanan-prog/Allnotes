@@ -1,0 +1,46 @@
+ 
+ JAVASCRITP LOOPING
+ ------------------
+    - for
+    - for-in
+    - for-of
+    - forEach
+ 
+ var number = [10,20,30,40]
+ 
+ 9.1 for
+    ----
+
+    syntax:
+        for( intialization; test-condtion; increment/decrement)
+
+
+
+
+    for(let i = 0; i < number.length; i++ ){
+
+        console.log("for =====>",number[i] )
+    }
+
+   9.2 for in
+    -----------
+
+        for(let i in number){
+
+            console.log(i)
+        }
+    
+    9.3 for of
+    -----------
+        for(let i of number){
+
+            console.log(i)
+        }
+
+    9.4 forEach  -> returns to value,index,arr
+    -----------------------------------------
+
+        number.forEach((value,index,arr) => {
+            
+                console.log("arr===>",arr)
+        })

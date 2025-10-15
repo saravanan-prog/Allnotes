@@ -1,0 +1,83 @@
+Map:-
+=====
+   - Map in Java is an object that maps keys to values. 
+   - It cannot contain duplicate keys, and each key maps to
+
+
+Common Map Methods
+------------------
+put(K key, V value)	        Add a key-value pair
+get(Object key)	            Get value for a given key
+remove(Object key)	        Remove entry by key
+containsKey(Object key)	    Check if key exists
+containsValue(Object v)	    Check if value exists
+keySet()	                Returns a Set of all keys
+values()	                Returns a Collection of all values
+entrySet()	                Returns a Set of all key-value pairs
+
+
+Map Implementations: Comparison
+----------------------------------------------------------------------------------------------------------
+    Type	        Ordered?	        Sorted?	    Thread-safe?	    Allows null?
+------------------------------------------------------------------------------------------------------------
+    HashMap	        ❌ No	            ❌ No	    ❌ No	            ✅ 1 null key, many null values
+    LinkedHashMap	✅ Insertion	        ❌ No	    ❌ No	            ✅
+    TreeMap	        ✅ Sorted by key	    ✅ Yes	    ❌ No	            ❌ No null keys
+    Hashtable	    ❌ No	            ❌ No	    ✅ Yes (legacy)	    ❌ No null keys/values
+
+
+
+
+Example: Using HashMap
+----------------------
+
+import java.util.*;
+
+public class MapExample {
+    public static void main(String[] args) {
+
+        Map<Integer, String> map = new HashMap<>();
+
+        map.put(1, "Apple");
+        map.put(2, "Banana");
+        map.put(3, "Cherry");
+
+        System.out.println("Map: " + map);
+        System.out.println("Value for key 2: " + map.get(2));
+        System.out.println("Contains key 3? " + map.containsKey(3));
+
+        map.remove(1);
+
+        System.out.println("After removing key 1: " + map);
+
+        for (Map.Entry<Integer, String> entry : map.entrySet()) {
+            System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue());
+        }
+    }
+}
+
+
+Example: TreeMap (Sorted by Key)
+----------------------------------
+    Map<String, Integer> treeMap = new TreeMap<>();
+    treeMap.put("Banana", 2);
+    treeMap.put("Apple", 1);
+    treeMap.put("Cherry", 3);
+
+    System.out.println("TreeMap: " + treeMap); // Sorted: Apple, Banana, Cherry
+
+
+
+
+Summary
+--------
+
+    Map stores key-value pairs.
+
+    Use HashMap for general-purpose.
+
+    Use TreeMap if you want sorted keys.
+
+    Use LinkedHashMap if you want to maintain insertion order.
+
+    Use ConcurrentHashMap in multithreaded applications.

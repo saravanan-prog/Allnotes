@@ -1,0 +1,30 @@
+Express file upload
+----------------------
+    step 1 : install this package           -        npm i express-fileupload
+    step 2 : import this index.js           -        const fileUpload = require('express-fileupload');
+    step 3 : call this middleware           -        app.use(fileUpload());
+    step 4 : get the upload file name       -        let   sampleFile = req.files.sampleFile;
+    step 5 : crate upload folder set path   -        let uploadPath = __dirname + '/somewhere/on/your/server/' + sampleFile.name;
+    step 6 :  write this upload logic       -        mv() - function it is helps to move the file to specified directory
+
+
+
+    Syntax:
+    -------
+        mv(uploadPath, Callback)
+
+
+
+    Example
+    -------
+
+
+     sampleFile.mv(uploadPath, function(err) {
+        if (err)
+        return res.status(500).send(err);
+
+        res.send('File uploaded!');
+    });
+
+
+

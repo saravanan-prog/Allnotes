@@ -1,0 +1,61 @@
+8. JS - Array functions
+------------------------
+
+         var fruits = ["Apple","Orange","Banana","pineapple"]
+
+         const veg = ['onion','potatto']
+
+
+        1. length                                                   ->      fruits.length;              
+        2. toString()           - string conversion                 ->      fruits.toString()
+        3. at()                 - (get the possion of array)        ->      fruits.at(3) || fruits[3]
+        4. join() - (str conversion  helps to remove (spl char)     ->      fruits.join(" ")
+        5. push (insert element in end)                             ->      fruits.push('grapes')
+        6. pop (remove element in end)                              ->      fruits.pop()  
+        7. unshift (add ele in front)                               ->      fruits.unshift("grapes")
+        8. shift (remove ele in front)                              ->      fruits.shift()
+
+
+        9.  delete                                                  ->      delete fruits[2]
+        
+        10. concat (combine two array called)                      ->       fruits.concat(veg);
+        11. copywithin (paste,copy)                                ->      fruits.copyWithin( 0, 2);
+        12 . slice                                                  ->      fruits.slice(1)
+        13. Splice                                                  ->      fruits.splice(1, 2, "Lemon", "Kiwi"); 
+
+     
+   8.1 Array Search Functions
+    -------------------------
+        1. indexOf              ->  fruits.indexOf("Orange")
+        2. lastIndexof          ->  fruits.lastIndexof("Orange")
+        3. includes             ->  fruits.includes("Orange")     // returns to boolean
+
+
+
+    8.2  Array Sorting Functions
+    ----------------------------
+        1. sort()           ->  fruits.sort()       // String asseding Order
+        2. reverse()        ->  fruits.reverse()    // String array reverse Order
+
+
+
+       Number assending Order and Desending Order
+       --------------------------------------------
+            var  number = [10,5,4,6]
+
+        1. Assending Order    
+        --------------------
+                    number.sort((a,b)=>{
+
+                        return  a-b
+
+                    })
+
+         2. Desending Order  
+         --------------------          
+
+                    number.sort((a,b)=>{
+
+                        return  b-a
+                    })
+        

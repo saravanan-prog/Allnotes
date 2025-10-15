@@ -1,0 +1,109 @@
+
+DOM :  Dom is represent Html strcuture. 
+       it is contain tree-level architecture of objects
+
+
+1. Simple DOM
+-----------------
+<!DOCTYPE html>
+<html>
+   <head>
+      <title> Demo Website </title>
+   </head>
+   <body>
+      <p> Welcome To Website </p>
+   </body>
+</html>
+
+    Elements
+    ----------
+       1. Block Level - creating a block
+       2. inline      -  same line having a content.
+       3. void        - no return tags
+       4. Semantics.  - tag name and action name is same.
+
+
+
+2. Heading content 
+ --------------------
+      
+      <h1> Welcome Lingesh ... </h1>
+
+      <h2> Welcome Saravanan ... </h2>
+
+      <h3> Welcome Lingesh ... </h3>
+
+      <h4> Welcome Lingesh ... </h4>
+
+      <h5> Welcome Lingesh ... </h5>
+
+      <h6> Welcome Lingesh ... </h6>
+
+3. Attributes
+--------------
+
+common Basic Attributes
+
+        1. id    - unique
+        2. class - refer the multiple elements
+        3. name  - refer the multiple elements
+
+     <h1 
+       id="titleContent" 
+       class="titlecontent"
+       name="titleContent"
+      > 
+               Welcome Lingesh ...
+       </h1>
+     <h2 id='titlecontent' class="titlecontent"> Welcome Saravanan ... </h2>
+
+     img Tag
+     -------
+        src - extact the file
+        width - specified size value 
+        height - specified size value
+
+        <img src="./image/vijay.jpg" height="100" width="100" />
+
+
+4. Table Creations
+--------------------
+   1.   <table> </table> - define the table
+        <tr>      -  Create the row
+        <th>      - define the row data with bold
+        <td>      - define the data.
+
+
+
+
+List Tag
+--------
+Example pattern
+
+    ul = unOrder List (<ul> <li>...</li> </ul>)  
+    -----------------
+         * Apple
+         * Orange
+         * Mango
+
+         - Apple
+         - Mango
+         - Orange
+
+    Ol = Order List (<ol> <li>...</li> </ol>)
+    ---------------
+        1. Apple
+        2. Mango
+        3. Orange
+
+        A. Apple
+        B. Orange
+        C. Mango
+
+   Code
+   ----  
+       <ul>
+         <li> Apple </li>
+         <li> Orange </li>
+         <li> Mango </li>
+       </ul>

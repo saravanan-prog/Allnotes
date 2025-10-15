@@ -1,0 +1,25 @@
+ 
+this Keyword
+=============
+    - this: Refers to the current object.
+    - Used to access class members, pass current object.
+
+Example :-
+
+class Person {
+    String name;
+    int age;
+    Person(String name,int age) {
+        this.name = name; // 'this' to refer to class variable
+    }
+    void display() {
+        System.out.println(this.name);
+    }
+}
+
+public class Main(){
+    public static void main(String args[]){
+        Person p = new Person("Saravanan", 32 );
+        p.display()
+    }
+}

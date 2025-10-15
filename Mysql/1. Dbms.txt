@@ -1,0 +1,51 @@
+1. Database:
+============
+    - A database is an organized collection of data stored electronically.
+    - Think of it as a digital filing cabinet where data is stored in a structured way.
+    - Instead of paper files, you keep all your important information on a computer.
+    - Data can be anything like student records, inventory, customer info, etc.
+
+
+2. Database Management System
+==============================
+    - A DBMS is software that helps you create, store, manage, and retrieve data from a database.
+
+
+3. Relational Database Management System
+=========================================
+    - An RDBMS is a type of DBMS that stores data in tables that are related to each other.
+    
+    Why tables?
+    -----------
+
+        Tables look like spreadsheets with rows and columns.
+        Each table stores a specific type of data.
+        Tables can be linked using keys to show relationships between data.
+
+    Key features of RDBMS:
+    -----------------------
+        Uses Primary Keys to uniquely identify each row.
+        Uses Foreign Keys to link tables together.
+        Supports SQL (Structured Query Language) to manage data.
+        Examples: MySQL, Oracle, SQL Server, PostgreSQL.
+
+
+4. SQL [SQL stands for Structured Query Language.]
+===================================================
+
+    - SQL stands for Structured Query Language.
+
+    - It is the standard language used to:
+        Create, modify, and manage databases,
+        Insert, update, delete, and retrieve data from tables,
+        Control access and permissions in databases
+
+Main Categories of SQL Commands
+----------------------------------------------------------------------------------------------------------------------------------------
+| Category                               | Purpose                                            | Examples                               |
+| -------------------------------------- | -------------------------------------------------- | -------------------------------------- |
+| **DDL** (Data Definition Language)     | Define or change structure of databases and tables | `CREATE`, `ALTER`, `DROP`              |
+| **DML** (Data Manipulation Language)   | Manipulate data inside tables                      | `SELECT`, `INSERT`, `UPDATE`, `DELETE` |
+| **DCL** (Data Control Language)        | Manage permissions and access                      | `GRANT`, `REVOKE`                      |
+| **TCL** (Transaction Control Language) | Manage transactions (units of work)                | `COMMIT`, `ROLLBACK`                   |
+----------------------------------------------------------------------------------------------------------------------------------------

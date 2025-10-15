@@ -1,0 +1,43 @@
+Java Interface
+==============
+    - Interface in Java: A reference type like a class, containing only abstract methods (pre-Java 8), constants.
+    - Java 8+ allows default and static methods.
+
+    Key Points
+        - Interfaces define a contract for implementing classes.
+        - Classes implement interfaces.
+
+    Example:-
+
+        interface Printable {
+            void print();
+        }
+        class Document implements Printable {
+            public void print() { System.out.println("Printing document"); }
+        }
+
+
+Multiple Interfaces 
+====================
+    - A class can implement multiple interfaces.
+    - Must implement all methods unless using default methods.
+
+    Example :-
+
+    interface A { 
+        void methodA();  
+        default void display(){
+            System.out.println("Display method");    // Concreate method.
+        }
+    }
+    interface B { 
+        void methodB(); 
+    }
+    class C implements A, B {
+        public void methodA() { System.out.println("Method A"); }
+        public void methodB() { System.out.println("Method B"); }
+    }
+
+
+    Usage
+    - Class C implements both A and B.

@@ -1,0 +1,38 @@
+Wrapper Classes in Java
+========================
+
+    - Wrap primitive types in objects.
+    - Useful for collections needing objects.
+
+    Wrapper Classes for Primitives 
+    
+          int     ->  Integer
+          char    ->  Character
+          double  ->  Double
+          boolean ->  Boolean
+          float   ->  Float
+          double  ->  Double
+
+    Example :- 
+
+        Integer num = Integer.valueOf(5);
+        System.out.println(num); // Output: 5
+
+
+ Autoboxing: 
+ -----------
+    Auto-convert primitives to wrappers.
+
+        Integer   num    = 10; 
+        Double    price  = 10.5;
+        Float     tax    = 10.5f;
+        Character  data  = 'c';
+
+
+Unboxing :
+--------
+     Wrappers to primitives. 
+  
+        Integer num = 10; // Autoboxing
+        int n = num;
+

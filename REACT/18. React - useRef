@@ -1,0 +1,48 @@
+USE REF HOOKS
+------------------
+
+STEP 1 : import the useRef hook
+
+STEP 2 : create one useRef state
+
+        const emailRef = useRef()
+
+STEP 3: Create one jsx element. and apply ref attribute value in useRef state.
+
+STEP 4 : After assign that ref attribute you can cotrol the elements.
+
+
+STEP 5 : you have to change modify the elements color, bg color, focus etc,
+
+
+
+Example
+---------
+import {useRef} from 'react'
+
+function LoginPage(){
+
+    const emailRef = useRef()
+
+    useEffect(()=>{
+        
+        emailRef.current.focus()
+        emailRef.current.style.color = 'red'
+        emailRef.current.style.backgroundColor = 'blue'
+        emailRef.current.value = "saravanan.mca1992@tcs.com
+
+
+    },[])
+
+    return <div >
+       
+                  <input type = "text"
+                         name = 'email' 
+
+                         ref = {emailRef} />
+                          
+    </div>
+}
+
+
+export default LoginPage

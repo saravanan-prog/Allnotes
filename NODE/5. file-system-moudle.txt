@@ -1,0 +1,103 @@
+File Systems
+---------------
+    1. readFile
+    2. writeFile
+    3. appendfile
+    4. delete file (unlink)
+
+First Callback:
+---------------
+    Generally first callback may be appears error.
+
+second Callback:
+---------------
+    second callback is returns to data.
+
+
+1. readFile
+-----------
+
+    const http = require('http')
+    const file   = require('fs')
+    
+    const server = http.createServer((req,res) => {
+    
+        file.readFile('./sasikumar.txt',(err,data)=>{
+            if(err)
+                throw err
+            else
+            res.end(data)
+        })
+    
+    })
+    
+    server.listen(8000,()=>console.log(`your port is 8000`))
+
+
+2. writeFile
+-----------
+
+    const http = require('http')
+    const file   = require('fs')
+    
+    const server = http.createServer((req,res) => {
+    
+        file.writeFile('./sasikumar.txt',(err,data)=>{
+
+            if(err)
+                throw err
+            else
+            res.end(data)
+        })
+    
+    })
+    
+    server.listen(8000,()=>console.log(`your port is 8000`))
+
+
+
+
+
+
+3. appendFile
+---------------
+const http = require('http')
+const file   = require('fs')
+ 
+const server = http.createServer((req,res) => {
+
+    const writeData = "Sasi kumar is a Angular Developer"
+ 
+    file.appendFile('./sasikumar.txt' , writeData , (err,data)=>{
+         if(err)
+            throw err
+         else
+           res.end(data)
+    })
+ 
+})
+ 
+server.listen(8000,()=>console.log(`your port is 8000`))
+ 
+
+4. Delete file (unlink)
+-------------------------
+ 
+const http = require('http')
+const file   = require('fs')
+ 
+const server = http.createServer((req,res) => {
+
+    const writeData = "Sasi kumar is a Angular Developer"
+ 
+    file.unlink('./sasikumar.txt', (err,data)=>{
+         if(err)
+            throw err
+         else
+           res.end("Your file is deleted successfully')
+    })
+ 
+})
+ 
+server.listen(8000,()=>console.log(`your port is 8000`))
+ 

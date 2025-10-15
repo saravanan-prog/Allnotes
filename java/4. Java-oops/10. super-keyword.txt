@@ -1,0 +1,18 @@
+super Keyword
+=============
+    - super: Refers to the immediate parent class object.
+    - Used to access parent class members: methods, constructors.
+
+Example 
+
+    class Animal {
+        void sound() { 
+            System.out.println("Animal sound"); 
+        }
+    }
+    class Dog extends Animal {
+        void sound() {
+            super.sound(); // calls Animal's sound()
+            System.out.println("Dog barks");
+        }
+    }

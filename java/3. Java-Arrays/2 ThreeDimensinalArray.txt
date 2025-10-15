@@ -1,0 +1,33 @@
+Java Three Dimensional Array
+============================
+
+A three-dimensional array in Java is an array of arrays of arrays. It is used to store data in a 3D format, like a cube or a collection of 2D matrices.
+
+Declaration:
+------------
+    dataType[][][] arrayName = new dataType[size1][size2][size3];
+
+Example:
+--------
+    int[][][] arr = new int[2][3][4];
+
+    // Assigning values
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 3; j++) {
+            for (int k = 0; k < 4; k++) {
+                arr[i][j][k] = i + j + k;
+            }
+        }
+    }
+
+    // Printing the 3D array
+    for (int i = 0; i < 2; i++) {
+        System.out.println("Block " + i + ":");
+        for (int j = 0; j < 3; j++) {
+            for (int k = 0; k < 4; k++) {
+                System.out.print(arr[i][j][k] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+    }

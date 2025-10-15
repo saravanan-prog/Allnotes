@@ -1,0 +1,27 @@
+Java Type Casting
+=================
+    Type casting in Java is converting one data type to another.
+
+        1. Widening Casting (automatic)
+
+           - From smaller to larger type:
+
+                    int to long, 
+                    float to double.
+            
+            Example
+            -------
+
+                int i = 10;
+                long l = i;      // automatic
+
+
+        2. Narrowing Casting (manual)
+
+            - From larger to smaller type:
+                 double to int. Requires cast.
+
+                  double d = 9.99;
+                  int i = (int) d;           // manual cast, i = 9
+
+

@@ -1,0 +1,71 @@
+REACT - USE CALLBACK
+-----------------------
+
+    The React useCallback Hook returns a memoized callback function.
+    
+
+PROCEDURE :
+------------------
+    STEP 1 : CREATE TWO FC COMPONETS ONE IS PARENT ANOTHER ONE IS CHILD
+    STEP 2 : PARENT COMPONET INSIDE CREATE ONE EVENT.
+    STEP 3 : CHILD COMPONET INSIDE PASS THE EVENT IN PROPS.
+    STEP 4 : AFTER EXECUTEION WE HAVE FACE THE MEMOMIZATION ISSUE.
+    STEP 5 : IMPORT THE USE CALL BACK FIRST YOUR PARENT COMPONENT.
+    STEP 6 : AFTER EVENT CALL INSIDE THE USECALLBACK HOOKS.
+
+
+EXAMPLE
+-----------
+    PARENT COMPONENT:
+    -----------------
+            
+            function HomePage() {
+
+            const [count,setCount] = useState(0)
+
+            const addInformation = useCallback(() => {
+
+                console.log("Add informatin iss processing.....")
+                
+            },[])
+
+            return <div>
+
+                <About 
+
+                    addInformation = {addInformation}
+                
+                />
+
+                <p> {count} </p>
+
+                <button onClick = { ()=>setCount(count + 1) }> Add Count </button>
+
+            </div>
+            
+            }
+
+    CHILD COMPONENT
+    ----------------
+
+    import { memo } from "react";
+
+       export default memo( function About( {addInformation} ) {
+
+
+            console.log("About page is rendering.....")
+
+
+
+            return <div>
+                <h3>About</h3>
+
+                <button onClick = {addInformation}> show me</button>
+            </div>
+        })
+
+
+
+      
+
+

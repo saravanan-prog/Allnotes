@@ -1,0 +1,34 @@
+EnvironmentSetup:
+----------------
+    1. Software Installation
+    -------------------------
+
+        - Visit the Oracle Java Downloads page or OpenJDK.
+        - Choose the latest version (e.g., JDK 24) for your OS.
+        - Run the installer and follow the prompts.
+
+        Checking the version
+
+            After installation open command prompt
+
+                java --version
+                javac --version
+
+
+    2. Environment Variable 
+    -------------------------
+         I. Environment Variables [Single user]
+
+            1. In the same Environment Variables window, find the Path variable under System Variables.
+            2. Click Edit → New → Add: C:\Program Files\Java\jdk-24\bin
+            3. Click OK to save.
+
+        II. System Variables [ Multiple users ]
+
+            1. Press Windows + S, search for Environment Variables, and open it.
+            2. Under System Variables, click New.
+            3. Variable name: JAVA_HOME
+            4. Variable value: Path to your JDK folder (e.g., C:\Program Files\Java\jdk-24)
+            5. Click OK to save.
+
+       

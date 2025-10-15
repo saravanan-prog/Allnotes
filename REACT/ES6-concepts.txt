@@ -1,0 +1,254 @@
+1. Arrow Functions
+---------------------
+
+    -   Arrow functions were introduced in the ES6 version.
+    -   Arrow function {()=>} is concise way of writing JavaScript functions in shorter way. 
+    -   They make our code more structured and readable.
+    -   Arrow functions are anonymous functions i.e. functions without a name but they are often assigned to any variable.
+
+
+    Syntax:
+    --------
+             { () => } 
+
+        Before function
+        ---------------
+
+            function greetingMessage(){
+
+                console.log( "Hi from GeekforGeeks!" ); 
+            }
+
+            greetingMessage();
+
+
+
+        Arrow function example
+        ------------------------
+        Exammple 1
+
+            const greetingMessage = () => { 
+
+                console.log( "Hi from GeekforGeeks!" ); 
+            }
+
+            greetingMessage();
+        
+        Example 2
+
+            const sum = ( x, y, z ) => { 
+
+                console.log( x + y + z ) 
+            } 
+  
+            sum( 10, 20, 30 );
+
+
+        Shorthand
+        ---------
+            const greetingMessage = () => console.log( "Hi from GeekforGeeks!" ); 
+
+            
+    Live Example
+    ----------------
+        const displayMessage = () => console.log("Welcome to js")
+
+        const add = (a,b) => a + b
+
+        const mul = (a,b) => {
+            let c = a + b
+            return c * 5
+        }
+
+        displayMessage()
+
+        let addResult =  add(10,5)
+
+        console.log( addResult )
+
+        let mulResult = mul(10,20)
+
+        console.log(mulResult)
+
+
+2. map()
+----------
+
+
+    The .map() method allows you to run a function on each item in the array, returning a new array as the result.
+
+        const fruits = ['apple', 'banana', 'orange'];
+
+        const myList = fruits.map( (item) => item )
+
+
+        Example
+        -------
+
+            const fruits = ['apple','mango','orange']
+
+            const duplicateFruitsList = fruits.map((value,index,arr)=>{
+                
+                return value.toUpperCase()
+            })
+
+            console.log("duplicateFruitsList=====>",duplicateFruitsList)
+
+    
+
+
+    filter() -  const fruits = ['apple', 'banana', 'orange'];
+
+                const myList = fruits.filter( (item,index) => item == 'apple' )
+        
+
+        Example
+        -------
+
+            const fruits = ['apple','mango','orange']
+
+            const duplicateFruitsList = fruits.filter((value,index,arr)=>{
+                
+                return value == 'apple'
+            })
+
+            console.log("duplicateFruitsList=====>",duplicateFruitsList)
+
+
+
+
+
+3. destructuring
+---------------------
+
+    -   The destructuring assignment syntax is a JavaScript expression 
+    -   that makes it possible to unpack values from arrays, or properties from objects,
+
+        old way - Example
+        ------------------
+        const vehicles = ['mustang', 'f-150', 'expedition'];
+
+        // old way
+            const car = vehicles[0];
+            const truck = vehicles[1];
+            const suv = vehicles[2];
+        
+      3.1 destructuring - Example
+       ------------------------
+
+        3.1.1  Array :
+        ---------------
+
+           const fruits = ['apple','mango','orange']
+
+            const [ winterFruit, summerFruit, normalFruit] = fruits
+
+                console.log('winterFruit=====>',winterFruit)
+                console.log('summerFruit=====>',summerFruit)
+                console.log('normalFruit=====>',normalFruit)
+
+
+       3.1.2 Object :
+       -----------------
+
+            const employee = {
+
+                empId   :    2430828,
+                empName :   'Saravanan',
+                work    :   'TCS',
+                Branch  :   'Chennai'
+
+            }
+
+            old way
+            --------
+             console.log('empId===>', employee.empId)
+             console.log('empName===>', employee.empName)  
+             console.log('work===>', employee.work) 
+
+             New -way destructuring  
+             -----------------------    
+            const { empId, empName, work, Branch } = employee
+
+             console.log('empId===>',   empId)
+             console.log('empName===>', empName)  
+             console.log('work===>',    work) 
+        
+
+
+4. Spread Operator
+--------------------
+    The JavaScript spread operator (...) allows us to quickly copy all or part of an existing array or object into another array or object.
+
+    Example 1
+    -------
+        const numbersOne = [1, 2, 3];
+        const numbersTwo = [4, 5, 6];
+        const numbersCombined = [...numbersOne, ...numbersTwo];
+
+
+        const fruits    =   ['apple','mango','orange']
+        const vegtable  =   ['tomatoo','potatoo','bringal']
+
+        const bag = [...fruits,...vegtable]
+
+        console.log('bag---->',bag)
+
+
+    Example 2 - destructuring with spread operator
+    ---------
+
+        const numbers = [1, 2, 3, 4, 5, 6];
+
+        const [one, two, ...rest] = numbers;
+
+
+
+ 5. JS - Modules
+ -----------------
+
+    -   JavaScript modules allow you to break up your code into separate files.
+    -   This makes it easier to maintain the code-base.
+    -   ES Modules rely on the import and export statements.
+
+
+
+6. Class
+----------
+   -    Classes are a template for creating objects. 
+   -    They encapsulate data with code to work on that data
+   -    Classes in JS are built on prototypes but also have some syntax and semantics that are unique to classes.
+
+
+Example : 
+---------
+
+To create a class inheritance, use the extends keyword.
+A class created with a class inheritance inherits all the methods from another class:
+
+class Car {
+
+  constructor(name) {
+    this.brand = name;
+  }
+
+  present() {
+    return 'I have a ' + this.brand;
+  }
+}
+
+class Model extends Car {
+    
+  constructor(name, mod) {
+    super(name);
+    this.model = mod;
+  }  
+
+  show() {
+
+      return this.present() + ', it is a ' + this.model
+  }
+}
+
+const mycar = new Model("Ford", "Mustang");
+mycar.show();

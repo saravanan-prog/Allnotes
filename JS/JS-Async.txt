@@ -1,0 +1,255 @@
+1. Javascript Asynchronous
+-----------------------------
+
+    -   JavaScript is a single-threaded and synchronous language
+    -   The code is executed in order one at a time
+    -   But Javascript may appear to be asynchronous in some situations.
+
+    -   Asynchronous JavaScript is a programming approach that enables the non-blocking execution of tasks
+        -   allowing concurrent operations, 
+        -   improved responsiveness, and 
+        -   efficient handling of time-consuming operations in web applications,
+
+   
+1.1  Callbacks:
+    -------------
+
+    - Callbacks are functions passed as arguments to be executed after an asynchronous operation completes. 
+    - They are used in asynchronous JavaScript to handle responses and ensure non-blocking execution,
+
+    Syntax :
+    ---------
+    function myFunction(param1, param2, callback) {
+
+        // Do some work...
+        // Call the callback function
+
+        callback(result);
+
+    }
+
+    Example :
+    ---------
+        Problem
+        -------
+            function productName(){
+                
+                setTimeout(()=>{
+                    console.log("Apple Orange Mango")
+                },80000)
+            }
+
+            function OfferPrice(){
+                
+                console.log("FLAT 50% above showing products.....")
+            }
+
+
+            productName()
+            OfferPrice()
+
+
+        callback - solutions
+        ---------------------
+
+            function productName(callback){
+    
+                setTimeout(()=>{
+                    console.log("Apple Orange Mango")
+                    callback()
+                })
+            }
+
+
+            function OfferPrice(){
+                
+                console.log("FLAT 50% above showing products.....")
+            }
+
+            productName(OfferPrice)
+
+
+
+1.2 Promise
+-------------
+
+    -   JavaScript Promises to simplify managing multiple asynchronous operations, 
+    -   preventing callback hell and unmanageable code.
+    -   The callback function takes two arguments, resolve and reject
+    -   Perform operations inside the callback function and if everything went well then call resolve.
+    -   If desired operations do not go well then call reject. 
+
+        syntax:
+        --------
+            let promise = new Promise(function(resolve, reject){
+                //do something
+            }); 
+
+     1.2.1 then() - method
+    ----------------------
+        - Promise method is invoked when a promise is either resolved or rejected. 
+
+            .then(function(result){
+
+                //handle success
+
+            }, function(error){
+
+                //handle error
+
+            })
+    
+    1.2.2 catch()
+    --------------
+        - is invoked when a promise is either rejected or some error has occurred in execution. 
+        - It is used as an Error Handler whenever at any step there is a chance of getting an error.
+
+  
+
+    1.2.3 Example 1
+    ----------------
+
+    let promise = new Promise(function (resolve, reject) {
+
+        const x = "geeksforgeeks";
+        const y = "geeksforgeeks"
+
+        if (x === y) {
+            resolve();
+        } else {
+            reject();
+        }
+
+    });
+
+    promise
+    .then(
+        function () {
+            console.log('Success, You are a GEEK');
+        },
+        function () {
+            console.log('Error, You are a GEEK');
+        },
+
+    )
+    .catch(function () {
+        console.log('Some error has occurred');
+    }); 
+
+
+   
+
+    1.2.4 Example 2
+    ----------------
+        let promise = new Promise(function (resolve, reject) {
+            resolve('Geeks For Geeks');
+        })
+
+        promise
+            .then(function (successMessage) {
+                 //success handler function is invoked 
+                 console.log(successMessage);
+            }, 
+            function (errorMessage) {
+                console.log(errorMessage);
+            }); 
+
+    1.2.5 Example 3
+        ----------------
+
+        function VoterList(){
+        
+            var age = 9
+        
+            let promise = new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    if(age > 18)
+                        resolve('done')
+                    else
+                        reject('error')
+                })
+            })
+    
+    
+            return promise
+        }
+
+        function display(data) {
+            console.log("voter is ",data)
+        }
+
+
+        //Promise call
+
+        VoterList().then(
+            
+            (item) => {
+                if(item == 'done')
+                    display('Eligble')
+                    
+            },
+            (error) =>{
+                console.log('Something computation error.')
+            }
+        )
+        .catch(()=>{
+            console.log("Promise Error.")
+        })
+
+
+
+
+
+1.3 Async / await
+-------------------
+    -   There’s a special syntax to work with promises in a more comfortable fashion, called “async/await”. 
+    -   It’s surprisingly easy to understand and use.
+
+
+        Example 1
+        -----------
+
+        async function PrintingMessage() {
+
+            let promise = new Promise((resolve, reject) => {
+
+                setTimeout(() => resolve("done!"), 1000)
+
+            });
+
+            let result = await promise; // wait until the promise resolves (*)
+
+            alert(result); // "done!"
+        }
+
+
+        PrintingMessage(); // Function call
+
+
+        Example 2
+        -----------
+        function VoterList(){
+            
+            var age = 29
+            var promise = new Promise((resolve)=>{
+                setTimeout(()=>{
+                    if(age > 18)
+                        resolve('eligible')
+                    else
+                        resolve('not eligible')
+                    
+                })
+            })
+            
+            
+            return promise
+        }
+        
+        async function display() {
+            
+            var data = await VoterList()
+            console.log("voter is ",data)
+            
+        }
+
+        display()

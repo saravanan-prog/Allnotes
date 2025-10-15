@@ -1,0 +1,34 @@
+UPDATE Query
+------------
+
+To update an existing document we can use the 
+
+            updateOne()        // update One is helps to update single document
+            updateMany()      //  updateMany is helps to update multiple document.
+    
+    Syntax
+    --------
+        db.collection_name.updateOne({ test_ondtions },{ update data})
+ 
+set Operator
+------------
+    In MongoDB, the $set operator is used to set the value of a field in a document.
+    
+
+Example
+------
+      db.departments.updateOne( 
+            { 
+                departmentName: "Master of Computer application" 
+            }, 
+            { 
+                $set: { 
+                        departmentID: 'COMPC01' 
+                    } 
+            } 
+        ) 
+
+
+        
+
+  

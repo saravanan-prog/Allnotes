@@ -1,0 +1,3 @@
+localStorage.setItem(key,value)  ->  localStorage.setItem("token",value)
+localStorage.getItem(key)        ->  localStorage.getItem("token")
+localStorage.removeItem(key)     ->  localStorage.removeItem('token')

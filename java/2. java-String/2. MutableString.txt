@@ -1,0 +1,41 @@
+Mutable String
+=================
+   There are two types
+
+      => String Builder
+      => String Buffer
+
+String Builder
+===============
+    => String Builder it is an one of the class heps to string mutable.
+    => A string Builder is helps to mutabale string
+    => String Builder is perfect to use single thread application.
+    => it is generally Fast.
+
+    Sytanx
+    =======
+    StringBuilder str = new StringBuilder("Hello world");
+
+String Buffer
+=============
+    => String Buffer it is an one of the class heps to string mutable but thread safe.
+    => A string buffer is a thread safe.
+    => Compare to string builder it is performance slow.
+    => Both it is helps to mutable string.
+    => Mostly preffered to use string buffer.
+
+    Syntax
+    =======
+      StringBuffer strbf = new StringBuffer("Hello world);
+
+
+Mutable String methods
+======================
+    1. append() - your string after bind the new string.
+    2. insert(pos,newstr) - it is heps to mutabale string with particular position.
+    3. delete(startpos,endpos) -> it is helps to delete particular string positon.
+    4. deleteCharAt(pos) -> it is heps to remove particular character in positon.
+    5. replace(starpos,endpos,newstring) -> it is helps to replace new old string to new string.
+
+
+

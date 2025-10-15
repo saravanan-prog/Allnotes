@@ -1,0 +1,57 @@
+1. Framework
+-------------
+    - Framework is an architecture. 
+    - Express JS [ MOST POPULAR DEVELOPERS USED ]
+    - Nest JS
+    - tail JS
+    - keystone JS .... 10 
+
+
+EXPRESS JS
+----------
+   - npm init  [some details - project name author....]
+   - npm i express --save
+   - npm i nodemon --save [ loading concurrency optimization ]
+
+package.json
+------------
+   script : {
+       start : "nodemon index",      // npm start
+       dev : "node index",           // npm run dev
+      
+   }
+MiddleWare
+-----------
+    - Two types
+        1. custom MiddleWare
+        2. Third party middlware
+
+
+
+
+Routing
+-------
+  - deafult Routing
+        /login
+        /register
+        /dashboard
+
+  - paramaterized Routing
+
+        http://localhost:8000/product/laptop
+               -return resposne laptop
+        
+        http://localhost:8000/product/laptop/mobiles
+
+                - return laptop and mobiles
+
+  - Querybased Routing
+        http://localhost:8000/product?id=lenevo1235&&name=lenevo&&type=laptop
+
+
+  - wildCard routing (*)
+
+
+  req.body = {}
+  req.params ={}
+  req.query

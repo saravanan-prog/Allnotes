@@ -1,0 +1,60 @@
+
+Context :-
+---------- 
+
+        - reduce the work props dirlling
+        - Sharing date between more than components.
+
+
+ Context Methods:
+ -----------------
+
+
+        1. CreateContext() - this method helps to create the context
+        2. useContext()    - use the context data in child component.
+
+
+Procedure :
+-------------
+    Step 1 :  Create the context first and export that.
+
+                Syntax :  TestContext = createContext()
+
+                Example : TestContext = createContext()
+
+
+    Step 2.   Create Context element.
+    
+    `        apply the create context name parent element of child component.
+
+                1. Provider  - This is the process supplying the data child component.
+                2. Value     - value is props of child component.
+
+            Syntax:
+            --------
+
+                <CreateContextName.Provider value = {{dashboard:"data",totalcustomer:"data"}}>
+                    // Render the child components
+                </CreateContextName.Provider>
+
+            Example
+            -------
+                const Persondata = {name:'Saravanan','age:27'}
+
+                <TestContext.Provider value = {{Persondata : Persondata}}>
+                   <Home />
+                   <About />
+                   <Blog />
+                </TestContext.Provider>
+
+
+Step 3 : Use Context:
+
+        which componet wants parent date you can read useContext() - hook
+
+        cons data = useContext(TestContext)
+
+
+
+
+

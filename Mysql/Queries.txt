@@ -1,0 +1,65 @@
+use credosystem;
+
+SELECT Query
+-------------
+    select * from mentor;
+    select * from mentor where name='yuvi' and id=10;
+    select * from mentor where name ='yuvi' or id= 4;
+    select name,age from mentor;
+    select m.name,m.age from mentor m;
+    select distinct m.name,m.age from mentor m;
+    select count(*) from  mentor m;
+    select name from mentor m limit 1,5;
+
+UDATE Query
+-----------
+    update mentor set name = "saravanan" where id = 2;
+    update mentor set name ="saravanan",age=25,skills="Vuejs" where id = 5;
+
+DELETE Query
+-------------
+
+    delete from  mentor where id = 13;
+
+INSERT Query
+--------------
+
+    INSERT INTO MENTOR (
+        name,
+        age,
+        skills,
+        experiece
+    )
+    VALUES
+    ("lakshmi",22,"angular",1);
+
+    Mutiple Insert
+    --------------
+
+    INSERT INTO MENTOR (
+        name,
+        age,
+        skills,
+        experiece
+    )
+    VALUES
+    ("devakumar",22,"angular",1),
+    ("Vimal",22,"angular",1);
+    
+    insert into mentor(name,age,skills,experiece) values ('yuvi',22,'Tesosorjs',2);
+
+
+    JOINS
+    -----
+
+    SELECT m.name,m.age,m.skills,ma.temp_address,ma.permanent_address,ma.mentor_id
+    FROM mentor m LEFT JOIN mentor_address ma 
+    ON m.id = ma.mentor_id;
+
+    SELECT m.name,m.age,m.skills,ma.temp_address,ma.permanent_address,ma.mentor_id
+    FROM mentor m RIGHT JOIN mentor_address ma 
+    ON m.id = ma.mentor_id;
+
+    SELECT m.name,m.age,m.skills,ma.temp_address,ma.permanent_address,ma.mentor_id
+    FROM mentor m INNER JOIN mentor_address ma 
+    ON m.id = ma.mentor_id;

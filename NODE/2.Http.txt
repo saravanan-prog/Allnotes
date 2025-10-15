@@ -1,0 +1,39 @@
+                            HTTP Methods
+                            ------------
+
+1. GET
+--------
+    - Used to retrieve data from a server.
+    - Request body: None
+    - Response: Data retrieved from the server
+    - Example: GET /users
+
+
+2. POST
+--------
+    - Used to send data to a server for processing.
+    - Request body: Data to be processed
+    - Response: Result of processing the data
+    - Example: POST /users
+    
+
+3. PUT
+-------
+    - Used to update existing data on a server.
+    - Request body: Updated data
+    - Response: Result of updating the data
+    - Example: PUT /users/1
+
+4. DELETE
+----------
+    - Used to delete data from a server.
+    - Request body: None
+    - Response: Result of deleting the data
+    - Example: DELETE /users/1
+
+5. PATCH
+---------
+    - Used to partially update existing data on a server.
+    - Request body: Partially updated data
+    - Response: Result of updating the data
+    - Example: PATCH /users/1

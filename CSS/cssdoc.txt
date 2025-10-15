@@ -1,0 +1,120 @@
+
+
+
+
+
+
+
+
+
+
+6. CSS box modal
+-------------------
+    - In CSS, the term "box model" is used when talking about design and layout.
+
+        Content     -   The content of the box, where text and images appear
+        Padding     -   Clears an area around the content. The padding is transparent
+        Border      -   A border that goes around the padding and content
+        Margin      -   Clears an area outside the border. The margin is transparent
+
+
+    6.1 CSS - Size Measurment
+    ------------------------
+
+        auto        -   the browser calculates the margin
+        length      -   specifies a margin in px, pt, cm, etc.
+        %           -   specifies a margin in % of the width of the containing element
+        inherit     -   specifies that the margin should be inherited from the parent element 
+
+    
+
+    Border            : 2cm solid  red      | 2px  dotted green    |    20%   double  yellow   |  2rem  orange                 |   auto pink
+    Margin (TRBL)     : 10cm 5cm 10cm 5cm   | 10px 5px 10px 12px   |    25% 25% 25% 25%        |  10rem 5rem 2rem 2rem         |   auto
+    Padding (TRBL)    : 5cm                 | 10px 5px 10px 12px   |    25% 25% 25% 25%        |  10rem 5rem 2rem 2rem         |   auto                            |   inherit
+
+
+    Margin
+    ----------
+        margin-top
+        margin-right
+        margin-bottom
+        margin-left
+
+
+
+    Example
+    -------
+            p {
+                margin-top: 100px;
+                margin-bottom: 100px;
+                margin-right: 150px;
+                margin-left: 80px;
+            }
+        
+
+        Shorthand :  margin: 25px 50px 75px 100px;
+
+
+    6.3 PADDING
+    ------------
+
+    Padding is used to create space around an element's content, inside of any defined borders.
+
+        padding-top
+        padding-right
+        padding-bottom
+        padding-left
+    
+    Example
+    --------
+
+        div {
+
+            padding-top: 50px;
+            padding-right: 30px;
+            padding-bottom: 50px;
+            padding-left: 80px;
+        }
+
+        Shorthand : padding: 25px 50px 75px 100px;
+
+
+7. HEIGHT and WIDTH
+-------------------------
+    - The height and width properties are used to set the height and width of an element.
+
+
+    Example :
+
+      div {
+            height: 200px;
+            width: 50%;
+            background-color: powderblue;
+        }
+    
+    7.1 MAX-WIDHT AND MAX-HEIGHT
+    ------------------------------
+        The CSS max-width property is used to set the maximum width of an element.
+
+    Example
+    ----------
+        div {
+
+            max-width: 500px;
+            height: 100px;
+            background-color: powderblue;
+        }
+
+
+
+
+    
+    
+
+9.Link tag
+------------
+        a:link       -  a normal, unvisited link
+        a:visited    -  a link the user has visited
+        a:hover      -  a link when the user mouses over it
+        a:active     -  a link the moment it is clicked
+

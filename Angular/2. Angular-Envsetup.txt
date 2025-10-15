@@ -1,0 +1,66 @@
+
+Angular Environment setup
+--------------------------
+        Step 1: Install Node.js and npm 
+
+                - Download and install Node.js (LTS version)
+
+        Step 2: Install Angular CLI 
+                - npm install -g @angular/cli
+
+        Step 3: Create a new Angular project 
+                - ng new my-angular-project
+
+        Step 4: Move into the project directory 
+                - cd my-angular-project
+        
+        Step 5: Run the application
+                ng serve
+
+Angular CLI
+------------
+    Angular CLI is a command-line interface tool for building, testing, and deploying Angular applications.
+
+    
+Basic Commands:
+---------------
+
+        1. ng new [project-name] - Create a new project
+        2. ng serve - Start the development server
+        3. ng build - Build the application
+        4. ng test - Run unit tests
+        5. ng e2e - Run end-to-end tests
+        6. ng generate [component/service/module] - Generate code
+
+        application control commands
+
+        7. component creation          :  ng g c comp_name
+        8. custom pipe creation        :  ng g p pipe_name
+        9. custom directive creation   :  ng g d directive_name
+        10. service file creation      :  ng g s service_name
+
+Bootstraping Process [starting process]
+------------------------------------------
+
+        - index.html: Entry point of the application.
+        - main.ts: Bootstrap file.
+        - app.module.ts: Root module of the application.
+        - app.component.ts: Root component of the application.
+
+       
+ Angular Bootstrap  
+--------------------
+   Step 1:  if you want bootstrap your application install this command.
+   
+                npm install bootstrap
+                
+
+
+   Step 2: open your angular.json inside style array add below mentiond lines.
+
+                "node_modules/bootstrap/dist/css/bootstrap.min.css",
+           
+
+   if you want uninstall bootstrap - npm uninstall bootstrap
+
+

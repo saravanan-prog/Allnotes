@@ -1,0 +1,30 @@
+Inheritance in Java
+====================
+    Inheritance: 
+
+        A class inherits properties and methods from another class.
+        Use extends keyword.
+
+        Example :-
+
+            class Animal {
+                void eat() {}
+            }
+            class Dog extends Animal {
+                void bark() {}
+            }
+    
+
+    Types of Inheritance 
+    --------------------
+        - Single inheritance: A super class inherit to one derived class.
+
+        - Multilevel inheritance: A class inherit a class that derived to another class. in simple term [chain relationship]
+
+        - Hierarchical inheritance: one super class extended by multiple derived classes.
+
+        - Hybrid inheritance - Hybrid Inheritance is a type of inheritance that combines two or more types of inheritance (like single, multiple, multilevel, hierarchical) in a single program. 
+
+    Not Supported
+    -------------
+        - Multiple inheritance (via classes). Java uses interfaces for similar functionality

@@ -1,0 +1,75 @@
+What is Media Query
+-------------------
+    - A media query is intoduced CSS2
+    - that main focus on makes different style and different media types like mobile tablet,laptop,desktop etc.,
+
+Html code:
+-----------
+ <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+Syntax:
+========
+
+  @media not|only mediatype and (media feature) and (media feature) {
+    / * Write inside CSS code */
+  }
+
+Example
+========
+
+ @media screen and (min-width:210px) and (max-width:420px) {
+      //code
+ }
+
+
+ code
+ -----
+
+ <!DOCTYPE html>
+<html>
+<head>
+   
+   <title>Sample Web page Creation</title>
+   <meta name='viewport' content='width=device-width, initial-scale=1'>
+   
+</head>
+<body>
+      <p>Welcome to Css world</p>
+</body>
+  <style>
+
+     
+     /* Mobile - Land-scape  */
+     @media only screen and (min-width:210px) and (max-width:432px) {
+       p{
+          color: white;
+          background-color: blue;
+       }
+     }
+     /* ipad - Land scape */
+     @media only screen and (min-width:433px) and (max-width:1024px) {
+         p{
+            color:white;
+            background-color: green;
+         }
+     }
+     /*Tablet*/
+
+      @media only screen and (min-width:1025px) and (max-width:1280px) {
+         p{
+            color:white;
+            background-color: brown;
+         }
+     }
+
+     /*Web*/
+     @media only screen and (min-width:1281px) and (max-width:1720px){
+         p {
+            color: white;
+            background-color: red;
+         }
+     }
+
+
+  </style>
+</html>

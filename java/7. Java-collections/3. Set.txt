@@ -1,0 +1,124 @@
+SET :-
+=====
+    - In Java, a Set is a collection that does not allow duplicate elements.
+
+                            SET 
+                             |
+            ----------------------------------
+            |                |                |
+          HashSet         LinkedHashSet     TreeSet      
+         
+
+
+
+-----------------------------------------------------------------------------------------------------------
+Sno     Implementation	            Description
+-----------------------------------------------------------------------------------------------------------
+1       HashSet	             Unordered, fastest for most operations. Backed by a hash table.
+2       LinkedHashSet	     Maintains insertion order. Slower than HashSet.
+3       TreeSet	             Sorted in natural order (or via a comparator). Backed by a Red-Black tree.
+
+
+Key Characteristics:- 
+-------------------------------------------------------------------------------------------------------------
+Feature	                    HashSet	                     LinkedHashSet	                        TreeSet
+--------------------------------------------------------------------------------------------------------------
+Allows duplicates	          ❌	                        ❌	                                ❌
+Maintains order	              ❌ (unordered)	            ✅ (insertion)	                    ✅ (sorted)
+Allows null elements	      ✅ (only one)	            ✅ (only one)	                    ❌ (throws exception)
+Performance	                Fastest lookups	            Slower than HashSet	                   Slowest (due to sorting)
+Thread-safe	                ❌ 
+                            (use 
+                            Collections.
+                            synchronizedSet() 
+                            if needed)		
+
+
+
+Example :  HashSet
+------------------------
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class SetExample {
+    public static void main(String[] args) {
+        Set<String> fruits = new HashSet<>();
+
+        // Add elements
+        fruits.add("Apple");
+        fruits.add("Banana");
+        fruits.add("Orange");
+        fruits.add("Apple");  // Duplicate, will not be added
+
+        // Print the set
+        System.out.println(fruits);  // Output will not be in any order
+
+        // Check existence
+        System.out.println(fruits.contains("Banana"));  // true
+
+        // Remove an element
+        fruits.remove("Orange");
+
+        // Iterate over set
+        for (String fruit : fruits) {
+            System.out.println(fruit);
+        }
+    }
+}
+
+Example : LinkedHashSet
+-----------------------
+
+import java.util.LinkedHashSet;
+
+public class LinkedHashSetExample {
+    public static void main(String[] args) {
+        LinkedHashSet<String> set = new LinkedHashSet<>();
+
+        set.add("Banana");
+        set.add("Apple");
+        set.add("Orange");
+
+        System.out.println(set);  // [Banana, Apple, Orange]
+    }
+}
+
+Example : TreeSet
+------------------
+
+import java.util.TreeSet;
+
+public class TreeSetExample {
+    public static void main(String[] args) {
+        TreeSet<String> fruits = new TreeSet<>();
+
+        // Adding elements
+        fruits.add("Banana");
+        fruits.add("Apple");
+        fruits.add("Orange");
+        fruits.add("Mango");
+        fruits.add("Apple");  // Duplicate — ignored
+
+        // fruits.add(null);  // ❌ Uncommenting this will throw NullPointerException
+
+        // Display elements — automatically sorted
+        System.out.println("Sorted TreeSet: " + fruits);
+
+        // First and last elements
+        System.out.println("First: " + fruits.first());
+        System.out.println("Last: " + fruits.last());
+
+        // Remove an element
+        fruits.remove("Orange");
+
+        // Check for presence
+        System.out.println("Contains Mango? " + fruits.contains("Mango"));
+
+        // Iterate over TreeSet
+        System.out.println("All fruits:");
+        for (String fruit : fruits) {
+            System.out.println(fruit);
+        }
+    }
+}

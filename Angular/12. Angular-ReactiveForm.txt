@@ -1,0 +1,99 @@
+                                            Angular Reactive Forms
+                                            ----------------------
+
+    1. Add your component import array inside ReactiveFormsModule
+
+What are Reactive Forms?
+------------------------
+    Reactive Forms is a module in Angular that allows you to build forms in a reactive way. 
+    It provides a powerful and flexible way to manage form data and validation.
+
+Key Features of Reactive Forms
+------------------------------
+
+    1. Reactive: 
+        Reactive Forms are built on top of the Reactive Extensions (RxJS) library, which allows you to manage asynchronous data streams in a reactive way.
+
+    2. Form Controls: 
+        Reactive Forms provide a set of form controls, such as FormControl, FormGroup, and FormArray, which allow you to manage form data and validation.
+
+    3. Validation: 
+        Reactive Forms provide a built-in validation system that allows you to validate form data using a variety of validation rules.
+
+    4. Async Validation: 
+        Reactive Forms also provide support for asynchronous validation, which allows you to validate form data using external APIs or services.
+
+Basic Example of Reactive Forms
+---------------------------------
+Here's a basic example of a reactive form in Angular:
+
+    import { Component } from '@angular/core';
+    import { FormGroup, FormControl, Validators } from '@angular/forms';
+
+    @Component({
+    selector: 'app-reactive-form',
+    template: `
+        <form [formGroup]="form">
+            <input formControlName="name" placeholder="Name">
+            <input formControlName="email" placeholder="Email">
+            <button type="submit">Submit</button>
+        </form>
+    `
+    })
+    export class ReactiveFormComponent {
+        form = new FormGroup({
+            name: new FormControl('', Validators.required),
+            email: new FormControl('', [Validators.required, Validators.email])
+        });
+
+        onSubmit() {
+            console.log(this.form.value);
+        }
+    }
+
+In this example,
+----------------
+
+    We create a reactive form using the FormGroup and FormControl classes. We also define validation rules for each form control using the Validators class.
+
+Advanced Features of Reactive Forms
+
+Reactive Forms provide a number of advanced features, including:
+--------------------------------------------------------------------
+    1. Form Arrays: Form arrays allow you to manage arrays of form controls.
+    2. Nested Forms: Nested forms allow you to create complex forms with multiple levels of nesting.
+    3. Custom Validation: Custom validation allows you to define custom validation rules for your forms.
+    4. Async Validation: Async validation allows you to validate form data using external APIs or services.
+
+
+Example 1 : Reactive Form validation
+------------------------------------
+
+
+<form [formGroup]="loginForm" (submit) = "loginFormSubmit()" >
+    <div>
+        <label> User Name</label>
+        <input type="text" name="userName" formControlName = 'userName' />
+        <div class="error">
+            <p *ngIf="loginForm?.get('userName')?.invalid && loginForm?.get('userName')?.touched"> User name is Required</p>
+            <p *ngIf="loginForm?.get('userName')?.errors?.['minlength']"> Minimum 5 letters Required </p>
+        </div>
+    </div>
+    <div>
+       <input type="submit" />
+    </div>
+</form>
+
+ export class AppComponent {
+  loginForm = new FormGroup( {
+    userName: new FormControl('',[Validators.required,Validators.minLength(5)])
+  })
+
+
+
+
+  
+  loginFormSubmit(){
+    console.log("LoginForm=====>",this.loginForm.get('userName'))
+  }
+}

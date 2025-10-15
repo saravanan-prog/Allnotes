@@ -1,0 +1,48 @@
+4. JS - Operators
+------------------
+    Java script operators are used to perform different types of mathematical and logical computations.
+
+    ------------------------------------------
+        4.1 Types of JavaScript Operators 
+    --------------------------------------------
+
+		There are different types of JavaScript operators:
+
+		    Arithmetic Operators - (+ , -, * , / , % )
+
+		    Assignment Operators - (=, +=, -=,*=,/=,%=)
+
+		    Comparison Operators - (==,===,!=, !==, <,>,<=,>=)
+
+		    String Operators -    ( "" , '', `` ) - double quotes Controls
+
+		    Logical Operators -  (&&) - Logical And (||) - Logical OR
+
+            Uniary Operator   - 
+                            ( [ ++container   Pre increment ]  , [--container   Pre Decrement]    ) 
+                            ( [ container++   Post increment ] , [container--  Post Decrement]    ) 
+
+		    Ternary Operators - ( ? ) - true block  (:) - false block
+
+		    Type Operators -  ( typeof )
+
+            Spread Operator - (...) 
+
+   4.1 Examples:-
+   ---------------
+
+        var a = 10, b = 5
+
+        var age = 18
+
+        var person = "child"
+
+        var result = a + b    // Arithmetic operators
+
+        var voter  =  age >= 18   // Comparison Operators
+
+        var voter = ( age > 18 && person == 'Adult' )  // Both condtion checking returns to boolean
+
+        var voter = (age > 18 || person == 'Adult' )   // Both condition checking returs to boolean
+
+        var voter = (age > 18 ) ? 'Elgible' : 'Not-Eligible' 

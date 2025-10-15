@@ -1,0 +1,32 @@
+
+1. Component Lifecycle Hooks in Angular
+---------------------------------------
+
+ Lifecycle Hooks:
+ -------------------
+
+    Lifecycle hooks are methods that are called at specific points during a component's lifecycle.
+
+Types of Lifecycle Hooks
+--------------------------
+    1. ngOnInit                 : Called after the component's constructor and before the template is rendered.
+    2. ngAfterViewInit          : Called after the component's view has been initialized.
+    3. ngOnChanges              : Called when the component's input properties change.
+    4. ngOnDestroy              : Called before the component is destroyed.
+    5. ngAfterContentInit       : Called after the component's content has been initialized.
+    6. ngAfterContentChecked    : Called after the component's content has been checked.
+    7. ngBeforeCheck            : Called before the component's template is checked.
+
+Lifecycle Hook Order
+--------------------
+    1. ngOnInit
+    2. ngAfterContentInit
+    3. ngAfterViewInit
+    4. ngAfterContentChecked
+    5. ngOnChanges
+    6. ngBeforeCheck
+    7. ngOnDestroy
+
+
+
+

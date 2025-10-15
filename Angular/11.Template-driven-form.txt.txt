@@ -1,0 +1,247 @@
+Angular Forms
+--------------
+
+    1. Template-Driven Form
+    2. Reactive Form
+      
+      
+                            Template-driven forms in Angular:
+                            --------------------------------
+
+What are Template-Driven Forms?
+--------------------------------
+
+  Template-driven forms are a way to build forms in Angular using templates. 
+  the form structure and validation are defined in the template, rather than in the component class.
+
+Advantages of Template-Driven Forms
+------------------------------------
+
+      1. Easy to use: Template-driven forms are easy to use and require minimal code.
+      2. Declarative syntax: The form structure and validation are defined declaratively in the template.
+      3. Automatic validation: Angular provides automatic validation for template-driven forms.
+
+Basic Syntax
+------------
+  1. import forms moudle.
+  
+         <form #myForm="ngForm" >
+
+              <!-- form fields -->
+
+         </form>
+
+
+
+      <form #myForm="ngForm">
+          <label>Username:</label>
+          <input type="text" ngModel name="username" #username  ="ngModel">
+          
+          <label>Password:</label>
+          <input type="password" ngModel name="password" #password  ="ngModel">
+          
+          <button type="submit">Submit</button>
+      </form>
+
+In this example:
+----------------
+    - #myForm="ngForm" creates a reference to the form and assigns it to the myForm variable.
+    - ngModel is used to bind the input fields to the form.
+    - name is used to specify the name of the input field.
+
+Validation
+----------
+
+  Template-driven forms provide automatic validation using the ngModel directive. You can also add custom validation using the Validators class.
+
+
+
+<form #myForm="ngForm">
+  <label>Username:</label>
+  <input type="text" ngModel name="username" required minlength="3">
+  
+  <label>Password:</label>
+  <input type="password" ngModel name="password" required>
+  
+  <button type="submit">Submit</button>
+</form>
+
+In this example:
+----------------
+  - required is used to specify that the input field is required.
+  - minlength is used to specify the minimum length of the input field.
+
+Submitting the Form
+---------------------
+  To submit the form, you can use the ngSubmit event binding.
+
+    <form #myForm="ngForm" (ngSubmit)="formSubmit(myForm)">
+
+      <!-- form fields -->
+
+    </form>
+
+In this example:
+-----------------
+    - (ngSubmit) is used to bind the formSubmit method to the form submission event.
+    -  formSubmit is a method that will be called when the form is submitted.
+
+      formSubmit(form: NgForm) {
+
+        console.log(form.value);
+        
+      }
+
+Template Drive form with validation
+--------------------------------------
+Example 1:
+-----------
+
+
+<form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+  <div class="form-group">
+    <label for="username">Username:</label>
+    <input type="text" 
+           id="username" 
+           name="username" 
+           ngModel 
+           required 
+           minlength="3" 
+           maxlength="20" 
+           #username="ngModel">
+    <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
+      <div *ngIf="username.errors.required">
+        Username is required
+      </div>
+      <div *ngIf="username.errors.minlength">
+        Username must be at least 3 characters
+      </div>
+      <div *ngIf="username.errors.maxlength">
+        Username must be no more than 20 characters
+      </div>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" 
+           id="email" 
+           name="email" 
+           ngModel 
+           required 
+           email 
+           #email="ngModel">
+    <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+      <div *ngIf="email.errors.required">
+        Email is required
+      </div>
+      <div *ngIf="email.errors.email">
+        Invalid email address
+      </div>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="password">Password:</label>
+    <input type="password" 
+           id="password" 
+           name="password" 
+           ngModel 
+           required 
+           minlength="6" 
+           maxlength="30" 
+           #password="ngModel">
+    <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+      <div *ngIf="password.errors.required">
+        Password is required
+      </div>
+      <div *ngIf="password.errors.minlength">
+        Password must be at least 6 characters
+      </div>
+      <div *ngIf="password.errors.maxlength">
+        Password must be no more than 30 characters
+      </div>
+    </div>
+  </div>
+  
+  <button type="submit" [disabled]="myForm.invalid">Submit</button>
+</form>
+
+Example 2:
+---------
+
+
+<form #myForm = "ngForm" (ngSubmit) ="formSubmit(myForm)"> 
+   <div>
+       <label>User Name</label>
+       <input type="text" ngModel name="firstname" required #firstname = "ngModel"/>
+       <div class="error_msg">
+           <p *ngIf=" firstname.invalid && (firstname.dirty || firstname.touched)"> Please Enter  First name field</p>
+       </div>
+   </div>
+   <div>
+      <input type="submit" />
+   </div>
+</form>
+
+ Typescript file
+ ----------------
+   formSubmit(Form:NgForm){
+      console.log("forms =======>",Form.controls)
+   }
+
+ 
+ Example 3:
+ ----------
+  <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" 
+            id="password" 
+            name="password" 
+            ngModel 
+            required 
+            minlength="6" 
+            maxlength="30" 
+            #password="ngModel">
+      <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+        <div *ngIf="password.errors.required">
+          Password is required
+        </div>
+        <div *ngIf="password.errors.minlength">
+          Password must be at least 6 characters
+        </div>
+        <div *ngIf="password.errors.maxlength">
+          Password must be no more than 30 characters
+        </div>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="confirmPassword">Confirm Password:</label>
+      <input type="password" 
+            id="confirmPassword" 
+            name="confirmPassword" 
+            ngModel 
+            required 
+            minlength="6" 
+            maxlength="30" 
+            #confirmPassword="ngModel">
+      <div *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)" class="alert alert-danger">
+        <div *ngIf="confirmPassword.errors.required">
+          Confirm Password is required
+        </div>
+        <div *ngIf="confirmPassword.errors.minlength">
+          Confirm Password must be at least 6 characters
+        </div>
+        <div *ngIf="confirmPassword.errors.maxlength">
+          Confirm Password must be no more than 30 characters
+        </div>
+        <div *ngIf="password.value !== confirmPassword.value">
+          Passwords do not match
+        </div>
+      </div>
+    </div>
+    
+    <button type="submit" [disabled]="myForm.invalid">Submit</button>
+</form>

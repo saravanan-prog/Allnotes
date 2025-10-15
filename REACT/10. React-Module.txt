@@ -1,0 +1,61 @@
+React Modules :-
+-----------------
+    - All components needs to create own files.
+    - Example src folder inside create one folder name is pages. that inside create component file.
+
+
+        src -> pages -> home -> Home.js or (jsx)
+        src -> pages -> about ->  About.js or (jsx)
+        src -> pages -> contact -> Contact.js or (jsx)
+        src -> pages -> blog ->  Blogs.js or (jsx)
+    
+
+    Import and export 
+    ------------------
+      - External component need to access inside compoenent that time import it.
+      - Internal component need to shared another external component that time export it.
+
+Example
+---------
+
+    Home.js
+    -------
+        function Home() {
+
+            return <div>
+                <h1> Home compoenent </h1>
+            </div>
+        }
+        export default Home
+
+
+    About.js
+    --------
+       
+
+        function About() {
+
+            return <div>
+                <h1> About compoenent </h1>
+                <Home/>
+            </div>
+        }
+        export default About
+   
+    Index.js
+    ---------
+     import Home from './Home'
+     import About from './About'
+
+
+
+     function Main(){
+        return <div>
+            <Home />
+            <About />
+        </div>
+     }
+
+     render() {
+        <Main />
+     }

@@ -1,0 +1,109 @@
+postgress PL / SQL - function
+-------------------------------
+    Function - https://www.geeksforgeeks.org/postgresql-data-types/?ref=lbp
+
+    syntax:
+    -------
+        create or replace function < function_name() >
+           returns <data_type>  as $$
+        declare
+           variable1 <data_type> := value;
+           variable2 <data_type> := value;
+        begin
+            return variable1 + variable2;
+        end
+           $$ language plpgsql;
+
+
+Program 1 :  Simple addition program
+-------------------------------------
+    Create Function
+    ---------------
+
+        create or replace function subraction()
+            returns integer as $$
+        declare
+            first_number integer := 25;
+            second_number integer := 30;
+            sum_of_result integer :=0;
+        begin
+            return sum_of_result + first_number + second_number;
+        end
+        $$ language plpgsql;
+
+    Select Function
+    ---------------
+
+        select subraction();
+
+    Drop Function
+    -------------
+        drop function subraction
+
+program 2 : simple text return
+-------------------------------
+
+    create or replace function displaytext()
+		returns varchar as $$
+	declare
+   		text varchar:= 'saravanan';
+	begin
+   		return text;
+	end
+	$$ language plpgsql;
+
+    Select Function
+    ---------------
+
+        select displaytext();
+
+
+program 3 : GET STUDENT RECORD IN DATABASE
+-----------------------------------------
+Example 1
+---------
+    create or replace function getRecord()
+        returns  table(roll_number int,student_name varchar)  as $$
+
+    begin
+        return query select * from students;
+    end
+    $$ language plpgsql;
+
+
+Example2
+---------
+
+    create or replace function getRecord()
+	    returns  table (rnumber int,rname varchar ) as $$
+
+    begin
+ 	    return query select * from students where roll_number ='1';
+    end
+    $$ language plpgsql;
+
+
+    Select Function
+    ---------------
+
+        select * from getRecord();
+
+    Drop Function
+    -------------
+
+        Edrop function getRecord
+
+
+Example 3
+---------
+    create or replace function getRecord(id integer)
+	    returns  table (rnumber int,rname varchar ) as $$
+
+    begin
+        return query select * from students where roll_number = id;
+    end
+    $$ language plpgsql;
+
+    select getRecord(2);
+
+    drop function getRecord

@@ -1,0 +1,60 @@
+Java Constructor
+================
+    Constructors in Java initialize objects. 
+    They have the same name as the class and no return type.
+
+    Key Points:- 
+
+        - No return type.
+        - Same name as class.
+        - Called with 
+    
+    Types of Constructors  :- 
+
+        - No-arg constructor: No parameters.
+        - Parameterized constructor: Takes parameters.
+        - Default constructor: Compiler provides if no constructors are defined
+
+
+1. Example - No-arg constructor :-
+---------------------------------
+
+    public class Car {
+        Car() {
+            System.out.println("Car created");
+        }
+    }
+
+    Car myCar = new Car();
+
+2. Parameterized constructor
+----------------------------
+    - A parameterized constructor takes arguments.
+    - Used to initialize objects with specific values.
+
+        public class Car {
+            String color;
+            
+            Car(String c) {
+                color = c;
+            }
+        }
+
+        Car myCar = new Car("Red");
+        System.out.println(myCar.color);
+
+3. Default constructor
+----------------------
+    - A default constructor is provided by Java if no constructor is defined in a class.
+    - It has no parameters.
+    - Does basic initialization.
+
+
+
+    public class Car {
+        // No constructor defined
+    }
+
+    Car myCar = new Car(); // Uses default constructor
+
+

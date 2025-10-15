@@ -1,0 +1,31 @@
+Java Access Specifiers
+======================
+
+    - public: Accessible everywhere.
+    - private: Accessible only within the class.
+    - protected: Accessible within class and subclasses.
+    - Default (no modifier): Accessible within the package.
+
+
+Example (Java)
+==============
+    public class MyClass {
+        public int a;
+        private int b;
+        protected int c;
+        int d; // default
+    }
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+accessspecifer           sameclass        subclass        samePackage/class/subclass       differentPackage/class   differentPackage/subclass
+------------------------------------------------------------------------------------------------------------------------------------------------ 
+public                      yes             yes                yes                                  yes                        yes
+
+
+private                     yes              No                 No                                  No                         No
+
+
+protected                   yes              yes                yes                                 No (extends) Yes           No (extends) Yes
+
+ 
+default                     Yes              Yes                 Yes                                No                         No 

@@ -1,0 +1,19 @@
+First Program
+-------------
+
+    public class HelloWorld {
+        public static void main(String[] args) {
+            System.out.println("Hello, World!");
+        }
+    }
+
+Explanation
+-----------
+
+    - This simple program prints “Hello, World!” to the console. It introduces:
+
+    - class: The blueprint for objects.
+
+    - main(): The entry point of any Java application.
+
+    - System.out.println(): Prints output to the console.

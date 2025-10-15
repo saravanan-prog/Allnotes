@@ -1,0 +1,28 @@
+ 1. Scanner
+ -----------
+    => The Scanner is used for reading input from users, 
+
+        Scanner sc = new Scanner(System.in)
+
+    => Parsing Input:
+
+           sc.nextInt()     -> read integer input, 
+           sc.nextDouble()  -> read double input, 
+           sc.nextLine()    -> read string input,
+
+
+   Example1: Simple Read input :
+   -----------------------------
+
+    import java.util.Scanner;
+    public class Main {
+        public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Enter your name: ");
+            String name = sc.nextLine();
+            System.out.println("Hello, " + name);
+            sc.close();
+        }
+    }
+
+

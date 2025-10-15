@@ -1,0 +1,89 @@
+
+Angular Routing
+---------------
+
+ - The routing module is a separate module that contains the routing configuration. 
+ - This module is imported in the main application module (app.module.ts).
+
+    routerOutlet:
+    --------------
+      - Renders the routed component.
+      - Router outlet Module add your shared module import and export array inside RouterOutlet 
+          import { RouterOutlet } from '@angular/router';
+
+            imports[RouterOutlet],
+            exports[RouterOutlet]
+
+
+
+      - In app.component.html add this  <router-outlet> </router-outlet>
+
+    Routing Configuration
+    ---------------------
+
+      Routes = [
+
+        { path:'', redirectTo:'about', pathMatch:'full' },
+        { path:'home', component:HomeComponent },
+        { path:'about', component:AboutComponent }
+        { path:'viewProfile/:id',component:viewProfileComponent }
+
+      ] 
+
+
+    Routing Directives
+    -------------------
+    Here are some common routing directives:
+
+      1. routerLink: Creates a link to a route.
+      2. routerLinkActive: Adds a class to an element when the linked route is active.
+
+     
+1. Eagger Loading
+---------------
+
+  import { HomeComponent } from '../pages/home/home.component';
+  import { AboutComponent } from '../pages/about/about.component'
+  
+    Routes = [
+
+        { path:'', redirectTo:'about', pathMatch:'full' },
+        { path:'home', component:HomeComponent },
+        { path:'about', component:AboutComponent }
+        { path:'viewProfile/:id',component:viewProfileComponent }
+
+    ] 
+
+    parameterized Routing
+    ---------------------
+        { path: 'viewProfile/:id' , component:viewProfileComponent }
+
+
+       viewProfile component typescript file
+        ------------------------------------
+
+
+        constructor(private activateRoute:ActivatedRoute){}
+        this.activateRoute.params.subscribe(paramMap => { 
+            console.log('paramap============>',paramMap['id'])
+       
+        })
+
+  
+    WildCard Routing
+    -----------------
+      { path:'**',component:NopageFoundComponent }
+
+
+
+2. Lazzy Loading
+----------------
+
+
+  const routes: Routes = [
+      { path:'home', loadComponent:() => import('../pages/home/home.component').then((c)=> c.HomeComponent)  },
+      { path:'about', loadComponent :() => import('../pages/about/about.component').then((c)=>c.AboutComponent) }
+  ];
+
+
+

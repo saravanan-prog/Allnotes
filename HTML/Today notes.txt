@@ -1,0 +1,237 @@
+HTML => Hyper Text markup language it is helps to creating web page
+     => this one is called Scripting Language.
+     
+
+DOM  => Document object model it is reprsent to blueprint how to construct your webpage.
+     => this is under comes to tree level architecture.
+
+
+Tags  => it is helps to construct in your webpage.
+
+      => We represent HTML elements with angular brackets(<>) called HTML Tags.
+      => this is two types
+
+              - parired tags. [ with closing tags ]
+                  For example : <p>..</p>, <h1>..</h1>, <div>...</div>
+
+              - Non paired tags [ without closing tags ]
+                   For example :  <img src='' /> 
+
+Elements => Element  is represent tag + content
+              For example : <p> Hello world </p>
+            
+
+
+Types of Elements => There are 4 type of Elements is there.
+                
+                1. Block Level Elements - [ occupied Entired row ]
+                2. Inline - Elements    - [ occupied specified space ]
+                3. void Elements        - [ Without closing Elements ]
+                4. Semmantic Elements.  - [ machine and humman understanding elements.]
+
+
+Attribute  => An Attributes is an additonal information of the tags.
+           => there are two types of attribues
+                1. Common Attributes -  [id,class,name,style]
+                2. Special Attributes - [src, href, type ]
+
+
+
+
+I .Blocking Level Elements
+  -------------------------
+
+
+    1.  Heading Elements    -> h1 to h6
+
+    2.  Paragraph Elements  ->  Starts to <p> tag and ends to </p> closing p tag.
+
+    3.  Container Tags      -> it is represent to layers or containers
+                              <div> and <span>
+                              <div>.. is block level element and <span> is inline Elment.
+    4. List Elements -> 
+            List Elements is two types.
+              1. Order List    -> 
+                    -  <ol> <li> Content </li> </ol>
+                    -  Order List it returns to specify order
+                    -  Like A,B,C,D (or) a,b,c,d (or) 1,2,3..
+                    -  Attribute is value and type is manditory
+                      
+              2. UnOrder List   -> 
+                      -  <ul> <li> Content </li> </ul>
+                      -  unOrder list it is returns to some unorder format. 
+                      -  like Bullet, Diamaond, circle, Arrow
+                      -  Attribute is value and type is manditory
+
+              3. Description List 
+                      - it is represent tbody
+                                <dl>
+                                  <dt> Apple </dt>
+                                  <dd> apple is a red color </dd
+                                </dl>
+                          
+                      -  Attribute is value and type is manditory
+
+
+    5. Table Elements - 
+                  - table elements is represent your content 2D view [row and columns ]
+                  - table element is represent tag is <table> .... </table>
+                Tags
+                  - <thead> -> table Header
+                  - <tbody> -> table body
+                  - <tr>    -> table row
+                  - <td>    -> table data
+
+
+                        syntax
+                        ------
+                           <table>
+                              <thead> 
+                                <tr>
+                                  <th> Heading Content </th>
+                                </tr>
+                              </thead>
+                              <tbody> 
+                                  <tr>
+                                     <td> Data Content </td>
+                                  </tr>
+                              </tbody>
+                           </table>
+
+                     - Attributes : border, rowspan and colspan
+
+      6. Forms.
+      -----------
+
+      Syntax:
+      -------
+
+          <form>
+            ...content
+          </form>
+
+
+      Elements.
+      --------
+            - label        -> label is catption of the input name -> <lable> Name </lable>
+
+            - Input type   -> An Input Element is capture the data in user. <input type="" />
+
+               - text       -> text Content
+               - email      -> email type
+               - Number     -> number
+               - date       -> calendview
+               - password   -> invisible text
+               - checkbox
+               - radio 
+               - submit
+               - button (or) Semmantic <button> ... </button>
+
+                example
+                -------
+                  <input type = "text" name="username" />
+
+                Attributes
+                ----------
+                  required, placeholder, checked[radio,checkbox], minlength,maxlength
+
+            - selectbox
+                  - select box is generally appeart to drop down options.
+
+                  Attributes  - selected, required, 
+                  ----------
+
+                  syntax
+                  ------
+                     <select id="" name=""> 
+                        <option value="content-value" > ... content ... </option>
+                      </select>
+                       
+            - textArea
+                    <textArea rows=10 cols=10>  </textArea>
+            - label
+            
+
+ II. Inline Elements
+ --------------------
+   it is occupy specified width 
+
+      1. Image Element. <img src="file path" height = 100 width = 100 />
+
+      2. Anchor Element. <a href= "Source paht" > content </a>
+
+      3. Formatting Elements 
+
+          - Bold <b> content </b>
+          - strong <strong> content </strong>
+
+          - Italic <i> content </i>
+          - emphaize text <em> content </em>
+
+          - underline <u> content </u>
+          - mark [highlighter] <mark> content </mark>
+          - delete <del> content </del>
+          - insert <ins> content </ins>
+
+          - abbr -> abbservation <abbr title="Tata consultancy service">TCS</abbr>
+          - sup  -> 2 * 2 
+          - sub  -> log 10
+
+
+
+ III. Void Elements
+ -------------------
+    Void element is defined to Does not having closing Types for example 
+
+      -  Horizontal Rule  < hr/>
+      -  breaking         <br/>   - it is create new line.
+      -  Input Element.   <input />
+      -  Image Element     <img />
+ 
+ IV. Semmantic Elements
+ -----------------------
+     - Semmantic element is defined to understand machine and human readable
+     - it is helps to improve SEO.
+
+        - header   -> div 
+        - main     -> div
+        - aside    -> div
+        - article  -> div
+        - section  -> div
+        - footer   -> div
+        - figure   -  div [images]
+        - nav      - navigation container
+      
+
+        - center  -> centerialized  view your elements
+        - table -> <table> ... </table>
+        - form  -> <form> ... </form>
+        - Input -> <input>
+        - button -> <button> Cancel </button>
+        - textArea -> <textarea rows="size" col="size" > ... </textarea>
+        etc..,
+
+Attributes.
+-----------
+  An attribute is an additonal information of the tags.
+     1. Common Attributes. - its available all html tags 
+
+         Id     - id is unique [#]
+         Class  - class is not unique [.]
+         name   - name is not unique
+         style  - it is defines to write inline style.
+         height - increase size of elements horizontally.
+         width  - increase size of elements verticaly.
+         title  - it is helps to hover the text hint.
+      
+    2. Special Attibutes. [ Special type of information an elements.]
+
+        href = hyperlink reference.
+        src  = source.
+        alt  = alternative 
+        type = typical 
+        action = actions or events.
+        value  = default values.
+        rowspan
+        colspan
+        border

@@ -1,0 +1,45 @@
+Documents. 
+---------
+    Documents known data object notations. generally having two types of documents.
+        1. Simple document.
+        2. Embeded document.
+
+BSON Document
+--------------
+
+    BSON document known as Birnary structure object notation. it is similar to JSON.
+
+
+    {
+        title: "Post Title 1",
+        body: "Body of post.",
+        category: "News",
+        likes: 1,
+        tags: ["news", "events"],
+        date: Date()
+    }
+
+Embeded document.
+-----------------
+    Embeded document is known as document inside having multiple doucments
+
+
+        {
+            employeeName: 'Rajesh',
+            employeeAge :  27,
+            employeeType:  'Temp',
+            employeeAddress : [
+                 temp_address: {
+                    street_no: '2nd cross st',
+                    Apartment : 'Gayathiri Apartments'
+                    location  : 'Velachery'
+                    city      :'chennai'
+                 }
+                 permanant_address: {
+                    street_no: '2nd cross st',
+                    Apartment : 'Gayathiri Apartments'
+                    location  : 'Velachery'
+                    city      :'chennai'
+                 }
+            ]
+        }

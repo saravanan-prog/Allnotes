@@ -1,0 +1,50 @@
+                            API
+
+
+Basic Concepts
+--------------
+
+
+API => Application interface.
+
+    frontEnd = React,Angular,vue html css jsx  [Action Trigger]
+        
+              API
+
+    Backend  = JAVA, .net, php, nodejs         [Capture that actions response to relavant ]
+
+
+Types of API
+   
+    => Restful API
+    => SOAP 
+    => GrapQl
+
+
+Restful API [http / https] => Hypertext Transfer Protocal / secure 
+   
+   => GET     - to get the inforamation from the server.
+   => POST    - to post the information from the server.
+   => PUT     - Existing data modification
+   => DELETE  - to remove data from the backend
+
+
+
+React API handling
+------------------
+        => fetch method 
+        => Axios Libirary
+
+
+    Fetch method
+    -------------
+       => Pure JS function
+
+       => const payload = {
+             method:"GET"
+          }
+
+       =>    fetch(url,payload).then(
+                (response) => response.json(),
+                (data) => console.log("data=====>",data)
+             )

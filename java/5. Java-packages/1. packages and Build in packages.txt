@@ -1,0 +1,36 @@
+1. Java Packages
+   =============
+    =>  Java Package: A way to organize related classes, interfaces.
+    =>  Prevent naming conflicts
+
+2. built-in packages:- 
+   ==================
+
+    1.  Java has several built-in packages 
+    2.  that are part of the Java Standard Edition (Java SE).
+   
+
+    Key Built-in Packages in Java
+    ----------------------------
+
+        - java.lang:- 
+             Fundamental classes and, 
+             Object, 
+             Exception.
+
+        - java.util:-
+             Scanner, 
+             Arrays Functions,
+             Streams,
+             collections, 
+             date/time(legacy).
+
+         - java.time:-
+         - java.io
+         - java.sql
+
+
+
+   
+
+

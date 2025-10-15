@@ -1,0 +1,56 @@
+React Callbacks 
+----------------
+
+    - Callback is shared data should be child to parent
+    - React envents way only achieve this.
+    
+
+Example : -
+
+Explanation
+------------
+
+    - parent component event is passing child component 
+    - child component button is triggred that event.
+
+
+Parent Component-
+-------------------
+
+    function Calculator(){
+
+
+        const [count,setCount] = useState(0)
+
+        const increaseCount = (data) => {
+
+            setCount(data)
+        }
+
+
+        return <div>
+
+            <h1>{count}</h1>
+
+            <PlusButton 
+                count = {count}
+                increaseCount = {increaseCount}
+            
+            />
+
+
+        </div>
+    }
+
+
+
+
+Child Component
+----------------
+
+   const PlusButton = ({count, increaseCount}) => {
+    
+        return(
+            <button onClick={() => increaseCount(count + 1)}> + </button>
+        )
+    };

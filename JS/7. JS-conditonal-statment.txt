@@ -1,0 +1,190 @@
+10. CONDITONAL statements
+---------------------------
+        - simple if
+        - if - else
+        - Nested If
+        - If else Ladder
+        - Switch statement.
+        - break 
+        - continue
+
+    10.1 IF -STATEMENT
+    ------------------
+     
+         - to specify a block of code to be executed, if a specified condition is true
+
+        SYNTAX:
+        --------
+
+            if (condition) {
+
+                //  block of code to be executed if the condition is true
+            }
+
+
+
+        Example
+        ---------
+            var age = 19
+            var voterList = null
+
+            if (age > 18) {
+
+                voterList = "Elgible";
+
+            }
+
+
+
+    10.2 IF -ELSE - STATEMENT
+    -------------------------
+
+        -Use else to specify a block of code to be executed, if the same condition is false
+
+         SYNTAX:
+         --------
+
+           if (condition) {
+
+                //  block of code to be executed if the condition is true
+
+           } else {
+
+            //  block of code to be executed if the condition is false
+
+           }
+        
+        ---------
+         Example
+        ---------
+
+            var age = 19
+            var voterList = null
+
+            if (age > 18) {
+
+                voterList = "Elgible";
+
+            }
+            else{
+                voterList = "Not Elgible";
+            }
+
+
+
+
+   10.3 IF ELSE LADER
+   -----------------------------
+
+
+       - Use else if to specify a new condition to test, if the first condition is false
+
+         SYNTAX:
+
+                if (condition1) {
+
+                 //  block of code to be executed if condition1 is true
+
+                } 
+                else if (condition2) {
+
+                    //  block of code to be executed if the condition1 is false and condition2 is true
+
+                } 
+                else {
+
+                    //  block of code to be executed if the condition1 is false and condition2 is false
+
+                }
+
+
+        Example
+        -------
+            var studentMarks = 19
+            var Grade = null
+
+            if (studentMarks >= 90) {
+
+                Grade = "First Class";
+
+            }
+            else if (studentMarks >= 70  && studentMarks <=89) {
+
+                Grade = "Second Class";
+
+            }
+            else if (studentMarks >= 60 && studentMarks <= 70) {
+
+                Grade = "Third Class";
+
+            }
+             else if (studentMarks >= 35 && studentMarks <= 50) {
+
+                Grade = "Pass";
+
+            }
+            else
+            {
+                Grade = "FAIL";
+            }
+
+
+
+    10.4 SWITCH CASE STATEMENT
+    ----------------------------
+
+       - Use switch to specify many alternative blocks of code to be executed
+
+        break       ->        While you have putting break keyword based on codition that program execution will stopped.
+        continue    ->        While you have putting continue keyword based on condtion particular item only rejected that printing state.
+
+
+         SYNTAX
+         ---------
+            switch( condtionValue ) {
+
+                case x:
+                    // code block
+                    break;
+                case y:
+                    // code block
+                    break;
+                default:
+                    // code block
+            }
+    
+        Example
+        -------
+
+            let day = 3;
+            let dayName;
+
+            switch (day) {
+
+            case 1:
+                dayName = 'Sunday';
+                break;
+            case 2:
+                dayName = 'Monday';
+                break;
+            case 3:
+                dayName = 'Tuesday';
+                break;
+            case 4:
+                dayName = 'Wednesday';
+                break;
+            case 5:
+                dayName = 'Thursday';
+                break;
+            case 6:
+                dayName = 'Friday';
+                break;
+            case 7:
+                dayName = 'Saturday';
+                break;
+            default:
+                dayName = 'Invalid day';
+            }
+
+
+console.log(dayName); // Tuesday

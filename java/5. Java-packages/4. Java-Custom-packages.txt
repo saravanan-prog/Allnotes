@@ -1,0 +1,38 @@
+Custom Package :- 
+===================
+
+    =>  you can create and use custom packages to organize your classes and interfaces.
+
+    1. Creating a Custom Package
+    ============================
+
+        => Use the package keyword at the top of your Java file.
+
+          Example:-
+
+            Folder: myapp/MyClass.java
+
+            package myapp;
+
+            public class MyClass {
+                public void sayHello() {
+                    System.out.println("Hello from MyClass");
+                }
+            }
+            
+
+    2. Using the package
+    =======================
+
+      => Package names typically follow a reverse domain name convention (e.g., com.example.myapp)
+
+
+        import myapp.MyClass;
+        public class Main {
+            public static void main(String[] args) {
+                MyClass obj = new MyClass();
+                obj.show(); // Output: Hello
+            }
+        }
+
+

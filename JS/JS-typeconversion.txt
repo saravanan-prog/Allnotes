@@ -1,0 +1,48 @@
+
+   type conversion  
+   ----------------
+             number to string 
+            --------------------
+
+                        var data = 125
+                        data =  data.toString()  // "125"
+
+
+            string to number  
+            ---------------------
+
+                        var number = "125"
+                        number = Number(number) // 125
+
+
+            array to string 
+            ---------------  
+
+                    var fruit = ["apple","orange","pineapple"] 
+                    method 1: fruit = fruit.toString()   // "apple,orange,pineppale"
+                    method 2 : fruit = fruit.join(' ')   // apple orange pineapple
+
+                
+             string to array
+             ---------------
+
+                    var data = "apple,Orange,pineapple,grapes"
+                    method 1: data.split()
+                   
+
+            object to string
+            ------------------
+
+                       var data = {
+                            empId : 'j0001',
+                            empname : 'jegen J'
+                       }
+
+                        data = JSON.stringify(data)
+
+           String to Object
+           -----------------
+
+                     var data = ' {"name":"John", "age":30, "city":"New York"} '
+                     data = JSON.parse(data)
+                    

@@ -1,0 +1,60 @@
+Function Component 
+--------------------
+    - This is a based on pure Javascript function
+    - A function returns to JSX code .
+    - Compare to class component it is a less code 
+    - so developer community team is suggested this.
+
+       Syntax
+       ------
+            export function ComponentName() {  
+                // Component name should be first lettter capital letter
+
+
+                return <div>
+                        ....
+                        ....
+                        .....
+
+                        html code
+                 </div>
+            }
+
+
+    Example :
+    ----------
+        export function Home() {
+
+            return <h1> This is the  Home component...</h1> 
+        }
+
+
+React Hooks
+-----------
+    React hook is functional component lifecycle.
+
+    important hooks:
+
+        1. useState
+
+        2. useEffect
+
+        3. createcontext and useContext
+
+        4. useRef
+
+        5. useReducer
+        
+        6. useMemo
+        
+        7. useCallback
+
+Router Hooks
+--------------
+    1. useParams
+    2. useNavigate.
+
+Redux hooks
+------------
+    1. useSelector
+    2. useDispatch

@@ -1,0 +1,79 @@
+1. What is Node.js?
+ ------------------
+
+    - Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine 
+    - that allows developers to run JavaScript on the server-side. 
+    - It provides an event-driven, non-blocking I/O model, making it lightweight and efficient.
+
+    Blocking - Example
+    -------------------
+         function multiplication(item){
+
+            let caclulation = item * 5
+            return calculation
+            
+         }
+
+         let result1 = multiplication(10)
+         console.log("result1====>", result1)
+
+         let result2 = multiplication(5)
+         console.log("result1====>", result2)
+
+    Non-Blocking - Example
+    ----------------------
+
+        multiplication(10,function(data){
+            console.log("result1",data)
+        })
+         multiplication(5,function(data){
+            console.log("result2",data)
+        })
+
+
+
+
+
+
+
+
+2. What is an Event-Driven Architecture
+----------------------------------------
+
+    - An event-driven architecture is a design pattern that allows a program to respond to events or changes in the system.
+
+    - In Node.js, events are used to handle asynchronous operations, such as I/O operations, network requests, and timer events.
+
+    2.1 How Node.js Handles Events
+    ------------------------------
+
+        Node.js uses an event loop to handle events. 
+        The event loop is a single-threaded loop that continuously checks for new events and processes them one by one.
+
+
+Key Features of Node.js
+------------------------
+
+    1. Asynchronous and Event-Driven - ( asynchronous, event-driven I/O model, which makes it efficient and scalable)
+    2. JavaScript Runtime
+    3. Modules and Packages - (it easy to find libraries and tools for various tasks.)
+    4. Cross-Platform       - (Windows, macOS, and Linux.)
+        
+
+Advantages of Node.js
+---------------------
+
+    1. Fast and Scalable 
+    2. Easy to Learn
+    3. Large Ecosystem
+    4. Real-Time Applications (gaming, and chat apps.)
+        
+
+Disadvantages of Node.js
+------------------------
+
+    1. Limited Multithreading
+    2. Callback Hell
+    3. Error Handling 
+        
+

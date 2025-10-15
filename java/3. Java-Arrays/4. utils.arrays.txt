@@ -1,0 +1,103 @@
+Array util package
+====================
+
+    => In Java, java.util.Arrays is a utility class that provides various methods for manipulating arrays.
+    => Here are some of the key methods and functionalities offered by Arrays 
+
+    => first import java.util.Arrays;
+
+
+        1. Sorting Arrays : 
+           ----------------
+            - Arrays.sort() sorts the elements of an array in ascending order.
+
+             Example
+               int arr[] = {85,2,1,4,5,7};
+               Arrays.sort(arr);
+
+
+        2.  Searching in Arrays : 
+           --------------------
+            - Arrays.binarySearch() searches for a specific element in a sorted array using the binary search algorithm.
+
+            Syntax
+            ------
+                Arrays.sort(array);
+                Arrays.binarySearch(array,searchValue);
+
+            Example
+            -------
+               int arr[] = {85,2,1,4,5,7}
+               Arrays.sort(arr);
+               int searchResult = Arrays.binarySearch(arr,8)
+
+            - if found returns an index value otherwise return negative array length.
+
+        3. Comparing Arrays:
+           -----------------
+
+            => Arrays.equals() checks if two arrays are equal.
+            => if arrays are equals returns to boolean value
+            => if equals returns to true otherwise false.
+
+            Syntax
+            ------
+                Arrays.equals(arr1,arr2) 
+
+            Example
+            -------
+               int arr1[] = {1,2,3,4}
+               int arr2[] = {1,2,3,4}
+               Arrays.equals(arr1,arr2) 
+
+
+        4. Converting Arrays to Lists: 
+           ---------------------------
+
+            Arrays.asList() converts to an array List.
+
+            Example
+            -------
+              String[] array     =  {"apple", "banana", "cherry"};
+              List<String> list  =  Arrays.asList(array);
+
+
+
+        5. Filling Arrays:
+           ---------------
+            => Arrays.fill() fills an array with a specified value.
+
+                Syntax
+                ------
+                Arrays.fill(array,fillValue);
+
+                Example
+                -------
+                int arr[] = {1,2,3,4};
+                Arrays.fill(arr,8);
+
+
+
+        6. Array to String:
+        -------------------
+
+            - Arrays.toString() converts an array to a string representation.
+
+            Examples
+            ---------
+                String[] fruits = {"apple", "banana", "cherry"};
+                String s = Arrays.toString(fruits)
+        
+        7. Arrays.stream()
+        ------------------  
+            Arrays.stream() is a method in Java that creates a Stream from an array. 
+            Streams are a part of Java's functional programming API and allow for efficient processing of data in a declarative way.
+
+            Example
+            ---------
+                int[] numbers = {1, 2, 3, 4, 5};
+                Arrays.stream(numbers).forEach(System.out::println);
+                
+                int sum = Arrays.stream(numbers).sum();
+                System.out.println("Sum: " + sum); 
+

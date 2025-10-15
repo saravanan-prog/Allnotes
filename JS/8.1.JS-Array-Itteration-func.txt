@@ -1,0 +1,99 @@
+ Array Itteration Functions
+ -------------------------------
+    - Map()
+    - filter
+    - reduce()
+    - some()
+    - every()
+
+       
+        - map()  - returns to new array
+
+                        Example
+                        -------
+                            var number = [20,5,8,1,3,9]
+
+                            const duplicateArray = number.map((value,key,arr) => {
+                                
+                                return value * 5
+                            } )
+
+                            
+
+
+
+        - filter()  - returns to new array with test condtion 
+
+                            Example
+                            --------
+                                var number = [20,5,8,1,3,9]
+
+                                    const duplicateArray = number.filter((value,key,arr) => {
+                                        
+                                        return value >= 20
+                                    })
+
+
+
+
+
+
+
+        - reduce ()  - reduce array and return to single value  
+
+                        Example
+                        ---------
+                                var number = [20,5,8,1,3,9]
+
+                                const duplicateArray = number.reduce((total,value,index,arr) => {
+                                    
+                                    return total + value
+                                },0)
+
+
+
+
+
+        - some ()         - some condtions checks  true / false
+
+
+                            Example
+                            --------
+                                var number = [20,25,28,21,23,6]
+
+                                const duplicateArray = number.some((value,key,arr) => {
+                                    
+                                    return value <  8
+                                })
+
+
+
+        - every ()        - every condtions checs true / false
+
+                            Example
+                            ------
+                                
+                            Example
+                            --------
+                                var number = [20,25,28,21,23,6]
+
+                                const duplicateArray = number.every((value,key,arr) => {
+                                    
+                                    return value <  8
+                                })
+
+
+
+
+
+
+
+
+        Syntax
+        -------
+             ARRTYPE.FOREACH(ANAYMSFUNCTION(VALUE,INDEX,ARR){
+                PRINT THE DATA
+             })
+        -
+
+        Example :    var number =  [ 10,5,25,6,8]

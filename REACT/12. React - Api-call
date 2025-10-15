@@ -1,0 +1,381 @@
+API
+----
+    Api - application protocal interface.
+
+Api methods
+-----------
+    - GET
+    - POST
+    - PUT
+    - PATCH
+    - DELETE
+
+
+REACT API CALLBACK
+------------------
+
+    There are two methods way of calling Api
+
+        1. fetch()          - javascript function
+        2. axios            - React Library [Advance method]
+
+
+
+fetch method
+---------------
+
+        Syntax:
+        -------
+            fetch(Url,option)  
+
+                Url - server side endpoint 
+                option - Headers content setup
+
+
+        Example Url :https://reqres.in/api/users?page=2
+
+
+        options
+        -------
+            method: "GET"
+            headers : {
+                Accept: "application/json",
+                Content-Type:"application/json"
+            }
+            
+            body : JSON.stringify(payload)
+
+
+        Example
+        -------  
+        const option = {
+            method: "post",
+            headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+
+                },
+
+            body: JSON.stringify({
+                    name: myName,
+                    password: myPassword
+            })
+        }   
+                
+Fetch method get Example
+--------------------------
+
+import React, { createContext, useContext, useEffect, useState } from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css'
+
+function ListingPage(){
+
+  const url = "https://reqres.in/api/users?page=1"
+
+  const option = {
+    method: "get",
+    headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+        'x-api-key' : 'reqres-free-v1'
+    }
+  }
+
+
+  const[listData,setListData] = useState("")
+
+  useEffect(() => {
+    apiCall()
+  },[])
+
+  const apiCall = async () => {
+
+    let response = await fetch(url,option)
+    let jsonConvert  = await response.json()
+    setListData(jsonConvert.data)
+    
+  }
+
+
+
+  return <div>
+        <table border ={2}>
+           <tr >
+              <th>ID</th>
+              <th>First name</th>
+              <th>Last name</th>
+              <th>Email</th>
+              <th>Profile Image</th>
+           </tr>
+           { listData.length != 0 ? (
+              listData.map((value,index) =>{
+
+                const {id,first_name,last_name,avatar,email} = value
+
+                return <tr>
+                    <td> {id} </td>
+                    <td> {first_name} </td>
+                    <td> {last_name} </td>
+                    <td> {email} </td>
+                    <td> <img src={avatar} /> </td>
+                </tr>
+
+                
+              })
+   
+           ) 
+           : (
+             <tr>
+                <td> No Data Found</td>
+             </tr>
+           )}
+        </table>
+    </div>
+} 
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+root.render(
+  <React.StrictMode>
+
+      <ListingPage />
+      
+  </React.StrictMode>
+);
+
+
+
+Axios
+--------    
+
+  -  Axios is an HTTP client library that allows you to make requests to a given endpoint:
+
+  Step 1:  npm install axios " npm i axios --save"
+  Step 2 : import axios from "axios";
+  Step 3 : general aware axios methods.
+
+                get()
+                post()
+                put()
+                delete()
+
+        For Example
+        -------------
+            axios.get()
+            axios.post(put(url, payload, headers-optional))
+            axios.putput(url, payload, headers-optional)
+            axios.delete()
+
+   Step 4 :  GET method
+      
+          Syntax :  axios.get(endpointURL)
+
+
+          Example
+          ----------
+
+                const reponse =  await axios.get(URL)
+    
+
+    Step 5 : POST  method
+
+             Syntax :  axios.post(endpointURL,payload)
+
+
+             with additional headers
+             --------------------------
+
+  
+            const option = {
+                "x-api-key":"deva-portal"
+            }
+
+            axios post => axios.post(url,payload, { headers: option  } )
+
+
+
+
+           Example
+           --------
+
+                const response =  await axios.post(endpointURL,formData)
+
+    
+
+Example   - Form api call - Fetch method
+--------------------------
+
+import { useState } from "react"
+
+function Login(){
+
+    const [loginData,setLogindata] = useState({})
+    const [token,setToken] = useState(null)
+
+    const handleChange = (event) => {
+
+        const name = event.target.name
+        const value = event.target.value
+
+        setLogindata({...loginData, [name] : value })
+
+
+    }
+
+    const handleSubmit = async (e) => {
+
+        e.preventDefault()
+
+        let payload =  {
+            "email": loginData.username,
+            "password": loginData.password
+        }
+
+        let option = {
+
+            method: "post",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+
+            body: JSON.stringify(payload)
+        }
+
+         fetch("https://reqres.in/api/login",option)
+         .then((response) => response.json())
+        .then((data) => setToken(data.token))
+
+
+   
+
+
+       if(token !=null){
+            localStorage.setItem('isLogin',true)
+       }
+        
+
+    }   
+
+
+
+    return <div>
+         <h1> Login</h1>
+
+         <form onSubmit = {handleSubmit}>
+              <div>
+                  <label> Username</label>
+                  <input type = "text"  name = "username" onChange = {handleChange} />
+              </div>
+              <div>
+                  <label> password</label>
+                  <input type = "password" name = "password" onChange = {handleChange} />
+               </div>
+              <div>
+                  <input type = "submit" />
+              </div>
+          </form>
+
+
+    </div>
+}
+
+export default Login
+
+
+Example 2 : Axios method
+------------------------
+
+import { useState } from "react"
+import axios from "axios"
+
+function Login(){
+
+    const [loginData,setLogindata] = useState({})
+    const [token,setToken] = useState(null)
+
+    const handleChange = (event) => {
+
+        const name = event.target.name
+        const value = event.target.value
+
+        setLogindata({...loginData, [name] : value })
+
+
+    }
+
+    const handleSubmit = async (e) => {
+
+        e.preventDefault()
+
+        let payload =  {
+            "email": loginData.username,
+            "password": loginData.password
+        }
+
+        
+
+    const response = await  axios.post("https://reqres.in/api/login",payload)
+    (response && response.data.token ) ? setToken(response.data.token) :setToken(null)
+
+   
+
+
+       if(token !=null){
+            localStorage.setItem('isLogin',true)
+       }
+        
+
+    }   
+
+
+
+    return <div>
+         <h1> Login</h1>
+
+         <form onSubmit = {handleSubmit}>
+              <div>
+                  <label> Username</label>
+                  <input type = "text"  name = "username" onChange = {handleChange} />
+              </div>
+              <div>
+                  <label> password</label>
+                  <input type = "password" name = "password" onChange = {handleChange} />
+               </div>
+              <div>
+                  <input type = "submit" />
+              </div>
+          </form>
+
+
+    </div>
+}
+
+export default Login
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

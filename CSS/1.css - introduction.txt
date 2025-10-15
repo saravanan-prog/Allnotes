@@ -1,0 +1,37 @@
+1.  CSS
+    -------
+
+   -    CSS stands for Cascading Style Sheets
+   -    CSS describes how HTML elements are to be displayed on screen, paper, or in other media
+   -    CSS is the language we use to style an HTML document.
+   -    CSS describes how HTML elements should be displayed.
+
+        Syntax     selector { property : value } 
+        -------
+
+        Example   p { color:red }
+           
+2.  CSS - Types
+    -------------
+    There are Three types of style sheet having
+
+        -   Internal 
+            --------
+
+                creating the style <style> element inside  <style> </style>
+
+        -   External
+            ---------
+
+                To create seperate file style.css after wirte the styles. <link>
+                <link rel="stylesheet" href="mystyle.css">
+
+        -   Inline
+            ------
+                Specified elements inside using write the styles using style attribute
+                      
+                Example
+                --------
+
+                    <h1 style="background-color:DodgerBlue;"> Hello World </h1>
+                    <p style="background-color:Tomato;"> Lorem ipsum... </p>

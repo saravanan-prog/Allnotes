@@ -1,0 +1,97 @@
+                                            ANGULAR CUSTOM PIPE
+                                            -----------------------
+PROCEDURE:
+----------
+
+    STEP 1 : Generate the pipe: 
+
+        Run "ng generate pipe my-pipe" (replace "my-pipe" with your desired pipe name).
+
+    STEP 2 : Define the pipe: 
+
+        In the generated file (my-pipe.pipe.ts), import PipeTransform and decorate the class with @Pipe.
+
+
+Example - custom pipe strcture.
+-------------------------------
+
+import { Pipe, PipeTransform } from '@angular/core';
+
+    @Pipe({
+        name: 'myPipe'
+    })
+    export class MyPipePipe implements PipeTransform {
+
+        transform(value: any, args?: any): any {
+
+            return value.toUpperCase();
+
+        }
+    }
+
+
+Using the Custom Pipe
+----------------------
+
+1. Declare the pipe: 
+--------------------
+    Add the pipe to the declarations array in your module (component).
+
+import { NgModule } from '@angular/core';
+import { MyPipePipe } from './my-pipe.pipe';
+
+    @Component({
+        selector: 'app-root',
+        standalone: true,
+
+        imports: [
+            RouterOutlet,
+            FormsModule,
+            CommonModule,
+            MyPipePipe  
+        ]
+
+        templateUrl: './app.component.html',
+        styleUrl: './app.component.css'
+    })
+    
+    export class AppModule { }
+
+
+
+
+2. Use the pipe: - (app.component.html).
+----------------------------------------
+
+    <p>{{ 'hello world' | myPipe }}</p>
+
+
+
+
+Advanced Custom Pipe Features
+-----------------------------
+
+1. Pipe parameters: Pass arguments to the pipe.
+
+    <p>{{ 'hello' | myPipe : 'world' }}</p>
+    
+
+myPipe file
+-----------
+
+    transform(value : any, args? : any): any {
+
+        return value.toUpperCase() + ' ' + args;
+    }
+
+
+
+
+1. Impure pipes: Update on every change detection cycle.
+
+    @Pipe({
+        name: 'myPipe',
+        pure: false
+    })
+
+1. Async pipes: Handle asynchronous data transformations.

@@ -1,0 +1,102 @@
+Array
+------
+  => an array is a collection of similar data types
+  => it is a fixed size data structure
+  => it can store multiple values of the same type
+
+  how to declare an array in Java:
+  --------------------------------
+    => syntax: 
+    ----------
+        data_type[] array_name = new data_type[5];
+        data_type array_name[] = new data_type[5];
+
+    Example
+    -------
+          int number[]; // Declaration only, no memory allocated yet
+          int number[] = new int[5]; // Declaration and memory allocation
+
+
+        int number[] = {10,20,30,40,50}; // Declaration and initialization
+
+        for(int i = 0; i < number.length; i++) {
+            System.out.println(number[i]); // Accessing elements of the array
+        }
+
+        int secondNumber[] = new int[5]; // Declaration and memory allocation
+        secondNumber[0] = 10; // Assigning values to the array
+        secondNumber[1] = 20;     // Assigning values to the array
+        secondNumber[2] = 30;     // Assigning values to the array    
+        secondNumber[3] = 40;     // Assigning values to the array
+        secondNumber[4] = 50;     // Assigning values to the array
+
+        for(int i = 0; i < secondNumber.length; i++) {
+            System.out.println(secondNumber[i]); // Accessing elements of the array
+        }
+
+        String[] names = new String[3]; // Declaration and memory allocation
+
+        names[0] = "Alice"; // Assigning values to the array      
+        names[1] = "Bob"; // Assigning values to the array
+        names[2] = "Charlie"; // Assigning values to the array
+        for(int i = 0; i < names.length; i++) {
+            System.out.println(names[i]); // Accessing elements of the array
+        }
+
+        char [] letters = {'A', 'B', 'C', 'D', 'E'}; // Declaration and initialization
+        for(int i = 0; i < letters.length; i++) { 
+            System.out.println(letters[i]); // Accessing elements of the array
+        }
+
+        char[] vowels = new char[5]; // Declaration and memory allocation
+        vowels[0] = 'A'; // Assigning values to the array     
+        vowels[1] = 'E'; // Assigning values to the array
+        vowels[2] = 'I'; // Assigning values to the array
+        vowels[3] = 'O'; // Assigning values to the array
+        vowels[4] = 'U'; // Assigning values to the array
+
+        double[] scores = {85.5, 90.0, 78.2, 88.8}; // Declaration and initialization
+        for(int i = 0; i < scores.length; i++) {  
+            System.out.println(scores[i]); // Accessing elements of the array
+        }
+
+        double[] prices = new double[4]; // Declaration and memory allocation
+        prices[0] = 10.99; // Assigning values to the array         
+        prices[1] = 20.49; // Assigning values to the array
+        prices[2] = 15.75; // Assigning values to the array
+        prices[3] = 5.99; // Assigning values to the array
+
+        for(int i = 0; i < prices.length; i++) {
+            System.out.println(prices[i]); // Accessing elements of the array
+        }
+
+        float[] temperatures = {32.5f, 28.7f, 30.2f}; // Declaration and initialization
+        for(int i = 0; i < temperatures.length; i++) {
+            System.out.println(temperatures[i]); // Accessing elements of the array
+        }
+
+        float[] temperatures = new float[3]; // Declaration and memory allocation
+        temperatures[0] = 32.5f; // Assigning values to the array
+        temperatures[1] = 28.7f; // Assigning values to the array
+        temperatures[2] = 30.2f; // Assigning values to the array
+
+        for(int i = 0; i < temperatures.length; i++) {
+            System.out.println(temperatures[i]); // Accessing elements of the array
+        }
+      
+
+      StringBuffer[] sbArray = new StringBuffer[3]; // Declaration and memory allocation
+      sbArray[0] = new StringBuffer(); // Assigning values to the array
+      sbArray[0] = new StringBuffer("Hello"); // Assigning values to the array  
+      sbArray[1] = new StringBuffer("World"); // Assigning values to the array
+      sbArray[2] = new StringBuffer("Java"); // Assigning values to the array
+      for(int i = 0; i < sbArray.length; i++) { 
+          System.out.println(sbArray[i]); // Accessing elements of the array
+      }
+
+
+      String s;
+      s = "Hello World"; // Declaration and initialization
+      StringBuffer bf = new StringBuffer();
+      bf = "HEllo"
+      

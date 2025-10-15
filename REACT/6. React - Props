@@ -1,0 +1,76 @@
+REACT PROPS
+------------
+    -   Props is generally known as "properties" 
+    -   props is sharing all state should be parent to child compoent.
+         
+        Parent and child
+        -----------------
+
+            function Home() {                                      ---> Parent Component
+
+                return <div>
+                     <h1> Parent Component</h1> 
+                    <About />                                      ----> Child Component 
+                </div>
+            }
+
+            function About() {
+                return <div>   
+                    <h1> Child Component</h1> 
+                </div>
+            }
+
+
+        Props
+        ------
+
+            function Home() {
+
+                const [ceoName,setCeoname] = useState('Saravanan')
+                const [companyBio,setCompanyBio] = useState("Since 1997 is started this compnay")
+
+                return <div>
+                     <h1> Parent Component</h1> 
+                    <About 
+                        ceoName = {ceoName}
+                        companyBio = {companyBio}
+                    />  
+                </div>
+            }
+
+            - While all state should be pass object strcture.
+            - Props keyword is invoked that objects.
+
+
+            function About(props) {
+
+                return <div>   
+                    <h1> Child Component</h1> 
+
+                    <div> Company CEO name is   { props.companyBio} </div>
+                    <div> Company Bio  { props.companyBio} </div>
+
+
+
+                </div>
+            }
+
+
+
+    In Short-hand - Object destructuring method.
+    --------------------------------------------
+
+            function About( {ceoName,companyBio } ) {
+
+                return <div>   
+                    <h1> Child Component</h1> 
+
+                    <div> Company CEO name is   { companyBio} </div>
+                    <div> Company Bio  { companyBio} </div>
+
+                </div>
+            }
+
+
+
+

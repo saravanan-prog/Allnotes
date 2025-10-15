@@ -1,0 +1,61 @@
+SERVER -  "server is a centerailzied system to distribute service".
+------
+PORT   - "A port is a number that identifies a specific process or service running on a computer".
+----
+
+HTTP Modules
+------------
+
+    Establish Server -> const server = require('http')
+
+    createServer() -> this method is helps to create server environment.
+        
+        const server = http.createServer((req, res) => {
+            res.writeHead(200, {'Content-Type': 'text/plain'});
+            res.end('Hello, World!\n');
+        });
+
+    listen()  -> assign the port number
+
+            server.listen(3000, () => {
+                console.log('Server running on port 3000');
+            });
+
+
+
+Example 1
+---------
+
+    const http = require('http');                                               
+
+    const server = http.createServer((req, res) => {
+        res.writeHead(200, {'Content-Type': 'text/plain'});
+        res.end('Hello, World!\n');
+    });
+
+    server.listen(3000, () => {
+        console.log('Server running on port 3000');
+    });
+
+
+Example 2
+-----------
+const http = require('http')
+
+const server = http.createServer( (req,res) =>{
+
+    res.writeHead(200,{'ContentType':'application/json'})
+
+    if(req.method =='POST' && req.url == '/addProduct' ){
+        res.write("Your product is added in Databases")
+    }
+    else if(req.method =='POST' && req.url == '/viewProduct') {
+        res.write(" {id:'1',productName:'apple'} ")
+    }
+    else{
+        res.write("Your server is ready")
+    }
+    res.end()
+})
+
+server.listen(8000,() => console.log("Your port Number is 8000"))

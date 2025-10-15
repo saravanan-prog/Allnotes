@@ -1,0 +1,159 @@
+1. Input decorator  [ Parent component to child component communication ]
+------------------------------------------------------------------------
+
+    The @Input decorator in Angular is used to bind a property of a component to a value provided by its parent component. This allows data to be passed from the parent to the child component.
+
+        Basic Syntax
+        ------------    
+            @Input() data: string;
+        
+        Example
+        -------
+            parent.component.html
+            --------------------
+                <app-child [data]="parentData"></app-child>
+                
+
+            parent.component.ts
+            -------------------
+                import { Component } from '@angular/core';
+
+                @Component({
+                    selector: 'app-parent',
+                    template: 'parent.component.html'
+                })
+                export class ParentComponent {
+                    parentData = 'Data from parent';
+                }
+
+
+            child.component.ts
+            -------------------
+                import { Component, Input } from '@angular/core';
+
+                @Component({
+                    selector: 'app-child',
+                    template: '<p>Received data: {{ data }}</p>'
+                })
+                export class ChildComponent {
+                    @Input() data: string;
+                }
+
+
+
+2. Output decorator (Child to parent communication)
+----------------------------------------------------
+
+
+    The @Output decorator in Angular is used to define an output property of a component or directive. This allows the component or directive to emit events to its parent component.
+
+    Basic Syntax
+    --------------
+
+        @Output() notifyParent = new EventEmitter<string>();
+
+
+    Example
+    -------
+        child.component.html
+        --------------------
+            <button (click)="onClick()">Send data</button>
+
+        child.component.ts
+        -------------------
+
+            import { Component, Output, EventEmitter } from '@angular/core';
+
+            @Component({
+                selector: 'app-child',
+                template: 'child.component.html'
+            })
+            export class ChildComponent {
+
+                @Output() dataSent = new EventEmitter<string>();
+
+                onClick(): void {
+                    this.dataSent.emit('Data from child');
+                }
+            }
+
+        parent.component.html
+        -------------------------
+
+            <app-child (dataSent)="data = $event"></app-child>
+
+        parent.component.ts
+        ----------------------
+            import { Component } from '@angular/core';
+
+            @Component({
+                selector: 'app-parent',
+                template: '<p>Received data: {{ data }}</p>'
+            })
+            export class ParentComponent {
+                data: string;
+
+               
+            }
+
+
+3. ViewChild
+------------
+
+    The @ViewChild decorator in Angular is used to access a child component, directive, or element from a parent component. It provides a way to query the component tree and retrieve a reference to a child element.
+
+    Basic Syntax
+    ------------
+
+        @ViewChild('child') childComponent: ChildComponent;
+
+    Decorator Options
+    -----------------
+
+        1. @ViewChild(selector: string, { read: Type }): Specify the type of the queried element.
+        2. @ViewChild(selector: string, { static: true/false }): Specify whether the query is static or dynamic.
+
+    Lifecycle Hooks
+    ----------------
+
+        1. ngAfterViewInit(): Access the queried element after the view has been initialized.
+        2. ngAfterContentInit(): Access the queried element after the content has been initialized.
+
+        Example
+        -------
+
+        parent.component.html
+        -----------------------
+            <app-child #child></app-child>
+
+        parent.component.ts
+        ----------------------
+            import { ViewChild, AfterViewInit } from '@angular/core';
+            import { ChildComponent } from './child.component';
+
+            @Component({
+                selector: 'app-parent',
+                template: 'parent.component.html'
+            })
+            export class ParentComponent implements AfterViewInit {
+                @ViewChild('child') childComponent : ChildComponent;
+
+                ngAfterViewInit(): void {
+                    console.log(this.childComponent);
+                    this.childComponent.doSomething();
+                }
+            }
+
+            child.component.ts
+            ------------------
+                import { Component } from '@angular/core';
+
+                @Component({
+                    selector: 'app-child',
+                    template: '<p>Child component</p>'
+                })
+                export class ChildComponent {
+                    doSomething(): void {
+                        console.log('Doing something');
+                    }
+                }

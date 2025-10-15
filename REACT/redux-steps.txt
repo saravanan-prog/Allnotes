@@ -1,0 +1,48 @@
+Redux
+  => redux is centeraized state management
+  => it is effective communicate state to all components.
+
+
+Redux Components
+   => Store     [configureStore] 
+   => reducer 
+   => action
+   => state
+
+React - Redux tookit
+-----------------------
+   1. store.js => createStore
+            reducer : {}
+
+   2. import that gloabal index.js after wrap the entire compoents.
+        
+        <Provider store={store}>
+            <RouterOutlet />
+        </Provider>
+
+
+   3. create a slice file in your compoent.
+         createSlice
+             name
+             intialState
+             reducer
+                add
+                Sub
+        
+            export reducer Action
+            export default createSlice.reducer
+            
+    
+   4. import that reduder from storefile
+           reducer: {
+               count : counterReducer
+           }
+
+   5. ComponentPage
+        1. import Redux hooks -> useSelector,useDispatch
+        2. create one one container in useDispatch()
+             const dispatch  = useDispatch()
+        3. import the actions from slice file
+        5. select the data from store [ const data  =useSelctor (state => state.calc.count)]
+
+        5. your logics

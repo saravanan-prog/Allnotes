@@ -1,0 +1,166 @@
+                                    Angular Pipes:
+                                    --------------
+
+What are Pipes
+---------------
+
+    Pipes are functions that transform data in templates. They take input data, transform it, and return the transformed data.
+
+
+Built-in Pipes
+---------------
+
+        1. DatePipe: Formats dates.
+        2. UpperCasePipe: Converts text to uppercase.
+        3. LowerCasePipe: Converts text to lowercase.
+        4. CurrencyPipe: Formats currency.
+        5. PercentPipe: Formats percentages.
+        6. JsonPipe: Converts objects to JSON.
+        7. SlicePipe: Slices arrays.
+        8. AsyncPipe: Handles asynchronous data.
+
+Pipe Parameters
+-----------------
+    Pass parameters to pipes using a colon (:) separator.
+    
+
+Chaining Pipes
+---------------
+
+    Use multiple pipes in sequence.
+
+    Example: Chained Pipes
+
+    <!-- Template usage -->
+        <div>{{ 'Hello World' | uppercase | slice:0:5 }}</div>
+
+
+Pure and Impure Pipes
+----------------------
+
+    1. Pure Pipes: Only execute when input changes.
+    2. Impure Pipes: Execute on every change detection cycle.
+
+
+
+
+
+
+Here are examples for each of the built-in Angular pipes:
+
+    1. DatePipe
+    ------------
+
+        Formats dates.
+        
+            <!-- Template -->
+
+                <p>Today's date: {{ today | date }}</p>
+                <p>Custom format: {{ today | date:'yyyy-MM-dd' }}</p>
+
+            <!-- Component -->
+
+                export class ExampleComponent {
+
+                    today = new Date();
+                }
+
+
+    2. UpperCasePipe 
+    -----------------
+
+        Converts text to uppercase.
+
+            <!-- Template -->
+
+                <p>{{ 'Hello World' | uppercase }}</p>
+
+        Converts text to lowercase.
+
+            <!-- Template -->
+
+                <p>{{ 'HELLO WORLD' | lowercase }}</p>
+
+
+
+    3.CurrencyPipe
+    ---------------
+
+    Formats currency.
+
+            <!-- Template -->
+                <p>{{ 12345 | currency }}</p>
+                <p>{{ 12345 | currency:'USD' }}</p>
+
+            <!-- Output -->
+                $12,345.00
+                $12,345.00 USD
+
+
+    4. PercentPipe
+    --------------
+    - Formats percentages.
+
+
+            <!-- Template -->
+                <p>{{ 0.5 | percent }}</p>
+
+            <!-- Output -->
+                50%
+
+
+    5. JsonPipe
+    -----------
+        - Converts objects to JSON.
+
+
+                <!-- Template -->
+                    <p>{{ user | json }}</p>
+
+                <!-- Component -->
+                    
+                    export class ExampleComponent {
+                        user = { name: 'John Doe', age: 30 };
+                    }
+
+            
+
+
+    6. SlicePipe
+    --------------
+
+    - Slices arrays.
+
+
+            <!-- Template -->
+                <p>{{ numbers | slice:1:3 }}</p>
+
+            <!-- Component  -->
+
+                export class ExampleComponent {
+                    numbers = [1, 2, 3, 4, 5];
+                }
+
+            <!-- Output -->
+                [2, 3]
+
+
+    7. AsyncPipe
+    ---------------
+
+        Handles asynchronous data.
+
+            <!-- Template -->
+
+                <p>{{ promise | async }}</p>
+
+            <!-- Component -->
+
+                export class ExampleComponent {
+                    promise = new Promise((resolve) => {
+                        setTimeout(() => resolve('Async data'), 2000);
+                    });
+                }
+
+
+

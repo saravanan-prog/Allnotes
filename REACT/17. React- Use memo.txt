@@ -1,0 +1,62 @@
+
+useMemo 
+--------
+    - The React useMemo Hook returns a memoized value.
+    - The useMemo Hook only runs when one of its dependencies update.
+
+
+Syntax:
+-------
+
+    useMemo(()=> event_call(),[])
+
+
+
+
+PROCEDURE
+----------
+
+    STEP 1 : CREATE ONE FC COMPONENT.
+    STEP 2 : AFTER CREATE ONE STATE EXAMPLE Count
+    STEP 3 : CREATE ONE DEPENDENCY EVENT.
+    STEP 4 : WHILE UPDATE THE STATE WE HAVE FACED REACT PERFORMACE ISSUE.
+    STEP 5 : FOUND THE SOLUTION TO IMPLEMENT THE USE MEMO.
+
+
+
+
+
+
+Example
+-------
+
+import { useCallback, useContext, useEffect, useMemo, useState } from 'react'
+
+function HomePage() {
+
+  const [count,setCount] = useState(5)
+
+  const result = useMemo(() => mulCount(count), []);
+
+  return <div>
+        <p>count - {count} </p>
+        <p> Result - {result}</p>
+        <button onClick={()=>setCount(count + 1 )}> Add count</button>
+     
+  </div>
+ 
+}
+
+const mulCount = (num) => {
+  console.log("Calculating...",num);
+  for (let i = 0; i < 1000000000; i++) 
+    num += 1;
+  
+
+  return num;
+
+} 
+
+
+
+export default HomePage

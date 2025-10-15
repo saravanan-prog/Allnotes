@@ -1,0 +1,148 @@
+1. Introduction
+ ---------------
+    1.1 SERVER :  
+    --------------
+
+        Centerialized machine or application called server.
+        PORT :- server identification number or partition
+
+    1.2 CLIENT : 
+    ------------
+
+        End point machine is called client
+    
+    1.3  HTTP  : 
+    ------------
+                HTTP provides a standard between a web browser and a web server to establish communication. 
+                It is a set of rules for transferring data from one computer to another.
+
+    1.4 HTTP method:
+    ----------------
+
+         - GET      -  Used to retrieve data from a specified resource. (URL Data's transparency)
+         - POST     -  Used to submit data to be processed by a specified resource. (form submissions)
+         - PUT      -  Used to update or create a resource on the server.
+         - DELETE   -  Used to remove a specified resource from the server.
+
+
+    Node.js is an open source server environment.
+    Node.js allows you to run JavaScript on the server.
+    Node.js runs on various platforms (Windows, Linux, Unix, Mac OS X, etc.)
+    Node.js uses JavaScript on the server
+
+    
+
+
+2. Envrionment setup
+ ---------------------
+
+    STEP 1: The official Node.js website has installation instructions for Node.js: 
+
+            https://nodejs.org
+
+    STEP 2 : Create a workspace in your local system 
+
+            mkdir myapp
+            
+    STEP 3 : open command prompt in your workspace.
+
+            cd myapp
+
+    STEP 4 : give the comment 
+
+            npm init  
+
+    STEP 5 : Please fill the Meta data (project version, owner etc.,)
+
+
+3.Express installation
+------------------------
+   -  "Express" is a minimal and flexible Node.js web application
+   -  framework that provides a robust set of features for web and mobile applications.
+   -  if you want express in your application you can install that module after use.
+
+   -  Installation command: npm i express --save
+
+
+    Simple Hello world program
+    -----------------------------
+
+        const express = require('express')
+        const app = express()
+        const port = 3000
+
+        app.get('/', (req, res) => {
+            res.send('Hello World!')
+        })
+
+        app.listen(port, () => {
+            console.log(`Example app listening on port ${port}`)
+        })
+
+
+        Program run command : node app.js
+        --------------------
+
+            - This app starts a server and listens on port 3000 for connections.
+            - The app responds with “Hello World!” for requests to the root URL (/) or route. 
+            - For every other path, it will respond with a 404 Not Found.
+
+
+4. Basic routing
+--------------------
+
+    Syntax : app.METHOD(PATH, HANDLER)
+
+    Examples
+    ---------
+    
+        app.get('/', (req, res) => {
+            
+            res.send('Hello World!')
+        })
+
+        app.post('/', (req, res) => {
+            res.send('Got a POST request')
+        })
+        app.put('/user', (req, res) => {
+            res.send('Got a PUT request at /user')
+        })
+
+        app.delete('/user', (req, res) => {
+            res.send('Got a DELETE request at /user')
+        })
+
+
+------------------------------------------------------------------------------------------------------------------------
+5. Express - Router
+----------------------------------------------------------------------------------------------------------------------------
+
+        Express router is helps to handle multiple routes easier
+
+        Syntax:
+        --------
+
+        Require this first
+
+            const express = require('express')
+            const router    express.Router()
+        
+
+
+        Routing Syntax
+
+            router.METHOD(PATH, HANDLER)  // get post put delete methods
+
+
+    Procedure creation steps:
+    ------------------------------
+
+    step 1 : create a folder name routes
+    step 2 : routers folder inside you have create specified routing file name.js
+    step 3 : After that file export that
+    step 4 : add the route file in main file index.js 
+
+
+
+        
+ :

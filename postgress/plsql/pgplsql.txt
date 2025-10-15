@@ -1,0 +1,61 @@
+1. Simple hello word program
+------------------------------
+    do 
+    $$
+        begin
+            raise notice 'Hello wrold welcome to PLSQL';
+        end
+    $$ language plpgsql;
+
+2. Sum of numbers program
+-------------------------
+
+    do
+    $$
+    declare
+        first_number integer := 25;
+        second_number integer := 25;
+    begin
+        raise notice 'Sum of addtion %',first_number + second_number;
+    end
+    $$ language plpgsql;
+
+3. IF - ELSE STATEMENT
+----------------------
+    SYNTAX
+    ------
+        IF CONDTION THEN
+            RAISE NOTICE 'PRINT THE STATEMENT';
+        else
+            RAISE NOTICE 'FALSE STATEMENT';
+        END IF;
+    
+    Example program
+    ---------------
+    do 
+        $$
+      declare
+          person_age integer := 50;
+      begin
+          if person_age > 18 then
+              raise notice 'Current Voter list this candidate eligible';
+          else
+              raise notice 'This candidate is not eligible';
+          end if;
+      end
+      $$ language plpgsql;
+
+4. Function program
+--------------------
+create or replace function welcomeMessage()
+   returns varchar as $$
+declare
+    person_name varchar := 'Aravind';
+begin
+    raise notice 'Welcome to apllo pharmacy %',person_name;
+end
+$$ language plpgsql;
+
+select welcomeMessage()
+
+drop function welcomeMessage()

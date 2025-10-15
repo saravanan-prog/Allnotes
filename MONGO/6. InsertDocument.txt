@@ -1,0 +1,51 @@
+ Insert query 
+ --------------------------
+    there are two methods of insert query
+
+            -   insertOne
+            -   insertMany
+            
+ insertOne
+ ---------
+    insertOne() method helps to insert a single document, 
+  
+    Example
+    --------
+        db.departments.insertOne({
+            departmentID:'COMPC'
+            departmentName:'Computer Science',
+            Hod : 'Miss.Karunaya Devi'
+        })
+
+        Query explanation
+        -----------------
+            db          ->  defines to current DB
+            departments  ->  departments is a collection name
+            insertOne   ->  query method
+
+ insertMany
+ ------------------
+
+    -  insertMany() method is to insert multiple documents at once, 
+    - This method inserts an array of objects into the database.  
+
+
+    Example
+    -------
+    db.departments.insertMany([
+        {
+            departmentID:'COMPC01'
+            departmentName:'Computer Application' 
+            Hod :'Mr.ShivaShankaran'
+        },
+        {
+            departmentID:'COMPC02'
+            departmentName:'Computer Multimedia', 
+            Hod :'Mr.Devaraj'
+        },
+        {
+            departmentID:'COMPC03'
+            departmentName:'Machine Learning',
+            Hod :'Mr.Saravanan'
+        }
+    ])

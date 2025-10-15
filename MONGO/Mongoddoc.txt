@@ -1,0 +1,223 @@
+1.    MongoDB  - Introduction
+    ------------------------------
+
+        -  MongoDB is a document database
+        -  It stores data in a type of JSON format called BSON
+        - A record in MongoDB is a document, which is a data structure composed of key value pairs similar to the structure of JSON objects.
+
+    1.1 A MongoDB Document
+    -----------------------
+
+        {
+            title: "Post Title 1",
+            body: "Body of post.",
+            category: "News",
+            likes: 1,
+            tags: ["news", "events"],
+            date: Date()
+        }
+
+
+
+    1.2 Compare Mysql to mongodb
+    --------------------------------
+
+        - Mysql is table structure      - MongoDB is Document structure
+        - Mysql is limitation           - MongoDb is non limitations
+        - Mysql having tables.          - MongoDb having collections
+
+
+
+2. Environment setup
+------------------------
+
+    step 1  :  download the mongodb community version https://www.mongodb.com/try/download/community
+    
+    step 2  :  After installation check your system mongodb version
+                mongosh --version 
+                    2.1.5
+
+    step 3 :  after install mongdb compass if not found your system.
+
+
+3. CURD OPERATION
+-------------------
+
+    - CURD is stands for create update read delete operations.
+    - Generally called DDL DML DCL controls.
+
+
+    3.1 Create database   - 
+    ---------------------------
+       - If a database does not exist, MongoDB creates the database when you first store data for that database.
+
+      Syntax:    use < Databasename > 
+      
+      Example:   use college
+
+
+    3.2 Show database
+    ------------------
+        show dbs - it is showing all database list whatever having mongodb engine.
+
+        Query   :  show dbs
+        
+
+
+    3.4 . Collections
+    ---------------------
+
+        MongoDB stores documents in collections. Collections are analogous to tables in relational databases.
+        MongoDB provides the db.createCollection() method to explicitly create a collection with various options,
+        such as setting the maximum size or the documentation validation rules.
+
+
+
+        db.createCollection("departments")
+        show collections // show collections List
+
+
+    3.5. Insert query 
+    --------------------------
+
+        there are two methods of insert query
+
+            -   insertOne
+            -   insertMany
+
+
+        3.5.1 insertOne
+        ----------------
+
+            To insert a single document, use the insertOne() method.
+            his method inserts a single object into the database.
+
+                Example
+               --------
+                    db.posts.insertOne({
+
+                        title: "Post Title 1",
+                        body: "Body of post.",
+                        category: "News",
+                        likes: 1,
+                        tags: ["news", "events"],
+                        date: Date()
+                        
+                    })
+
+
+                Query explanation
+               -----------------
+                    db          ->  to access mongodb key
+                    posts       ->  posts is collection name
+                    insertOne   ->  query method
+
+
+        3.5.2 insertMany
+        ------------------
+
+            - To insert multiple documents at once, use the insertMany() method.
+            - This method inserts an array of objects into the database.  
+
+
+            Example
+            -------
+                db.posts.insertMany([  
+                        {
+                            title: "Post Title 2",
+                            body: "Body of post.",
+                            category: "Event",
+                            likes: 2,
+                            tags: ["news", "events"],
+                            date: Date()
+                        },
+                        {
+                            title: "Post Title 3",
+                            body: "Body of post.",
+                            category: "Technology",
+                            likes: 3,
+                            tags: ["news", "events"],
+                            date: Date()
+                        },
+                        {
+                            title: "Post Title 4",
+                            body: "Body of post.",
+                            category: "Event",
+                            likes: 4,
+                            tags: ["news", "events"],
+                            date: Date()
+                        }
+                ]) 
+
+
+    3.5.3. find() -> search the data (like us select query RDBMS)
+    ----------------------------------------------------------
+
+        To select data from a collection in MongoDB, we can use the find() method.
+        This method accepts a query object. If left empty, all documents will be returned.
+
+            db.posts.find()
+
+
+   3.5.3.1 findOne()
+   ---------------
+
+    -  To select only one document, we can use the findOne() method.
+    -  This method accepts a query object. If left empty, it will return the first document it finds.
+
+
+            db.posts.findOne()
+            
+
+    3.5.3.2 filter DATA
+    ----------------   
+     
+        To query, or filter, data we can include a query in our find() or findOne() methods.
+
+                db.posts.find( {category: "News"} )
+    
+
+
+    3.6 Update Document
+    ---------------------
+    To update an existing document we can use the 
+
+            updateOne() or 
+            updateMany() methods.
+
+
+      3.6.1  Find Query
+        ------------
+        db.posts.find( { title: "Post Title 1" } ) 
+
+
+        Now let's update the "likes" on this post to 2. To do this, we need to use the $set operator.
+
+      3.6.2  updateQuery
+        ------------- 
+        db.posts.updateOne( { title: "Post Title 1" }, { $set: { likes: 2 } } ) 
+
+      3.6.3  upsert
+        ----------
+            If you would like to insert the document if it is not found, you can use the upsert option.
+
+Example
+------------
+
+        db.posts.updateOne( 
+            { title: "Post Title 5" }, 
+            {
+                $set: 
+                {
+                    title: "Post Title 5",
+                    body: "Body of post.",
+                    category: "Event",
+                    likes: 5,
+                    tags: ["news", "events"],
+                    date: Date()
+                }
+            }, 
+            { upsert: true }
+        )
+
+

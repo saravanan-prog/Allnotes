@@ -1,0 +1,27 @@
+1. CSS - color
+---------------
+
+    Colors are specified using predefined color names, or RGB, HEX, HSL, RGBA, HSLA values.
+
+        color : red | Orange | blue | h12XAB
+      
+
+            
+2. CSS - BackGround
+-------------------
+
+    background-color        : red | Orange | blue | h12XAB       
+    background-image        : url('./image/paper.gif)          
+    background-repeat       : repeat-x | no-repeat              
+    background-size         : cover | 1300px 800px
+    background-position     : top right | top left | bottom right | bottom left 
+    background-attachment   : fixed;
+
+       
+
+
+Shorthand 
+---------
+
+    background : #ffffff url("img_tree.png") no-repeat right top;
+                    color     image              repeat   pos          [CIRP]

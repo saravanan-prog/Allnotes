@@ -1,0 +1,34 @@
+
+plpgsql - procedure language / postgresql
+-----------------------------------------
+  do  $$             ->  action
+  declare            ->    declare variable declation part
+  begin              ->   main part of the program
+
+  end  $$ language plpgsql;  -> end of program 
+
+
+
+
+
+1. Simple hello world program plpgsql
+   ----------------------------------
+
+do $$
+ begin 
+   raise notice 'hello world';
+ end
+$$ language plpgsql;
+
+2.  IF - ELSE - STATEMENT
+--------------------------
+
+do $$
+  begin 
+    if true then 
+      raise notice 'true statement is printing...';
+    else
+      raise notice 'false statement is printing...';
+    end if;
+   end
+$$ language plpgsql;

@@ -1,0 +1,43 @@
+PROJECT SETUP:
+--------------
+
+    step 1 : create one folder inside c drive development.
+    step 2 : development folder inside create one more foler nodeProject.
+    step 3 : open that nodeProject folder in command prompt.
+    step 4 : provide this command "npm init". you have to fill some meta-data.
+              Like name,version,description etc.,
+    step 5 : open vs code create index.js file fill the code. 
+    step 6 : run that file node index.js (or) node index
+            
+
+package.json
+-------------
+
+    {
+        "name": "college",
+        "version": "1.0.0",
+        "description": "this project is created for college management",
+        "main": "index.js",
+        "scripts": {
+            "test": "echo \"Error: no test specified\" && exit 1"
+        },
+        "author": "saravanan durai",
+        "license": "ISC"
+    }
+
+Nodemon
+--------
+    - Nodemon is a Node.js module 
+    - When changes are detected. automatically restarts the Node.js application 
+    
+        npm i nodemon --save
+        
+    Run the project  - after installation we have to run "nodemon index.js"
+
+    nodemon setup
+    --------------
+        add this package.json inside script object inside "nodemon index.js
+
+        scripts": {
+            "start": "nodemon index.js"
+        }

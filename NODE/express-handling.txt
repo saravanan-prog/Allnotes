@@ -1,0 +1,140 @@
+
+-----------------------------------------------------------------------
+1. Express        -  framework                  npm i express --save
+----------------------------------------------------------------------
+
+    step 1 :  const express  = require('express')
+    step 2 :  const app      = express()
+
+    step 3 :  Express functions
+
+              app.get()     -> Routing methods      -> app.METHOD(PATH, HANDLER)        -> app.get('/',function)
+              app.post()    -> Routing methods      -> app.METHOD(PATH, HANDLER)        -> app.get('/',function)
+              app.put()     -> Routing methods      -> app.METHOD(PATH, HANDLER)        -> app.get('/',function)
+              app.delete()  -> Routing methods      -> app.METHOD(PATH, HANDLER)        -> app.get('/',function)
+          
+              app.listen()  -> Port listen          -> app.METHOD(PORT_NUMBER, HANDLER) -> app.get(8000,function)
+
+              
+
+            MiddleWare method
+            -----------------
+             app.use()     -> Middle ware access   -> app.METHOD(MIDDLEWARE_CALL)      
+
+                    app.use('/', (req,res,next) => {
+
+                        console.log("First invoking method")
+
+                        next()   ---> // Callback method
+                    })
+
+
+
+------------------------------------------------------------------------------------------------------------
+2. nodemon        -  dynamic running          -  npm i nodemon --save
+------------------------------------------------------------------------------------------------------------
+
+    step 1 : package.json -> script { "start" : "nodemon index" }
+
+--------------------------------------------------------------------------------------------------
+3. body-parser    - post form body content access    npm i body-parser --save
+-----------------------------------------------------------------------------------------------------
+
+    step 1 : const bodyParser =  require('body-parser')
+    step2  : app.use(bodyParser.json())
+
+
+-------------------------------------------------------------------------------------------------------------------------
+4. dotenv     -    Envrionemnt handling       -     npm i dotenv --save
+--------------------------------------------------------------------------------------------------------------------------
+
+        step 1 :  create one file .env extenstion and maintain constant data this file.
+
+                    PORT  = 8000
+                    DBURL = 'http://www.mongodb.com/dburl'
+                    
+        step 2 : add this index.js file ->  const dotenv = require('dotenv').config()
+        step 3 :  after import dot env directly use it below format 
+
+                    process.env.PORT 
+                    porcess.env.DBURL
+
+
+
+
+DB handling
+--------------------
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+5. moongoose        -                ORM                                 - npm install mongoose
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+    - mongoose it is a Object realation mapping items of mongodb
+    - it is easier to handle CURD operations
+    - require mongoose
+
+
+    1. connect() :-  connect funtion is establish the db connection
+    2. Schema :-  defined to strcture of data like json format
+
+                Example:
+
+                    new schema({
+                        id : number,
+                        title:string
+                    })
+
+    3. Model  :-  model is a represented to date model how to store and retive handling things.
+
+
+                Example :
+                 mongoose.modal('user',userSchema)
+
+
+    4. CURD operation methods you know mongowell mongodb query functions find(),delete(),save() etc.,
+
+
+
+        step 1 :  const mongoose = require("mongoose");
+
+        step 2 :  Connect() -> method is establish to db connection
+                
+                
+                mongoose.connect("mongodb://localhost:27017/collectionName", {
+                    useNewUrlParser: true,
+                    useUnifiedTopology: true
+                  });
+
+        step 3 :   Define the data modal schema
+
+                 const contactSchema = new schema({
+                        email: String,
+                        query: String,
+                 }); 
+
+        Step 4 :  Create a Model with the defined schema
+
+                const Contact = mongoose.model("Contact", contactSchema);
+
+        Step 6 :
+           
+           app.post("/contact", function (req, res) {
+
+                const contact = new Contact({
+                    email: req.body.email,
+                    query: req.body.query,
+                });
+
+                contact.save(function (err) {
+                    if (err) {
+                        res.redirect("/error");
+                    } else {
+                        res.redirect("/thank-you");
+                    }
+                });
+
+
+           });
+

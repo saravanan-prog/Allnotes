@@ -1,0 +1,138 @@
+React Components :
+---------------------
+    Two types of react components
+
+        1. Class components  - [oops concepts]
+        2. Function components. [React Team preffered this FC component]
+        
+
+    1. Class components
+    ------------------------
+
+        Class components is based on oops technique instance of objects.
+
+
+        import { Component } from "react";
+        
+          export class [Comp_name] extends Component {
+
+                render(){
+
+                    return (
+                        <div>
+                            <h1> Welcome to React Class components </h1>
+                            <p>Hello React js </p>
+
+                         </div>
+                    )
+                }
+            }
+
+
+        State Mangement
+        ---------------
+
+         class Comp_name extends React.Component {
+
+                constructor(){
+                    super()
+                    this.state = { welcomeMsg = 'Welcome to react JS'}
+
+                }
+
+                rendr(){
+
+                    return (
+                        <div>
+                            <h1> { this.state.welcomeMsg } </h1>
+                            <p>Hello React js </p>
+
+                         </div>
+                    )
+                }
+            }
+
+
+
+
+
+
+
+        1.1  Class component life cycle
+        ----------------------------------
+
+
+            constructor()           ->     first invoking the objects
+            render()                ->     method is required, and is the method that actually outputs the HTML to the DOM.
+            componentWillmount()    ->     after render tempalte invoking
+            componentDidMount()     ->     method is called after the component is rendered.
+
+
+     
+    
+        
+        
+        Example 2 
+        ----------
+
+           
+
+
+        Example 3
+        ----------
+            class Comp_name extends React.Component {
+
+                constructor(){
+                    super()
+                    this.state = { welcomeMsg = 'Welcome to react JS'}
+                }
+
+                componentDidMount(){
+
+                    console.log("component Didmount called")
+                    
+                }
+                componentWillMount(){
+
+                    console.log("component will mount called")
+                }
+
+                rendr(){
+
+                    return (
+                        <div>
+                            <h1> {this.state.welcomeMsg } </h1>
+                            <p>Hello React js </p>
+
+                         </div>
+                    )
+                }
+            }
+
+
+
+STATE and UPDATE STATE
+------------------------
+
+
+class FirstProgram extends React.Component {
+
+  constructor(){
+    super()
+    this.state = {
+       name : 'Saravanan',
+       age : 27
+    }
+  }
+
+  render(){
+    return <div>
+        <h1>Name : {this.state?.name}</h1> 
+        <button onClick = {()=> this.setState({name:'Rajesh'}) } > update name </button>
+
+        <p> age : {this.state?.age}</p> 
+        <button onClick = {()=> this.setState({age : 30})}> update age </button>
+        
+    </div>
+  }
+}

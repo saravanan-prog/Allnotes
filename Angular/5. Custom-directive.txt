@@ -1,0 +1,67 @@
+Creating a Custom Directive
+-----------------------------
+
+    1. Generate the directive: 
+
+        Run ng generate directive my-directive (replace "my-directive" with your desired directive name).
+
+    2. Define the directive: 
+
+        In the generated file (my-directive.directive.ts), import Directive and decorate the class with @Directive.
+
+
+Example 1
+---------
+directive file
+--------------
+
+  import { Directive, ElementRef } from '@angular/core';
+
+  @Directive({
+    selector: '[appMyDirective]'
+  })
+  export class MyDirectiveDirective {
+    constructor(private elementRef: ElementRef) {
+      this.elementRef.nativeElement.style.background = 'yellow';
+    }
+  }
+  
+
+html
+----
+  <p appHighlight>This text will be highlighted.</p>
+
+
+
+
+
+Example 2
+---------
+
+ Here's an example of a custom directive with a host listener:
+
+
+ highlight.directive.ts
+ ----------------------
+ 
+import { Directive, ElementRef, HostListener } from '@angular/core';
+
+  @Directive({
+    selector: '[appHighlight]'
+  })
+
+export class HighlightDirective {
+  constructor(private elementRef: ElementRef) { }
+
+  @HostListener('mouseover') onMouseOver() {
+    this.elementRef.nativeElement.style.background = 'yellow';
+  }
+
+  @HostListener('mouseout') onMouseOut() {
+    this.elementRef.nativeElement.style.background = '';
+  }
+
+  @HostListener('click') onClick() {
+    console.log('Element clicked!');
+  }
+}

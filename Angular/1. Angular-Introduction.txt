@@ -1,0 +1,47 @@
+Angular
+-------
+    Angular is a popular JavaScript framework for building dynamic web applications.
+
+ Angular Versions:
+-----------------
+    1. AngularJS (1.x) - Legacy version -> not follow MVC pattern
+    2. Angular 2-5 - Older versions
+    3. Angular 6-8 - Mid-life versions
+    4. Angular 9-18 - Latest versions -> standalone 
+
+Key Features:
+------------
+    1. Component-based architecture
+    2. Templates and data binding
+    3. Services and dependency injection
+    4. Routing and navigation
+    5. Forms and validation
+    6. Security and authentication
+
+
+Angular Compilers
+-----------------
+    1. JIT - Just in time compiler 
+    2. Aot - Ahead of time compiler
+    3. Ivvy
+
+
+Basic Angular Concepts:
+-----------------------
+
+    1. Components
+    2. Modules
+    3. Services
+    4. Pipes
+    5. Directives
+    6. Observables
+
+------------------------------------------------------------------------------
+Single-Page Applications (SPAs)
+-------------------------------------------------------------------------
+
+    1. Single-page architecture
+    2. Client-side rendering
+    3. Dynamic content updates
+    4. Single HTML file with JavaScript-generated content
+    5. State is stored on the client

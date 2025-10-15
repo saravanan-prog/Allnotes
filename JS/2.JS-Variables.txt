@@ -1,0 +1,64 @@
+2. JS Variables  
+-----------------
+
+	-	Generally variables are stored values in container
+	-  	There are three types of variable declaration
+
+   
+   		let                 -    Block scope  ( {} ) - mutable
+        const [constant]    -    block scope and inmutable.
+   		var                 -    Global scope - mutable
+
+
+        -----------------------------------------------------------------
+        keyword           scope              mutable            immutable
+   		------------------------------------------------------------------   
+          let             block-scope           Yes                No
+          const           block-scope           No                Yes
+          var             global-scope          Yes                No
+		
+		
+	     Example
+         --------
+            let a = 5 
+            var b = 5
+            const data = "Hello world"
+        
+
+
+
+    2.1  JS - STRICT MODE
+    ----------------------  
+
+        - "use strict" - Using a variable without declaring it, is not allowed.
+
+        Before Accepts:
+        ---------------
+            a = 5 
+            b = 5
+        
+
+        Example - use strict
+        -----------------------
+
+        "use strict"
+             let a = 5 
+             var b = 5
+             const data = "Hello world"
+
+    2.2 Hoisting
+    -----------------
+
+        In JavaScript, variable first need to declare and after assign the value.
+
+        Before Accepts :
+        --------------------
+
+            x = 5;      //  Assign 5 to x
+            var x;      //  Declare x
+
+
+        Example Hoisting
+        -----------------
+            var x;      // Declare x
+            x = 5;      // Assign 5 to x

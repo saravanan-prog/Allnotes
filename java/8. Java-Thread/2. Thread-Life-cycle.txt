@@ -1,0 +1,57 @@
+   2. Thread Lifecycle
+   ===================
+
+        New                 –   Thread is created but not started
+        Runnable            –   After calling start()
+        Running             –   When CPU picks it for execution
+        Blocked/Waiting     –   Waiting for resources or signal
+        Terminated          –   When run() completes or an exception occurs
+
+
+
+
+
+          +------------------+
+          |     New          |
+          | (Thread created) |
+          +------------------+
+                    |
+                    | start()
+                    v
+          +---------------------+
+          |    Runnable         |
+          | (Ready to run)      |
+          +---------------------+
+                    |
+                    | Thread scheduler picks it
+                    v
+          +---------------------+
+          |     Running         |
+          | (Executing code)    |
+          +---------------------+
+           /        |         \
+          /         |          \
+         /          |           \
+        v           v            v
++------------+ +-------------+ +----------------+
+| Blocked    | | Waiting     | | Timed Waiting  |
+| (e.g., I/O)| | (wait())    | | (sleep(), join()) |
++------------+ +-------------+ +----------------+
+         \         |           /
+          \        |          /
+           \       v         /
+            +---------------------+
+            |     Runnable        |
+            +---------------------+
+                    |
+                    v
+          +---------------------+
+          |   Terminated        |
+          | (Dead, finished)    |
+          +---------------------+
+
+
+
+
+
+

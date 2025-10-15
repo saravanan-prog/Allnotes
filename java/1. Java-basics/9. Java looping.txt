@@ -1,0 +1,131 @@
+Looping
+========
+    => while Looping      - Entry control loop 
+    => do-while Looping   - Exit control loop
+    => for-Looping        - intialization testconditon inc/dec
+    => Nested for-Looping - loop inside another loop
+    => Enhanced loop
+
+1. While loop
+   ==========
+    syntax :-
+
+        while(testConditon){
+            print statement;
+            Inc/dec;
+        }
+
+    Example :-
+
+        int i = 0;
+        while(i<100){
+            System.out.println(i);
+            i++;
+        }
+
+2. do-while
+   ========
+
+    Syntax :-
+        do {
+            print statement;
+            inc/dec;
+        }(testCondtion);
+    
+    Example :-
+    
+        int i = 0;
+        do{
+            System.out.println(i);
+            i++;
+        } while(i<100);
+
+3. for Looping
+==============
+    Syntax :-
+
+        for(initalization; testConditon; inc/dec){
+            print the statement;
+        }
+
+    Example:-
+
+        for(int i = 0; i<=100; i++){
+            System.out.println(i);
+        }
+
+4. Nested for
+=============
+    Syntax:-
+    
+        for(initalization; testConditon; inc/dec){
+            for(initalization; testConditon; inc/dec){
+                print the statement;
+            }
+        }
+
+     Example :-
+    
+        for(int i = 0; i<=100; i++){
+            for(int j = 0; j<=100; j++){
+                System.out.print(j);
+            }
+             System.out.println();
+        }
+
+
+5. Enhanced Looping
+   ================
+
+    => Enhanced Loop only for eligible to itterate arrays.
+
+    Syntax :-
+    
+
+        for( container :  array) {
+            print the statement;
+        }
+    
+    Example :-
+    
+        int numbers = [100,200,300,400];
+
+        for( int i :  numbers) {
+            System.out.println(i);
+        }
+
+
+6. break and continue 
+======================
+
+    In Java, break and continue are used to control loop flow.
+
+break :-
+
+    - Exits the loop immediately.
+
+        for (int i = 0; i < 5; i++) {
+
+            if (i == 3) 
+                break;
+
+            System.out.println(i);
+        }
+
+        // prints 0, 1, 2
+
+
+continue :- 
+
+    - Skips the rest of the current iteration.
+
+        for (int i = 0; i < 5; i++) {
+            if (i == 3) 
+                continue;
+                
+            System.out.println(i);
+        }
+
+        // prints 0, 1, 2, 4
+
+

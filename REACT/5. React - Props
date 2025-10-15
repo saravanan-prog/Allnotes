@@ -1,0 +1,175 @@
+REACT PROPS
+------------
+
+    - Props is generally known as "properties" it sharing to one component to another component
+    - Parent to child communication. all data should be passed on object strcture in props keyword
+
+
+STEP 1 : Create a two FC components. one is parent component another one is child component.
+
+ Component 1
+------------
+     
+    function Home() {
+
+        return <>
+
+            <h1> Home page </h1>
+            
+        </>
+    }
+
+
+Component 2
+------------
+     
+    function AboutUs() {
+
+
+        return <>
+            <h1> About page </h1>                   
+        </>
+    }
+
+
+STEP 2 : Parent component inside which component called  that is called child component.
+
+Component 1
+------------
+     
+    function Home() {
+
+        const [name,setName] = useState('Saravanan')
+
+        return <>
+            <h1> Home page </h1>
+            <AboutUs />                      // Child component
+        </>
+    }
+
+
+Component 2
+------------
+     
+    function AboutUs() {
+        return <>
+            <h1> About page </h1>
+                              // Child component
+        </>
+    }
+
+
+
+
+STEP 3 :  Parents components states is pass to child component in custom attributes way
+
+Component 1
+------------
+
+function Home() {
+
+        const [name,setName]           = useState('Saravanan')
+        const [age,setName]            = useState(27)
+        const [hobbies,setHobbies]     = useState(['eat','dance','singing'])
+
+        let caseStudyList = [ 
+            {
+                year : "2020 to 2021 ",
+                work : 'TCS'
+
+            },
+            {
+                    year : "2021 to 2022",
+                    work : 'CTS'
+
+            },
+            {
+                year : "2023 to 2024",
+                work : 'wipro'
+
+            },
+        ]
+
+
+        const [caseStudy,setCasestudy] = useState(caseStudyList)
+
+
+
+        return <>
+
+            <h1> Home page </h1>
+
+            <AboutUs 
+                name = {name}   // Child component
+                age = {age}
+                hobbies = {hobbies}
+                caseStudy = {caseStudy}
+            />                      
+        </>
+    }
+
+
+  Every props value getting into Object Strcutre. 
+
+
+
+Component 2
+------------
+     
+    function AboutUs(props) {
+
+       const  {name,age,hobbies,caseStudy}  = props                           // Destcturing
+
+        return <>
+            <h1> About page  </h1>
+            <p> Candidate Name : {props.name} </p>
+            <p> Candidate age :{props.age} </p>
+
+            <h2> Hobbies list </h2>
+
+            {hobbies &&
+                hobbies.map((value,index) => {
+                    return <p> {value}</p> 
+                })
+            
+            }
+
+            <h3> Employee Case study </h3>
+
+
+             {caseStudy &&
+
+                caseStudy.map((value,index) => {
+
+                    const { year, work } = value
+
+                    return (<React.component>
+
+                        <p> working Period :  {year} </p>
+                        <p> worked Company : {work} </p>
+
+
+                    </React.component>)
+
+                })
+            
+            }
+
+        </>
+    }
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+

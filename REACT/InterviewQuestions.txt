@@ -1,0 +1,108 @@
+HTML
+
+  => Explain Elements types
+  => paired tags and Non-paried tags
+  => diff b/w void and semmantic
+  => ID Vs class
+  => img vs svg
+  => Html vs html5
+  => Blocklevel vs inline.
+  => what is meant by meta tag. [it is show our webiste under responsive.]
+  => div vs span
+  => Html events
+       i have one textbox whatevert you type the text box i want to show below.
+  => how you link the css file.
+  => how you link JS file in your website.
+  => what is meant by DOCTYPE
+  => What is meany By DOM
+  => forms attributes.
+
+
+
+
+
+  
+
+css
+   => How many types
+   => which one is under weightage you specifed type.
+   => What is mean by selector. what are the types.
+   => what is meany by universal selector.
+   => What is Boxmodel?
+   => Padding vs margin?
+   => How you control text overflow?
+   => What is mean by position. and types
+   => What is meant flexbox ?
+   => what is meant by flex-direction ?
+   => what is meant by justify-content?
+   => Waht is Grid?
+   => Height vs width?
+   => I want to hide one particular element ? [display:none]
+   => What is meadia query? write one media query syntax?
+
+JS
+   => what is differce b/w let var const ? 
+   => What is useStrict ?
+   => What is hoisting ?
+   => what difference b/w null and undefined?
+   => What is meany by array vs object ?
+   => == vs === ?
+   => what is mean by typeof ?
+   => what is meany by ternary operatoy write syntax?
+   => what is meany by closure?
+   => What is feature of ES6 or Escmascript?
+   => what is spread operator? [...]
+   => push vs pop ?
+   => unshift() vs shift()
+   => Promise ? pending,fullfilled,rejected
+   => what is meany by async await ?
+   => what is HOF ? 
+      - map()
+      - filter()
+      - reduce()
+      - map vs 
+   => coding task?
+        - patterns
+        - palindrom program
+        - odd or event
+        - prime number
+        - fibnaci series
+        - String reverse
+        - filter duplicates
+        -> duplicate repeats.
+
+
+React
+
+   => Virtual Dom ?
+   => Babel ?
+   => webpack ?
+   => Concilation Process?
+   => HOC ?
+   => JSX ?
+   => Components & Types ?
+   => Lifecycle methods?
+        - constructor
+        - componetdidmount
+        - comnponentdidpupdate
+        - componentsdidcatch
+        - componentwillunmount
+
+    => state ? how you main the state in FC and CC
+    => props ?
+    => props vs callback?
+    => Explain react hooks and any 5 ?
+    => useEffect ?
+    => ContextApi ?
+    => axios vs fetch ?
+    => useMemo vs useCallback
+    => useParams vs useNavigata?
+    => <Navigate to="" />
+    => link vs a 
+    => coding task 
+    => what is redux?
+    => redux components?
+    => Explain redux middleware?
+           - Logger
+           - Thunk
+           - Saga

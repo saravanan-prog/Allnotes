@@ -1,0 +1,37 @@
+React Routing
+-------------
+   Routing -> Page navigation.
+   Package -> npm i react-router-dom --save
+
+
+   react-router-dom
+   ----------------
+     Elements - BrowserRoute,Routes,Route,Link,Navigate
+     Hooks    - useParam(), useNavigate(), useHistory(), useLocation()
+
+     <BrowserRouter>
+        <Routes>
+            <Route Index element={<HomePage />} />
+            <Route path="" element={<HomePage />} />
+            <Route path="route-name" element={<routePage />} />
+        </Routes>
+     </BrowserRouter>
+
+     BrowserRouter - this Parent wrap all routes.
+     Routes        - collection route container element
+     route         - Establish navigation.
+     Link          - A link is act on a tag. it is main focus on page without reload.   
+                     <Link to ="/routename">Home </Link>
+   
+   wildCardRoute - Any unspecifed web request came that time you can redirect 404 page
+   -------------  - wildcard route path (*)
+      
+   ParameterizedRoute = 
+      
+       <Route path="route-name/:id" element={<routePage />} />
+       <Route path="route-name/:id/:name" element={<routePage />} />
+   
+
+   Protection Routes
+   ------------------
+       Dashboard => login

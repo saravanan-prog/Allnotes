@@ -1,0 +1,39 @@
+What is a Primary Key?
+======================
+    - A Primary Key is a column (or group of columns) in a table that uniquely identifies each row.
+    - No two rows have the same value in that column
+
+
+    CREATE TABLE Students (
+        StudentID INT PRIMARY KEY,
+        Name VARCHAR(100),
+        Class VARCHAR(10)
+    );
+    
+
+What is a Foreign Key?
+======================
+A foreign key is a column in one table that links to the primary key in another table.
+
+    It creates a relationship between two tables.
+
+
+
+    Step 1: Create the parent table (with primary key)
+
+        CREATE TABLE Students (
+            StudentID INT PRIMARY KEY,
+            Name VARCHAR(100),
+            Class VARCHAR(10)
+        );
+
+        CREATE TABLE Marks (
+            MarkID INT PRIMARY KEY,
+            StudentID INT,
+            Subject VARCHAR(50),
+            Marks INT,
+            FOREIGN KEY (StudentID) REFERENCES Students(StudentID)
+        );
+
+
+

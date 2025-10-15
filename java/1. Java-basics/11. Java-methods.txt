@@ -1,0 +1,85 @@
+Java Methods
+=============
+
+    Methods in Java define behaviors of a class. 
+    They can take parameters and return values.
+
+    Method Types :-
+    ----------------
+
+        - Instance methods: Belong to an object.
+        - Static methods: Belong to the class.
+
+    Method Syntax :-
+    ---------------
+
+        1. Instance method
+
+            access_Specifier returnType methodName(parameterType parameterName) {
+
+                // method body
+            }
+
+        2. Static method:-
+
+           access_Specifier static returnType methodName(parameterType parameterName) {
+                // method body
+            }
+
+
+    Example
+    -------
+
+            public int sum(int a, int b) {
+                return a + b;
+            }
+
+            public static int sum(int a, int b, int c){
+
+                return a + b + c;
+            }
+
+
+
+
+
+Example 2
+---------
+
+        class Calculator {
+
+            public void testing(){
+                System.out.println("Method invoking);             ----> if you put void no need to return type
+            }
+
+            public int add(){
+                int a = 10;
+                int b = 5;
+                int c = a + b;
+                return c;
+            }
+            public int sub(int a, int b) {
+                return a - b;
+            }
+
+            public double multiply(double a, double b){
+                 return a * b;
+            }
+
+        }
+
+        public class Main{
+            public static void main(String args[]){
+
+                Calculator calc = new Calculator();
+
+                int additionResult    = calc.add();
+                int subractionResult  = calc.sub(2, 3);
+                double multiplicationResult =  calc.multiply(10.4,5.2);
+            }
+        }
+
+      
+        
+
+

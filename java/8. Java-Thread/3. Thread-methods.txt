@@ -1,0 +1,182 @@
+3. Java Thread Methodsthod	
+==========================
+
+|--------------------------------------------------------------------------|
+| Method               | What it does                                      |
+| -------------------- | ------------------------------------------------- |
+| `start()`            | Starts the thread (calls `run()` in a new thread) |
+| `run()`              | Code that will run inside the thread              |
+| `sleep(time)`        | Pauses the thread for some time                   |
+| `join()`             | Waits for a thread to finish before continuing    |
+| `isAlive()`          | Checks if the thread is still running             |
+| `setName(name)`      | Sets a name for the thread                        |
+| `getName()`          | Gets the thread's name                            |
+| `setPriority(value)` | Sets thread priority (1–10)                       |
+| `getPriority()`      | Gets the thread priority                          |
+| `interrupt()`        | Interrupts a sleeping or waiting thread           |
+| `isInterrupted()`    | Checks if thread was interrupted                  |
+|---------------------------------------------------------------------------
+  
+1. start() and run()
+---------------------
+
+    class MyThread extends Thread {
+        public void run() {
+            System.out.println("Thread is running!");
+        }
+
+        public static void main(String[] args) {
+            MyThread t = new MyThread();
+            t.start(); // Correct
+            // t.run(); // Wrong - this runs like normal method, not a thread
+        }
+    }
+
+
+2. sleep(milliseconds) – Pause thread
+--------------------------------------
+
+        public class SleepExample {
+            public static void main(String[] args) throws InterruptedException {
+                for (int i = 1; i <= 5; i++) {
+                    System.out.println("Number: " + i);
+                    Thread.sleep(1000); // Wait 1 second
+                }
+            }
+        }
+    
+3. join() – Wait for thread to finish
+-------------------------------------
+    class Main extends Thread {
+
+        public void run() {
+            try {
+                Thread.sleep(2000); // Simulate some work
+            } 
+            catch (InterruptedException e) {
+                System.out.println(e);
+            }
+            System.out.println("Thread work done!");
+        }
+
+        public static void main(String[] args) {
+            Main t = new Main();
+            t.start();
+
+            try {
+                t.join(); // Wait for thread to finish
+            } catch (InterruptedException e) {}
+
+            System.out.println("Main method finished!");
+        }
+    }
+
+4. isAlive() – Check if thread is still running
+------------------------------------------------
+
+class MyThread extends Thread {
+    public void run() {
+        try {
+            Thread.sleep(1000); // Simulate work
+        } catch (InterruptedException e) {
+            System.out.println(e);
+        }
+        System.out.println("Thread done!");
+    }
+}
+
+public class ThreadAliveExample {
+    public static void main(String[] args) throws InterruptedException {
+
+        MyThread t = new MyThread();
+
+        System.out.println("Before start: " + t.isAlive()); // false
+
+        t.start();
+
+        System.out.println("After start: " + t.isAlive());  // true (if thread hasn't finished)
+
+        t.join(); // Wait for thread to finish
+
+        System.out.println("After join: " + t.isAlive());   // false (thread is done)
+    }
+}
+
+5. setName() and getName()
+------------------------------
+
+class MyThread extends Thread {
+    public void run() {
+        System.out.println("Running in thread: " + getName());
+    }
+}
+
+public class ThreadNameExample {
+    public static void main(String[] args) {
+        MyThread t = new MyThread();
+        t.setName("MyCustomThread");
+        t.start();
+    }
+}
+
+6. setPriority(int) and getPriority()
+-------------------------------------
+
+                ----------------------------------------------------------
+                |   | Constant           | Value | Meaning                 |
+                | ---------------------- | ----- | ----------------------- |
+                | `Thread.MIN_PRIORITY`  | `1`   | Lowest priority         |
+                | `Thread.NORM_PRIORITY` | `5`   | Normal/default priority |
+                | `Thread.MAX_PRIORITY`  | `10`  | Highest priority        |
+                |----------------------------------------------------------
+
+
+    public class Main {
+        public static void main(String[] args) {
+            Thread t1 = new Thread(() -> System.out.println("Thread 1 running"));
+            Thread t2 = new Thread(() -> System.out.println("Thread 2 running"));
+
+            // Set thread priorities correctly
+            t1.setPriority(Thread.MAX_PRIORITY); // 10 ✅
+            t2.setPriority(Thread.MIN_PRIORITY); // 1 ✅
+
+            // Print priorities
+            System.out.println("Priority of t1: " + t1.getPriority());
+            System.out.println("Priority of t2: " + t2.getPriority());
+
+            // Start both threads
+            t1.start();
+            t2.start();
+        }
+}
+
+7.interrupt()
+-------------
+ - Great! Let's now learn about the interrupt() method in Java threads.
+ - This is a very important concept for safely stopping or signaling threads — especially in real-world applications.
+
+
+
+public class InterruptExample {
+    public static void main(String[] args) {
+        
+        Thread t = new Thread(() -> {
+            try {
+                System.out.println("Thread going to sleep...");
+                Thread.sleep(5000); // Will be interrupted
+                System.out.println("Thread woke up!");
+            } catch (InterruptedException e) {
+                System.out.println("Thread was interrupted during sleep!");
+            }
+        });
+
+        t.start();
+
+        try {
+            Thread.sleep(1000); // Wait a bit before interrupting
+        } catch (InterruptedException e) {}
+
+        t.interrupt(); // Send interrupt signal
+    }
+}
+

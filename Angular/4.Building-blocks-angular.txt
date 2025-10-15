@@ -1,0 +1,113 @@
+                            Main Building Blocks of Angular
+                            --------------------------------
+
+1. Modules
+-----------
+
+    - An Angular module is a container that groups related components, services, directives, and pipes to form a cohesive unit of functionality.
+
+    - A module is defined using the @NgModule decorator, which takes a metadata object with the following properties:
+
+        1. declarations: Components, directives, and pipes that belong to the module.
+        2. imports: Other modules that are imported into the current module.
+        3. exports: Components, directives, and pipes that are exposed to other modules.
+        4. providers: Services that are provided by the module.
+
+2. Components
+--------------
+    - An Angular component is a self-contained piece of code that represents a UI element or a functionality in an Angular application.
+
+
+3. Decorator
+-------------
+    Decorators are special kinds of functions that modify or extend the behavior of a class, method, or property in Angular.
+
+    Types of Decorators
+    -------------------
+        1. Class Decorators
+        2. Method Decorators
+        3. Property Decorators
+        4. Parameter Decorators
+
+    Angular Decorators
+    ------------------
+        1. @Component
+        2. @NgModule
+        3. @Injectable
+        4. @Directive
+        5. @Pipe
+        6. @Input
+        7. @Output
+        8. @HostBinding
+        9. @HostListener
+
+4. Metadata
+------------
+    Metadata is an object that provides additional information about the decorated class, method, or property.
+
+5. Templates 
+------------
+
+In Angular, templates are HTML files that define the user interface of a component. They contain the structure and layout of the component, including HTML elements, bindings, and directives.
+
+
+6. Data binding - Directives
+------------------------------
+
+    Data Binding
+    ------------
+
+        Data binding is a mechanism that allows synchronization between the component's data and the template's UI.
+
+            1. Interpolation {{ }} : One-way binding, updates template with component data.
+            2. Property Binding [property] : One-way binding, updates template property with component data.
+            3. Event Binding (event) : One-way binding, listens to template events and updates component.
+            4. Two-way Binding [(ngModel)] : Two-way binding, updates both component and template.
+
+    Directives
+    -----------
+
+        Directives are instructions that modify or extend the behavior of HTML elements.    
+
+            1. Structural Directives: Modify the DOM structure.
+            
+                - *ngIf
+
+                    <div *ngIf="condition; else elseBlock">Content to render</div>
+                    
+                    <ng-template #elseBlock>Else content</ng-template>
+
+                - *ngFor
+                        items = ['Item 1', 'Item 2', 'Item 3'];
+
+                        <div *ngFor="let item of items">{{ item }}</div>
+
+                - *ngSwitch
+
+                    <div [ngSwitch]="fruit">
+                        <p *ngSwitchCase="apple">Apple is red</p>
+                        <p *ngSwitchCase="banana">Banana is yellow</p>
+                        <p *ngSwitchDefault>Unknown fruit</p>
+                    </div>
+
+            2. Attribute Directives: Modify element attributes.
+                - ngClass
+                - ngStyle
+                
+            3. Component Directives: Custom directives that create components.
+
+7. Services
+------------
+    Services are reusable classes that provide specific functionality to components.
+
+    Purpose of Services
+
+        1. Share data between components
+        2. Encapsulate business logic
+        3. Provide utility functions
+        4. Handle HTTP requests
+
+
+8. Dependency Injection (DI) in Angular:
+-----------------------------------------
+    Dependency Injection is a design pattern that allows components to receive dependencies from external sources rather than creating them internally.

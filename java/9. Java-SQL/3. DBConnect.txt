@@ -1,0 +1,44 @@
+1. Connection interfaces
+==========================
+    In JDBC, the Connection interface represents a link between a Java program and a database.
+
+    Components:
+    ----------
+        Database url
+        Database username
+        Database password
+
+      String dburl = "jdbc:mysql://localhost:3306/school";  /*  jdbc:mysql://host:port/database */
+      String user = "root"; 
+      String password = "your_password"; 
+
+    Connection conn = DriverManager.getConnection(
+        dburl,    
+        username,                               
+        password                        
+    );
+ 
+ExampleCode
+===============
+
+import java.sql.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        String url = "jdbc:mysql://localhost:3306/school"; 
+        String user = "root"; 
+        String password = "your_password"; 
+
+        try {
+            Connection conn = DriverManager.getConnection(url, user, password);
+            System.out.println("✅ Connected to MySQL database!") 
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        finally{
+            conn.close();
+        }
+    }
+}

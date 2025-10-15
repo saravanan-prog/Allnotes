@@ -1,0 +1,30 @@
+Java enum    
+==========
+      
+    -  A collection of constant values is called enum
+    -  this is implicitly having public static final        
+
+
+        enum Color {
+            RED, GREEN, BLUE
+        }
+
+
+
+Example:
+--------
+    enum Weekday {
+        MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY
+    }
+
+    public class Main {
+        public static void main(String[] args) {
+            Weekday today = Weekday.MONDAY;
+            System.out.println("Today is " + today);
+        }
+    }
+
+
+    Output
+
+    Today is MONDAY

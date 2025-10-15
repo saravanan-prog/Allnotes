@@ -1,0 +1,72 @@
+Queue:-
+========
+    - The Queue interface in Java is part of the Java Collections Framework and is used to hold elements prior to processing, usually in FIFO (First-In-First-Out) order.
+
+
+    Special Types of Queues:-
+
+        ----------------------------------------------------------------------
+            Type	                    Description
+        -------------------------------------------------------------------------
+            PriorityQueue	        Orders elements based on priority (natural/comparator)
+            ArrayDeque	            Double-ended queue (can be used as a stack or queue)
+            BlockingQueue	        Thread-safe queues for concurrent use
+            ConcurrentLinkedQueue	Non-blocking, high-performance queue
+
+    common Methods:
+    --------------
+        add(e)	        Inserts element; throws exception if full
+        offer(e)	    Inserts element; returns false if full
+        remove()	    Removes head; throws exception if empty
+        poll()	        Removes head; returns null if empty
+        element()	    Retrieves head; throws exception if empty
+        peek()	        Retrieves head; returns null if empty
+
+    
+    Syntax:-
+    --------
+        Queue<String> queue = new LinkedList<>();
+        Queue<Integer> pq = new PriorityQueue<>();
+    
+    Example 1 : Basic Queue with LinkedList
+    ------------------------------------------
+
+        import java.util.*;
+
+        public class QueueExample {
+            public static void main(String[] args) {
+                Queue<String> queue = new LinkedList<>();
+
+                queue.add("Alice");
+                queue.add("Bob");
+                queue.offer("Charlie");
+
+                System.out.println("Queue: " + queue);  // [Alice, Bob, Charlie]
+
+                System.out.println("Peek: " + queue.peek()); // Alice
+                System.out.println("Poll: " + queue.poll()); // Alice
+
+                System.out.println("Queue after poll: " + queue); // [Bob, Charlie]
+            }
+        }
+    
+    Example 2 : PriorityQueue (Sorted Queue)
+    ----------------------------------------
+    
+        import java.util.*;
+
+        public class PriorityQueueExample {
+            public static void main(String[] args) {
+                Queue<Integer> pq = new PriorityQueue<>();
+
+                pq.add(30);
+                pq.add(10);
+                pq.add(20);
+
+                System.out.println("PriorityQueue: " + pq); // [10, 30, 20] — internal order
+
+                while (!pq.isEmpty()) {
+                    System.out.println(pq.poll()); // 10, 20, 30 (sorted order)
+                }
+            }
+        }

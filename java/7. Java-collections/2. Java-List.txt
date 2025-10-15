@@ -1,0 +1,185 @@
+
+List :- 
+=======
+    - Ordered collection.
+    - Allows duplicates.
+
+
+                            List 
+                             |
+            --------------------------------------------
+            |                |                |         |
+          ArrayList         LinkedList     Vector      Stack
+
+
+    1.1 Array vs List
+    ------------------------------------------------------------
+    Feature	               Array	            List (ArrayList)
+    ------------------------------------------------------------
+
+    Fixed size	           ✅ Yes	           ❌ No (resizable)
+    Built-in methods	   ❌ No	               ✅ Many
+    Generics support	   ❌ (sort of)	       ✅ Yes
+    Part of Collections?   ❌ No	               ✅ Yes
+
+
+    1.2  List Implementations
+    -----------------------------------------------------------------------------
+        Class	        Description                 	        Best Use Case
+    ------------------------------------------------------------------------------
+        ArrayList	    Resizable array	                        Fast access, frequent reads
+        LinkedList	    Doubly-linked list	                    Frequent insert/delete
+        Vector	        Like ArrayList, but synchronized	    Legacy or thread-safe needs
+        Stack	        LIFO stack (extends Vector)	            Stack-based tasks (undo, back)
+
+
+    1.3 Common List Methods :- 
+    ------------------------------------------------------
+        Method	                Description
+    -------------------------------------------------------
+    - add(element)              Add element
+    - add(index,element)        Add at position
+    - get(index)                Get element at index
+    - remove(index)             Remove by index
+    - contains(E e)             Check if item exists
+    - size()                    Number of elements
+    - clear()                   Remove all elements
+    - isEmpty()                 Check if list is empty
+    - indexOf(element)
+
+    Syntax:   List<Type> list = new ArrayList<>();
+    Example : List<String> list = new ArrayList<>();
+
+
+    Example  -  ArrayList
+    ----------------------
+
+    import java.util.List;
+    import java.util.ArrayList;
+    public class Main {
+        public static void main(String[] args) {
+            List<String> list = new ArrayList<>();
+            list.add("A");
+            list.add("B");
+            System.out.println(list); // Output: [A, B]
+        }
+    }
+
+
+LinkedList
+==========
+
+    Ordered elements (like ArrayList)
+    Duplicate values
+    Efficient insertion and deletion at both ends
+
+        Syntax:     LinkedList<Type> listName = new LinkedList<>();
+        Example:    LinkedList<String> names = new LinkedList<>();
+
+        ------------------------------------------------------
+            Method	                Description
+        -------------------------------------------------------
+        addFirst(element)	 Add to the beginning
+        addLast(element)	 Add to the end
+        getFirst()           get First value      
+        getLast()            get Last value
+
+
+    Example
+    -------
+        import java.util.*;
+
+        public class Main {
+            public static void main(String[] args) {
+
+                LinkedList<String> fruits = new LinkedList<>();
+
+                fruits.add("Apple");
+                fruits.add("Banana");
+                fruits.add("Cherry");
+
+                System.out.println(fruits); // [Apple, Banana, Cherry]
+
+                fruits.addFirst("Mango");
+                fruits.addLast("Orange");
+
+                System.out.println(fruits); // [Mango, Apple, Banana, Cherry, Orange]
+            }
+        }
+
+
+
+Vector
+======
+    - Works like an ArrayList, but is synchronized (thread-safe) by default 
+
+    Syntax:     Vector<Type> vectorName = new Vector<>();
+    Example:    Vector<String> names = new Vector<>();
+
+     ------------------------------------------------------
+            Method	                Description
+     -------------------------------------------------------
+        firstElement()	            Get first item
+        lastElement()	            Get last item
+
+    
+    Example
+    -------
+
+        import java.util.*;
+        public class Main {
+            public static void main(String[] args) {
+                Vector<String> colors = new Vector<>();
+
+                colors.add("Red");
+                colors.add("Green");
+                colors.add("Blue");
+                colors.add("Red"); // Duplicates allowed
+
+                System.out.println(colors); // [Red, Green, Blue, Red]
+
+                colors.remove("Green");
+                System.out.println(colors); // [Red, Blue, Red]
+
+                System.out.println("First color: " + colors.get(0)); // Red
+            }
+        }
+
+
+Stack
+=====
+    A Stack is a Last-In, First-Out (LIFO) data structure
+    The element added last is removed first.
+
+    Syntax  :  Stack<Type> stack = new Stack<>();
+    Example :  Stack<Integer> stack = new Stack<>();
+
+    -------------------------------------
+     Method	            Description
+    -------------------------------------
+    push(element)	    Add item to top
+    pop()	            Remove and return top item
+    peek()	            Return top item without removing
+    empty()	            Check if stack is empty
+    search(Object o)	Find position (1-based index from top), or -1 if not found
+
+    Example
+    -------
+        import java.util.*;
+        public class StackExample {
+            public static void main(String[] args) {
+                Stack<String> books = new Stack<>();
+
+                books.push("Book A");
+                books.push("Book B");
+                books.push("Book C");
+
+                System.out.println("Stack: " + books);              // [Book A, Book B, Book C]
+
+                System.out.println("Top item: " + books.peek());   // Book C
+
+                System.out.println("Removed: " + books.pop());     // Book C
+
+                System.out.println("Stack after pop: " + books);   // [Book A, Book B]
+            }
+        }

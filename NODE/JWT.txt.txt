@@ -1,0 +1,89 @@
+JWT - JSON web  token
+-------------------------
+
+     - Web token is help's to protect router to access valid user.
+     - JWT is stands for Javascript web token
+     - it is familiar to  create dynamic web token.
+
+
+
+    Sign () ->  this methods is create a web TOKEN    
+
+            Syntax : jwt.sign( payload, SECRET_KEY, EXPIRE_TIME);
+            -------
+
+                payload     - server request payload
+                SECRET_KEY  - User can decide to the project key. 
+                EXPIRE_TIME - it is optional no need to specify .
+            
+            Example
+            --------
+                jwt.sign( 
+                        { username : 'admin' }, 
+                        'Sangeetha',
+                         {expireTime:'1h'}
+                );
+    
+    verify()
+    ---------
+
+        This method is process of verification valid user or not.
+
+         Syntax :
+         -------
+                 jwt.verify(TOKEN, SECRET_KEY, CALLBACK )
+
+        
+         Example :
+        -----------
+        const authVerification = (req,res,next) => {
+
+            jwt.verify(1hzxvltt123jklo,'TCS-Project' function(err,data) {
+                 if(err) 
+                    throws err
+                 else
+                    next()
+            })
+
+        }
+    
+
+    Procedure.
+    -----------
+        Step 1 : install the JWT "npm i jsonwebtoken --save"
+
+        Step 2 : When you want to use jwt you can require this json web token
+
+            const jwt = require('jsonwebtoken')
+
+        Step 3 : sign() ->  this function is helps to create web token
+
+        step 4 : verify() -> this method is help's to verification authorized user or not.
+
+
+
+
+
+         
+
+
+
+
+            
+
+
+
+
+
+
+   
+
+
+
+
+        
+
+       
+            
+
+

@@ -1,0 +1,85 @@
+ Collection Framework
+ ====================
+
+    -   The Java Collection Framework is a set of interfaces and classes
+    -   in Java used to store, manage, and manipulate groups of objects
+
+
+                    Collection (Interface)
+                             |
+            ----------------------------------
+            |                |                |
+          List              Set              Queue
+        (ordered)      (no duplicates)   (FIFO order)
+
+
+    1. Core Interfaces
+
+    -----------------------------------------------------------------------------------
+       SNO  Interface	   Description	      Allows Duplicates?	     Maintains Order?
+    ----------------------------------------------------------------------------------
+       1    List	    Ordered collection	   ✅ Yes	                  ✅ Yes
+       2    Set	        Unique elements	       ❌ No	                      ❌ (some do)
+       3    Queue	    First-In-First-Out	   ✅ Yes	                  ✅ Yes
+       4    Map	        Key-value pairs	       ❌ (no duplicate keys)	  ❌ (some do)
+
+
+
+
+    -----------------------------------------------------------------------------------
+    Interface	        Class	                        Description
+    ------------------------------------------------------------------------------------
+    List	         ArrayList, LinkedList	             Resizable array, linked list
+    Set	             HashSet, TreeSet, LinkedHashSet	 Unordered / ordered unique items
+    Queue	         PriorityQueue, ArrayDeque	         Queues, priority queues
+    Map	HashMap,     TreeMap, LinkedHashMap	             Key-value pairs, sorted or not  
+
+
+    Example - List (ArrayList)
+    ---------------------------
+
+    import java.util.*;
+    public class Example {
+        public static void main(String[] args) {
+            List<String> fruits = new ArrayList<>();
+            fruits.add("Apple");
+            fruits.add("Banana");
+            fruits.add("Apple"); // Duplicates allowed
+            System.out.println(fruits); // [Apple, Banana, Apple]
+        }
+    }
+
+    Example - Set (HashSet)
+    -----------------------
+
+    import java.util.*;
+
+    public class Example {
+        public static void main(String[] args) {
+            Set<String> names = new HashSet<>();
+            names.add("Alice");
+            names.add("Bob");
+            names.add("Alice"); // Duplicate ignored
+            System.out.println(names); // [Alice, Bob]
+        }
+    }
+
+    
+    
+3. Map (HashMap)
+----------------
+
+import java.util.*;
+
+public class Example {
+    public static void main(String[] args) {
+        Map<Integer, String> users = new HashMap<>();
+        users.put(1, "John");
+        users.put(2, "Jane");
+        users.put(1, "Jack"); // Replaces "John"
+        System.out.println(users); // {1=Jack, 2=Jane}
+    }
+}
+       
+
+

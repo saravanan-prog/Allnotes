@@ -1,0 +1,32 @@
+Yup Validation            ->  npm install Yup --save
+-----------------
+  import * as Yup from 'yup'
+
+  Step 1 : type conversation
+              Yup.String()
+  Step 2 :
+              
+
+  required(error_msg)  - Field is mandatory.
+  email(error_msg)     - it is check that field is email format
+  min(size,error_msg)  - it is check that field minimun length.
+  max(size,error_msg)  - it is check that field maximum length.
+  matches(pattern,error_msg) - to check this correct pattern or not.
+  oneof([])
+
+
+	
+Yup.object({
+	Fieldname : yup.string()
+		    .required()
+	termsandcheck : yup.bool()
+                        .oneof(true,"")
+})
+
+
+/a
+/[a-z]
+/[A-Z]
+/[0-9]
+
+/[a-z]/[A-Z]/[0-9]/@

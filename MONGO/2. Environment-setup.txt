@@ -1,0 +1,26 @@
+ Environment setup
+ -----------------
+    There are two types of environment setup having.
+
+        1. Cloud DB
+        2. Local DB
+
+
+Cloud Dabatase
+--------------
+
+    1. Go to mongodb atlas page and signin your account with username and password.
+    2. After login you have to see Explore page.
+    3. In Leftside panel find Database security tab you need to configure Database access and network access
+    5. once setup done you need to move cluster tab.
+    6. In cluster inside click connect button.
+    7. you have to find one popup that DB establish in your system.
+    8. you need to select shell based (or) compass based connect to local system.
+
+
+Local Database
+---------------
+    1.  Go to official site (https://www.mongodb.com/try/download/community) mogodb atlas and download community version and install it.
+    2.  open your c drive and find your mongodb folder
+    3.  open that command prompt and navigate file path C:\Program Files\MongoDB\Server\5.0\bin
+    4.  finally execute mongo.exe (or) mongosh.exe

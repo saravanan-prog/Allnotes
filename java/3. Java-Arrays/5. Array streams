@@ -1,0 +1,120 @@
+Array Stream Methods in Java
+-----------------------------
+
+ => Java Streams provide a functional programming approach to process data in a declarative way. 
+ 
+        - Declarative coding:     Specify what you want to do.
+        - Lazy evaluation:        Computation happens when needed.
+        - Pipelining operations:  Chain methods like filter, map, reduce.
+
+
+   When working with arrays and streams in Java, here are some common methods you can use with Arrays.stream():
+    - map()     : Transforms elements.
+    - filter()  : Selects elements based on a condition.
+    - reduce()  : a combines elements into a single value.
+    - forEach() : Performs an action on each element.
+    - sum(), min(), max(): Aggregate operations.
+    - min,max  -  it is returns to optionalInt value
+    - toArray() : Converts the stream back to an array.
+
+
+map method
+----------
+        Syntax :- stream.map(mapper)
+
+        Examples
+        --------
+
+                int numbers[] = {100,500,600}        
+                 Arrays.stream(numbers)
+                                 .map( i -> i*5 )
+                                 .forEach(System.out::println);
+
+
+                int[] priceList = {1, 2, 3, 4};
+                int[] priceListMul5 = Arrays.stream(priceList)
+                                        .map(i -> i*5)
+                                        .toArray();
+
+                int[] priceList = {1, 2, 3, 4};
+                double[] decimalPriceList = Arrays.stream(priceList)
+                                        .mapToDouble(i -> i)
+                                        .toArray();
+
+
+
+filter method
+-------------
+        Syntax:  stream.filter(predicate)
+        ------
+
+        int[] numbers = {1, 2, 3, 4, 5};
+        int[] evens = Arrays.stream(numbers)
+                            .filter(n -> n % 2 == 0)
+                            .toArray();
+        
+        System.out.println(Arrays.toString(evens)); // Output: [2, 4]
+
+reduce method
+-------------
+
+
+         String fruits[] = {"apple","orange","grapes"};
+
+         String result = Arrays.stream(fruits)
+            .reduce("", (a, b) -> a + b);
+
+
+         int priceList[] = {100,200,300,400,500}
+         
+         int sumofvalue = Arrays.stream(priceList)
+                .reduce( 0, (a,b) -> a + b );
+
+         
+        int sum = Arrays.stream(priceList)
+            .reduce(0, Integer::sum);
+           System.out.println(sum); 
+        
+
+
+forEach method
+--------------
+
+    forEach() is a terminal operation in Java Streams that performs an action on each element of the stream. Here's an example where we print each element of an array using forEach()
+
+
+            String[] fruits = {"apple", "banana", "cherry"};
+            Arrays.stream(fruits).forEach(System.out::println)
+
+Sum method
+-----------
+        int[] numbers = {1, 2, 3, 4, 5};
+        int sum = Arrays.stream(numbers).sum();
+        System.out.println("Sum: " + sum); // Output: Sum: 15
+
+
+Min and max method
+------------------
+
+
+    OptionalInt
+    -----------
+        OptionalInt is a container class in Java that may or may not contain an int value. 
+        It's used to represent a value that might be absent (like when a stream is empty).
+        Here's how it works:
+
+        - OptionalInt methods:
+            - isPresent(): Checks if a value is present.
+            - ifPresent(): Performs an action if a value is present.
+            - getAsInt(): Gets the value if present; throws if not.
+
+
+    Example
+    -------
+            int[] numbers = {1, 2, 3};
+            OptionalInt min = Arrays.stream(numbers).min();
+            min.ifPresent(value -> System.out.println("Min: " + value)); // Output: Min: 1
+            
+            int[] empty = {};
+            OptionalInt emptyMin = Arrays.stream(empty).min();
+            System.out.println(emptyMin.isPresent()); // Output: false

@@ -1,0 +1,30 @@
+JAVA DATA TYPES
+---------------
+   1. Primitive Data TYPES
+   2. Non-Primitive Data types
+
+Prmitive Data types
+--------------------
+    1. Integer - [it is a store whole value Ex: 25555]
+
+        (i).   byte (8 bits) 
+        (ii).  short (16 bits)
+        (iii). int (32 bits)
+        (iv).  long (64 bits)
+
+    2.Float - [ it is store decimal value Ex: 250.25 ]
+
+        (i)  double (32 bits)
+        (ii) float (64 bits)
+
+    3. Char - 1 byte  ['']
+
+    4. Boolean - true or false
+
+2. Non-Primitive Data types
+-----------------------------
+    1. String
+    2. Array
+    3. Enum
+    4. Class 
+    5. Interface 

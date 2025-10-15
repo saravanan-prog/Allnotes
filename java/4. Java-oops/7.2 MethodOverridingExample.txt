@@ -1,0 +1,40 @@
+
+Method Overriding
+=================
+
+    - Method Overriding: A subclass provides a specific implementation of a method already defined in its superclass.
+
+    - Method in subclass has same name, return type, parameters as in superclass.
+
+
+        Examples:
+
+            class Animal {
+                void sound() {
+                    System.out.println("Animal makes a sound");
+                }
+            }
+
+            class Dog extends Animal {
+                @Override
+                void sound() {
+                    System.out.println("Dog barks");
+                }
+            }
+
+            public class Main {
+                public static void main(String[] args) {
+                    Animal animal = new Animal();
+                    Animal dog = new Dog();
+                    
+                    animal.sound(); // Output: Animal makes a sound
+                    dog.sound();    // Output: Dog barks
+                }
+            }
+
+
+Output Clearly
+- animal.sound() :  Animal makes a sound
+- dog.sound()    :     Dog barks
+
+    

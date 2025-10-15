@@ -1,0 +1,33 @@
+// Use Reducer 
+
+How to Declare State?
+
+   const [count,dispatch] = useReducer(reducerAction,0)
+   const [name,dispatch] = useReducer(reducerAction,"Hello ReactJS")
+
+
+
+   <button onClick = { ()=> dispatch({type:"add"}) }> addition </button>
+   <button onClick = { ()=> dispatch({type:"sub"}) }> addition </button>
+
+
+
+
+const reducerAction = (state,action) => {
+
+    
+
+    if(action.type == "add"){
+        return state =+1 
+    }
+    else if(action.type=="sub"){
+        return state =-1
+    }
+
+    else{
+        return state
+    }
+
+    
+
+}

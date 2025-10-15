@@ -1,0 +1,60 @@
+REACT - MEMO
+---------------
+
+STEP 1 : CREATE ONE PARENT AND CHILD COMPONENTS.
+
+STEP 2 : PARENT COMPONENT INSIDE YOU CAN CALL CHILD COMPONENT
+
+STEP 3 : CHILD COMPONENT INSIDE IMPORT THE MEMO
+
+            import { memo } from "react";
+
+STEP 4 : EXPORT CHILD COMPONENT THAT TIME CALL MEMO FUNCTION
+
+            export default memo(About)
+
+
+EXAMPLE :
+------------
+
+PARENT COMPONENT
+-------------------
+
+function HomePage() {
+
+  const [count,setCount] = useState(0)
+
+  return <div>
+
+      <About 
+       name ="saravanan"
+      
+      />
+
+      <p> {count} </p>
+
+      <button onClick = { ()=>setCount(count + 1) }> Add Count </button>
+
+  </div>
+ 
+}
+
+
+
+CHILD COMPONENT
+------------------
+
+import { memo } from "react";
+
+export default memo (function About() {
+
+    console.log("About page is rendering.....")
+
+    return <div>
+         <h3>About</h3>
+    </div>
+})
+
+
+
+

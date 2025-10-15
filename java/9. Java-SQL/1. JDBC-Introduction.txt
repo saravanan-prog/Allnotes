@@ -1,0 +1,17 @@
+ JDBC - (Java Database Connectivity)
+=====================================
+    - JDBC is a Java API (a set of classes and interfaces) 
+    - that allows Java programs to communicate with databases.
+    - It acts like a bridge between your Java application and a database (like MySQL, Oracle, etc.).
+    - You use JDBC to send SQL queries (like SELECT, INSERT, UPDATE, DELETE) from Java and get results back.
+
+
+JDBC 5 Main Steps
+-----------------
+
+    1. Load JDBC Driver
+    2. Connect to Database
+    3. Create Statement
+    4. Execute SQL Query
+    5. Process Result
+    6. Close Connection

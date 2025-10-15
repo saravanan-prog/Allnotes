@@ -1,0 +1,127 @@
+1️⃣ CREATE DATABASE AND USE DROP COMMANDS
+========================================
+
+    Syntax: 
+    -------   
+               CREATE DATABASE database_name;
+               SHOW databases;
+               USE database_name;
+               DROP DATABASE database_name;
+
+
+    Example:-
+    ---------
+            CREATE DATABASE credoSystem;
+            SHOW databases;
+            USE credoSystem;
+            DROP DATABASE credoJavaBatch;
+
+
+2️⃣ CREATE TABLE
+=================
+    Syntax :-
+    ---------
+
+        CREATE TABLE table_name (
+            column1 datatype constraints,
+            column2 datatype constraints,
+            ...
+        );
+
+    Example:-
+    ----------
+
+        CREATE TABLE Students (
+            StudentID INT PRIMARY KEY,  // an integer and the Primary Key (unique identifier),
+            Name VARCHAR(100),
+            Class VARCHAR(10)
+        );
+
+        CREATE TABLE Teacher (
+            
+            TeacherID INT PRIMARY KEY AUTO_INCREMENT,  
+
+            /* an integer and the Primary Key (unique identifier) and automatically value increment,*/
+
+            Name VARCHAR(100),
+            Class VARCHAR(10)
+        );
+
+🔧 What is ALTER TABLE?
+ ------------------------
+    ALTER TABLE is used to change the structure of an existing table in a database.
+
+    You can use it to:
+
+        ✅ Add a new column
+        ✅ Modify a column
+        ✅ Rename a column or table
+        ✅ Delete (drop) a column
+        ✅ Add or drop constraints (like primary key, foreign key)
+
+     -------------------------------------------------------------
+    | Task              | SQL Command Example                     |
+    | ----------------- | --------------------------------------- |
+    | Add a column      | `ADD column_name data_type;`            |
+    | Modify a column   | `MODIFY column_name new_data_type;`     |
+    | Rename a column   | `RENAME COLUMN old_name TO new_name;`   |
+    | Drop a column     | `DROP COLUMN column_name;`              |
+    | Add a primary key | `ADD PRIMARY KEY (column_name);`        |
+    | Add a foreign key | `ADD FOREIGN KEY (...) REFERENCES ...;` |
+    | Rename the table  | `RENAME TABLE old_name TO new_name;`    |
+    ---------------------------------------------------------------
+
+
+    Example:-
+    --------
+
+        1️⃣ Add a Column
+        -----------------
+            ALTER TABLE Students ADD Age INT;
+
+        2️⃣ Modify a Column (Change Data Type)
+        --------------------------------------
+            ALTER TABLE Students MODIFY Name VARCHAR(150);
+        
+        3️⃣ Rename a Column
+        -------------------
+            ALTER TABLE Students RENAME COLUMN Name TO FullName;
+            
+        4️⃣ Rename the Table
+        --------------------
+            RENAME TABLE Students TO StudentInfo;
+        
+        5️⃣ Drop (Delete) a Column
+        --------------------------
+             ALTER TABLE Students DROP COLUMN Age;
+        
+        6️⃣ Add a Primary Key
+        --------------------
+             ALTER TABLE Students ADD PRIMARY KEY (StudentID);
+        
+        7️⃣ Add a Foreign Key
+        --------------------
+            ALTER TABLE Marks ADD FOREIGN KEY (StudentID) REFERENCES Students(StudentID);
+
+
+
+3️⃣ ❌ What is DROP TABLE?
+--------------------------
+
+    The DROP TABLE command is used to permanently delete a table from a database, along with all the data stored in it.
+
+    Syntax:-
+    -------
+        DROP TABLE table_name;                /* Delete signle table */
+        DROP TABLE table1, table2, table3;    /* To delete multiple table */
+
+
+    
+    Example:-
+    ---------
+
+        DROP TABLE Students;
+        DROP TABLE Students, Marks;
+
+
+

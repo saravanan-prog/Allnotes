@@ -1,0 +1,336 @@
+1. Create DB                -> use college
+
+2. listing DB               -> show dbs
+
+3. create collecction       -> db.createCollection("departments")
+
+4. show collection List     -> show collections
+
+5. INSERT document          -> db.departments.insertOne(
+                                    {
+                                        "deparmentID" : "BCS01",
+                                        "departmentName" : "Computer Applications",
+                                        "HOD" :"Mr.Saravanan MCA.phd"
+                                    }
+                                )
+
+
+6. INSERT MANY RECORD           -> db.departments.insertMany(
+                                    [
+                                        {
+                                            "deparmentID" : "BCS01",
+                                            "departmentName" : "Computer Applications",
+                                            "HOD" :"Mr.Saravanan MCA.phd"
+                                        },
+                                        {
+                                            "deparmentID" : "BCS02",
+                                            "departmentName" : "Business Administration",
+                                            "HOD" :"Mr.Raghavan MBA .phd"
+                                        },
+                                        {
+                                            "deparmentID" : "BCS03",
+                                            "departmentName" : "Commerce and Accountancy",
+                                            "HOD" :"Mr.Sri ram Mcom.phd"
+                                        },
+
+                                    ]
+                                    
+                                )
+
+
+7. find documents                           ->   db.departments.find({})
+
+
+8. find document paticular Record           -> db.departments.find({"deparmentID":"BCS03"})
+
+
+
+9. Project Data                             -> db.departments.find({}, { departmentName: 1, HOD: 1})
+
+
+10 .Id disable view                         -> db.departments.find({}, { _id: 0, departmentName: 0 })
+
+
+11. exclude Field                           -> db.departments.find({}, { HOD: 0 })
+
+
+12. Update one                              -> db.departments.updateOne( 
+                                                    { _id:  ObjectId("665aa4ad5e8f42bbc2cadd52")}, 
+                                                    { $set:
+                                                        { deparmentID: 'BCA01' } 
+                                                    } 
+                                                ) 
+
+
+                                        
+13. upsert = update + insert                    -> db.departments.updateOne( 
+                                                    { departmentName: "Computer Applications" }, 
+                                                    {
+                                                        $set: 
+                                                            {
+                                                            deparmentID: "BCA02",
+                                                            departmentName: "Computer Application and science",
+                                                            Lab: "Computer and embded system lab",
+                                                            HOD : "MR.Raghunanthan Msc.,"
+                                                            }
+                                                    }, 
+                                                    { upsert: true }
+                                                )
+
+14. updateMany                             ->  db.departments.updateMany( 
+                                                { departmentName: "Computer Applications" }, 
+                                                {
+                                                    $set: 
+                                                        {
+                                                            deparmentID: "BCA02",
+                                                            departmentName: "Computer Application and science",
+                                                            Lab: "Computer and embded system lab",
+                                                            HOD : "MR.Raghunanthan Msc.,"
+                                                        }
+                                                }
+                                              
+                                            )
+
+
+15. deleteOne                               -> db.departments.deleteOne(
+                                                    { 
+                                                        departmentName: "Computer Applications" 
+                                                    }
+                                                )
+
+
+16. deleteMany                              -> db.departments.deleteMany(
+                                                    { 
+                                                        departmentName: "Computer Applications" 
+                                                    }
+                                                )
+
+                                                db.deparments.drop() // delete entire collection
+                                                db.dropDatabse()     // delete the database
+
+
+
+
+17.Query Operators  =
+                         
+       17.1 Comparison Operator
+        ------------------------
+        
+                        
+        $eq  (==)               :   Values are equal
+                                            
+                                            
+                                    db.departments.find({
+                                        departmentName: {
+                                            $eq:"Commerce and Accountancy"
+                                            }
+                                        }
+                                    )
+
+
+
+
+        $ne  (!=)              :   Values are not equal
+
+
+                                        db.departments.find({
+                                            departmentName: {
+                                                $ne:"Commerce and Accountancy"
+                                                }
+                                            }
+                                        )
+
+
+
+
+        $gt  (>)               :   Value is greater than another value
+                                        
+                                    db.departments.find({
+                                        staffCount: {
+                                            $gt:100
+                                            }
+                                        }
+                                    )
+
+
+        $gte (>=)              :   Value is greater than or equal to another value
+
+                                        db.departments.find({
+                                            staffCount: {
+                                                $gte:100
+                                                }
+                                            }
+                                        )
+
+
+        $lt  (<)               :   Value is less than another value
+
+      
+
+                                        db.departments.find({
+                                            staffCount: {
+                                                $lt:2
+                                                }
+                                            }
+                                        )
+
+
+
+
+        $lte (<=)              :   Value is less than or equal to another value
+                                        
+                                        db.departments.find({
+                                            staffCount: {
+                                                $lte:2
+                                                }
+                                            }
+                                        )
+
+                                            
+        $in  (IN)              :   Value is matched within an array
+
+                                        db.departments.find({
+                                            staffCount: {
+                                                $in:['Computer Application','Commerce']
+                                                }
+                                            }
+                                        )
+
+
+
+        17.2 Logical
+        ------------
+                  
+        $and:  ( AND )      Returns documents where both queries match    
+
+                Syntax:
+                -------
+                    { $and: [ { Expression1 }, { Expression2 }, ..., { ExpressionN } ] }
+                       db.courses.find(
+                            {
+                                $and:[ 
+                                { courseID:'JD106'},
+                                { CourseName:'Credo comobo pack'}
+                                ]
+                            }
+                        )
+
+
+        $or:    ( OR )      Returns documents where either query matches
+        $nor:               Returns documents where both queries fail to match
+        $not:   (!)         Returns documents where the query does not match
+
+
+
+
+
+     update queries
+     --------------
+
+
+     1. inc ->
+                        db.departments.updateOne( 
+
+                            { deparmentID: "BCS02"}, 
+                            { $inc:
+                                    { staffCount:1} 
+                            },
+                        
+                    ) 
+                                        
+     2. set ->
+
+
+                        db.departments.updateOne( 
+
+                            { deparmentID: "BCS02"}, 
+                            { $set:
+                                    { toppers:['vignesh','vimal','karan']} 
+                            }
+                            
+                        ) 
+                    
+     3. rename ->
+
+                    db.departments.updateOne( 
+
+                        { deparmentID: "BCS02"}, 
+                        { $rename:
+                                { staffCount:'profilecount'} 
+                        }
+                    
+                ) 
+
+    4. unset    ->
+
+                
+                db.departments.updateOne( 
+
+                    { deparmentID: "BCS02"}, 
+                    { $unset:
+                            { profilecount:''} 
+                    }
+                
+                ) 
+
+Array - update
+----------------------
+         
+
+                1. push - insert new value
+
+                            db.departments.updateOne( 
+
+                                { deparmentID: "BCS02"}, 
+                                { $push:
+                                        { toppers:'sriram'} 
+                                },
+                            
+                            ) 
+                
+
+                2. pop -> remove the value
+
+                        db.departments.updateOne( 
+
+                            { deparmentID: "BCS02"}, 
+                            { $pop:
+                                    { toppers:1} 
+                            },
+                        
+                        ) 
+
+
+
+
+
+                        
+
+3. LIMIT
+-------------
+
+       db.departments.find({}).limit(3)                 
+
+
+
+
+
+
+18. Query Operator examples    ->   https://www.w3schools.com/mongodb/mongodb_query_operators.php
+                                    https://www.mongodb.com/docs/manual/reference/operator/update/rename/
+
+
+
+    
+            
+
+
+
+
+
+
+
+                                            
+
+
+

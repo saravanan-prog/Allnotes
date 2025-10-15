@@ -1,0 +1,19 @@
+Day 1 - Introduction class - BASICS SERVER CONCEPTS
+---------------------------------------------------
+
+        SERVER          - Centerailized software or system
+        CLINET          - End user
+        IP ADDRESS      - Unique identifiy number
+        PORT NUMBER     - part of indentification 
+        DNS             - Domain name system     
+        SESSION         - Server storage   
+        COOKIES         - Browser storage
+
+
+
+192:52:25:25 -> 
+
+4200
+    4201
+3000
+    3001

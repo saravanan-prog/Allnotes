@@ -1,0 +1,65 @@
+Abstraction
+===========
+     Abstraction: 
+                    - Hiding implementation details, 
+                    - showing only essential features.
+
+    - Helps reduce complexity, enhance modularity.
+
+In Java :- 
+    - Achieved using abstract classes and interfaces.
+    - Abstract methods define behavior without implementation.
+
+
+Key Points :- 
+    - abstract classes can have both abstract and concrete methods.
+    - interfaces (pre-Java 8 mostly abstract; Java 8+ can have default methods).
+
+Example 1 :-
+
+    abstract class Animal {
+
+        String name;              /* Abstract member */
+        abstract void sound();    /* Abstract method */
+        void eat() {
+            /* concrete method * /
+        }             
+    } 
+
+    class Dog extends Animal {
+        void sound() { 
+            System.out.println("Bark"); 
+        }
+    }
+
+
+
+Example 2: 
+
+    abstract class Employee {
+
+        abstract void calculateSalary();
+        void displayInfo() {}
+
+    }
+    class FullTime extends Employee {
+
+        void calculateSalary() { 
+            System.out.println("Full-time salary"); 
+        }
+    }
+
+
+Example 3: 
+
+    abstract class Game {
+        abstract void play();
+        void end() { 
+            System.out.println("Game ended"); 
+        }
+    }
+    class Chess extends Game {
+        void play() { 
+            System.out.println("Playing chess"); 
+        }
+    }

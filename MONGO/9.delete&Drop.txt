@@ -1,0 +1,35 @@
+DROP 
+----
+
+    DROP is command to delete or remove database objects 
+
+        db.dropDatabase()           - to drop the database.
+        db.collectionName.drop()    - to drop the collections.
+
+
+DELETE
+------
+    - Delete query is a process delete a document with particular condtions.
+    - Delete query having two types
+    
+        - deleteOne()   -  single record at a time.
+        - deleteMany()  -  to delete multiple record at a time.
+
+
+
+
+        db.departments.deleteOne(
+            { 
+                departmentName: "Computer Applications" 
+            }
+        )
+
+
+        db.departments.deleteMany({ 
+            departmentName: "Computer Applications" 
+        })
+
+
+    
+
+

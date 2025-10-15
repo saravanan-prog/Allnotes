@@ -1,0 +1,32 @@
+[
+    {
+        "courseID":"JD101",
+        "CourseName":"JAVA",
+        "fees":25000
+    },
+    {
+        "courseID":"JD102",
+        "CourseName":"Advanced Java",
+        "fees":30000
+    },
+    {
+        "courseID":"JD103",
+        "CourseName":"Spring Boot",
+        "fees":35000
+    },
+    {
+        "courseID":"JD104",
+        "CourseName":"Applets and servlets",
+        "fees":15000
+    },
+    {
+        "courseID":"JD105",
+        "CourseName":"Core Java",
+        "fees":10000
+    },
+    {
+        "courseID":"JD106",
+        "CourseName":"Advanced JAVA",
+        "fees":50000
+    }
+]

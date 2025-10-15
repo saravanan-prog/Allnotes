@@ -1,0 +1,59 @@
+
+Statement Interface
+====================
+
+    The Statement interface is used to execute SQL queries like 
+    SELECT, INSERT, UPDATE, and DELETE from Java code.
+
+        Connection conn = DriverManager.getConnection(url, user, password);
+        Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT * FROM students");
+        
+|------------------------------------------------------------------------------------
+| SQL Type                     | Method to Use     | Description                     |
+| ---------------------------- | ----------------- | ------------------------------- |
+| `SELECT`                     | `executeQuery()`  | Returns a `ResultSet`           |
+| `INSERT`, `UPDATE`, `DELETE` | `executeUpdate()` | Returns number of affected rows |
+|  Any SQL                     | `execute()`       | Returns `boolean` (has result?) |
+|-------------------------------------------------------------------------------------
+
+
+ResultSet:-
+==========  
+    A ResultSet is an object in Java's JDBC API that stores the data returned by a SELECT query from a database.
+
+
+
+    Run SQL commands
+    ----------------
+     
+     Connection conn = DriverManager.getConnection(url, user, password);
+     Statement stmt = conn.createStatement();
+     ResultSet rs = stmt.executeQuery("SELECT * FROM students");
+
+     while (rs.next()) {
+        System.out.println(rs.getString("name"));
+     }
+
+     rs.close();
+     stmt.close();
+     conn.close();
+
+
+    ------------------------------------------------------------------------------------   
+    | Method                  | Description                                             |
+    | ----------------------- | ------------------------------------------------------- |
+    | `next()`                | Moves to the next row. Returns `false` if no more rows. |
+    | `getString(columnName)` | Returns a column value as a `String`.                   |
+    | `getInt(columnName)`    | Returns an integer column value.                        |
+    | `getDouble(columnName)` | Returns a double column value.                          |
+    | `getDate(columnName)`   | Returns a SQL `Date` object.                            |
+    |                                                                                   |
+    -------------------------------------------------------------------------------------
+
+    
+       
+
+
+
+

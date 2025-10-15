@@ -1,0 +1,54 @@
+
+Custom Exception:-
+=====================
+
+    In Java, a custom exception is a user-defined exception that extends either the Exception class (for checked exceptions) or the RuntimeException class (for unchecked exceptions). 
+
+    You create a custom exception when the standard Java exceptions don't describe a particular error scenario in your application well enough.
+
+
+
+    Basic Steps to Create a Custom Exception:
+    --------------------------------------------
+
+        Extend the Exception or RuntimeException class.
+
+        Create constructors to allow different ways of instantiating your exception.
+
+        Optionally, add custom fields or methods.
+
+    
+
+    code
+    ----
+        public class InvalidAgeException extends Exception {
+    
+            public InvalidAgeException() {
+                super("Invalid age provided");
+            }
+
+            public InvalidAgeException(String message) {
+                super(message);
+            }
+        }
+
+    Usage
+    ------
+
+    public class AgeValidator {
+
+        public void validate(int age) throws InvalidAgeException {
+            if (age < 18) {
+                throw new InvalidAgeException("Age must be 18 or older");
+            }
+        }
+
+    public static void main(String[] args) {
+        AgeValidator obj = new AgeValidator();
+        try {
+            obj.validate(16);
+        } catch (InvalidAgeException e) {
+            System.out.println("Caught exception: " + e.getMessage());
+        }
+    }
+}

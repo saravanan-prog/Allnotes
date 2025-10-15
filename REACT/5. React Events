@@ -1,0 +1,98 @@
+React Events:
+--------------
+
+    - An events is generally known as triggering actions.
+    - React envents is a case sensitive.
+
+-----------------------------------------------------------------------------------------------------------------------
+   SNO              Event           Html           Html Example                     React         React Example
+----------------------------------------------------------------------------------------------------------------------
+    1                click          onclick          onclick = "addCount()"         onClick        onClick = {addCount}
+----------------------------------------------------------------------------------------------------------------------
+    2                change         onchange         onchange = "addCount()         onChange       onChange = {addCount}
+------------------------------------------------------------------------------------------------------------------------
+    3                submit         onsubmit         onsubmit = "handleSubmit()      onSubmit        onSubmit = {handleSubmit}
+------------------------------------------------------------------------------------------------------------------------
+    4                hover          onmouseover      onmouseover = "handleOver()     onMousehover     onMousehover = {handleOver}
+------------------------------------------------------------------------------------------------------------------------
+
+
+1. Example    Click Event
+-------------------------
+
+     function AdditionProgram() {
+    
+            count [count,setCount] = useState(0)
+
+            const addCount = () => {
+                setCount(count + 1)
+            }
+
+                return <div>
+                       <h1> Count : {count} </h1>
+                       <button onClick = {addCount} > Add Count </button
+                 </div>
+    }
+    
+Short -hand
+-------------
+
+    function AdditionProgram() {
+    
+            count [count,setCount] = useState(0)
+
+            const addCount = () => {
+                setCount(count + 1)
+            } 
+
+                return <div>
+                       <h1> Count : {count} </h1>
+                       <button onClick = { () => {setCount(count + 1)}} > Add Count </button
+                 </div>
+    }
+
+
+    parameterized - Event
+    -----------------------
+
+         function AdditionProgram() {
+    
+            count [count,setCount] = useState(0)
+
+            const addCount = (data) => {
+                setCount(count + data)
+            }
+
+                return <div>
+                       <h1> Count : {count} </h1>
+                       <button onClick = {() => addCount (2)} > Add Count </button
+                 </div>
+    }
+
+
+
+
+
+
+
+2. Example change Event
+  -----------------------
+
+    function InputExample () {
+
+            const [typedtext,setTypedtext] = useState(null)
+
+            const changeText = (event) => {
+
+                setTypedtext(event.target.value)
+            }
+
+            return <div>
+
+                    <label> Enter the Text </label>
+                    <input type = "text" onChange = {changeText} />
+                     
+                     <h1> Result : {typedtext}  </h1>
+                       
+                </div>
+    }

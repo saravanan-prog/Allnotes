@@ -1,0 +1,35 @@
+find() -> search the data (like us select query RDBMS)
+------------------------------------------------------
+
+  - find() method to select data from a collection in MongoDB
+  - This method accepts a query object. 
+  - If left empty, all documents will be returned.
+
+    Syntax
+    ------
+        db.find({},{})      // {} -> conditons projection {} -> controlled projection 
+
+
+     Example
+     -------
+         db.departments.find({})                         // Get all doc or records.
+         db.departments.findOne({})                      // Returns to only one doc.
+         db.departments.find({"deparmentID":"BCS03"})   // filter, data we can include a query
+
+
+
+pretty() 
+---------
+    this method is helps to show structured document.
+
+        db.department.find({}).pretty()
+
+
+Enable and disable
+------------------
+
+        0 -> means disable
+        1 -> means Enable
+        
+        db.departments.find({}, { departmentName: 1, HOD: 1})
+        db.departments.find({}, { _id: 0, departmentName: 0 })

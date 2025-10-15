@@ -1,0 +1,55 @@
+
+REACT CSS
+---------
+
+        - Internal
+        - External
+        - Inline
+
+    Here class properties  is called className
+
+    Internal
+    --------
+        create one state object assign all style code key with value pair.
+
+        const obj = {
+
+            backgroundColor:'red'
+            color :'blue'
+            fontSize : '20px'
+
+        }
+
+        <div style = {obj} > React Tutorial </div>
+    
+
+    Inline.
+    -------
+        style attribute inside directly write css called inline.
+
+        <div style = {{ backgroundColor:'red', color :'blue', fontSize : '20px' }} > React Tutorial </div>
+    
+    External 
+    ---------
+        - To create extnal css file add import your component.
+        - css file inside write css code. no need follow key with value pair
+
+        - exteal css file
+
+                index.css (or) index.module.css
+
+        - Community team is sugggest index.module.css it is avoiding overlapping.
+
+
+
+BootStrap
+---------
+   step 1 :  npm install react-bootstrap bootstrap
+   step 2 : add your index.js import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+
+
+
+
+

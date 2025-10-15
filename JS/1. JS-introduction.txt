@@ -1,0 +1,118 @@
+
+1. JAVASCRIPT
+---------------
+
+        - JavaScript is the programming language of the Web.
+        - JavaScript is easy to learn.
+
+
+    1.1  Environment setup
+    ---------------------
+
+        - No need to setup any environment it is defautly having in your browser.
+        - Editor's recommended by visual studio code.
+
+
+
+    1.2  JS - OUTPUTS
+    ------------------
+        console.log()     	-	 Writing into the browser console, using console.log().
+        document.write() 	-  	 Writing into the HTML output using document.write().
+        alert()         	-	Writing into an alert box, using window.alert().
+
+        innerText  	 	    -	 Read / Write - Displaying the elements
+        innerHTML 		    - 	 Writing into an HTML element, using innerHTML.
+        src       		    - 	upload the image 
+        value     		    -	 Read / Write input box values
+
+
+
+    1.3 JS -READS
+    ---------------
+
+        Generally four types of JS reads the HTML elements.
+
+
+	    1.3.1 getElementById() 
+        ------------------------ 
+		
+		        The example below "finds" an HTML element (with id="demo"), and changes the element content (innerHTML) to "Hello JavaScript"
+
+                    <p id='demo'> welcome to js</p>
+                    
+                    var content = document.getElementById("demo")
+
+                    console.log(content)
+
+                    content.innerHTML = "Hello JavaScript";
+		
+
+	    1.3.2  getElementByClassName()
+        ---------------------------------- 
+
+                The example below "finds" an HTML element (with className ="example"), and changes the element content (innerHTML) to "Hello JavaScript"
+
+                 <p class='example'> welcome to js</p>
+
+                    document.getElementsByClassName("example")[0].innerText = "Hello JavaScript";
+
+	
+	     1.3.3 getElementsByName() 
+         ----------------------------
+		
+            The getElementsByClassName() method returns a collection of elements with a specified class name(s).
+                
+                - document.getElementsByName("fname");
+
+
+
+	     1.3.4 getElementsByTagName()
+         --------------------------------
+
+                The getElementsByTagName() method returns a collection of all elements with a specified tag name.
+            
+                document.getElementsByTagName("p")[0].innerHTML = "Hello World!";
+
+
+
+
+1.4 JS - Key words
+----------------------
+
+    var	 	    - 	Declares a variable
+    let	 	    - 	Declares a block variable
+    const	 	- 	Declares a block constant
+    if	 	    - 	Marks a block of statements to be executed on a condition
+    switch		- 	Marks a block of statements to be executed in different cases
+    for		    -	Marks a block of statements to be executed in a loop
+    function	-	Declares a function
+    return		-	Exits a function
+    try		    -	Implements error handling to a block of statements
+
+
+
+
+
+
+
+   
+  
+
+
+
+   
+
+
+
+
+
+
+
+
+
+	
+		
+
+
+
+

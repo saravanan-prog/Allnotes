@@ -1,0 +1,58 @@
+Java Operators
+---------------
+    Java has various operators for arithmetic, comparison, logical operations, and more.
+
+        1. Arithmetic Operators
+
+             +, -, *, /, % (modulus)
+        
+        2. Assignment:
+
+             =, +=, -=, *=, /=, %= etc.
+
+    
+        3. Comparison Operators
+
+             ==, !=, >, <, >=, <=
+
+        4. boolean  - True (or) False
+
+            isEqual = (5 == 5); // true
+
+
+        5. Logical Operators
+
+             && (AND), || (OR), ! (NOT)
+        
+        6. Unary Operators: 
+        
+            ++ increment 
+
+                int a = 10
+                a++ // post increment
+                ++a // Pre increment
+
+
+            -- Decrement
+
+                int a = 10
+                a-- // post Decrement
+                --a // Pre Decrement
+
+
+
+            !  not 
+               
+               boolean productAvailable = true;
+
+               String availbleStatus = productAvailable ? 'Availble : 'Not-Availble';
+
+
+        7. Ternary Operator (?) -> True block (:) -> false block
+
+        
+
+
+
+
+

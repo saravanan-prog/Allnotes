@@ -1,0 +1,180 @@
+USE REDUCER  :
+------------
+
+    - The useReducer Hook is similar to the useState Hook.
+    - It allows for custom state logic.
+    - If you find yourself keeping track of multiple pieces of state that rely on complex logic, useReducer may be useful.
+
+
+
+    SYNTAX
+    ---------
+
+        useReducer(arg1,arg2)
+
+            arg1 - reducerAction function
+            arg2 - initial State
+
+        Example : useReducer(reducerAction,0)
+
+    Example
+    --------
+        const initialState = 0
+
+        const [count,dispatch] = useReducer(reducerAction,initialState)
+
+            count = 0
+            dispatch - it is a method to dispatch reducer function
+
+        const reducerAction = (state, action) => {
+
+        }
+
+            state   - updated state.
+            action  - action recieves in dispatch method argument.
+
+
+Procedure :
+------------
+
+   STEP 1 : import the use Reducer hook
+   STEP 2 : Create the FC component.
+   STEP 3 : Declare the initial state.
+   STEP 4 : Declare the use reducer state.
+   STEP 5 : Expand the logic of reducerAction method.
+   STEP 6 : render updated state in jsx.
+   STEP 7 : create an events for the dispatch.
+   STEP 8 : Events argument invoking the reducer method.
+   STEP 9 : reducer method inside write the logic of update state and return the original state.
+
+
+
+Real Time Example
+------------------
+
+
+import { useReducer } from "react"
+
+function TestComp(){
+
+    const initialCount = 0
+
+    const [count,dispatch] = useReducer(reducer,initialCount)
+
+    return <div>
+
+        <h1> value :  {count} </h1>
+
+        <button onClick = {() => dispatch("add")} > Add  </button>
+        <button onClick = {() => dispatch("sub")} > Sub  </button>
+        <button onClick = {() => dispatch("mul")} > Mul  </button>
+        <button onClick = {() => dispatch("div")} > Div  </button>
+        <button onClick = {() => dispatch("reset")} > reset  </button>
+
+
+    </div>
+
+}
+
+const reducer = (state,action) => {
+
+    if(action =='add')
+
+        return state + 1
+    else if(action =='sub')
+        return state - 1
+    else if(action =='mul')
+        return state * 5
+    else if(action =='div')
+        return state /  2
+    else
+        return state = 0
+        
+
+}
+
+
+export default TestComp
+
+
+
+Example 2 :
+------------
+
+import { useReducer } from "react"
+import { employeeReducer } from "./test.service"
+
+
+
+function TestComp() {
+
+    const initialemployeeState = [
+        {
+            empId: 111,
+            empName: 'Nishanth'
+        },
+        {
+            empId: 222,
+            empName: 'Roshan'
+        },
+        {
+            empId: 333,
+            empName: 'Sivakumar'
+        }
+
+    ]
+
+    const [employeeDetails, dispatch] = useReducer(employeeReducer, initialemployeeState)
+
+
+    return <div>
+
+        <table border = {2} align={'center'}>
+            <tr>
+                <th>Employee ID</th>
+                <th>Employee Name</th>
+                <th>Action</th>
+
+            </tr>
+
+            {employeeDetails &&
+                employeeDetails.map((value, index) => {
+
+                    const {empId,empName} = value
+
+                    return <tr>
+                            <td> {empId} </td>
+                            <td> {empName} </td>
+                            <td> <button onClick = { () => dispatch({type:'delete',id:index})}>Delete</button> </td>
+                    </tr>
+
+
+                })}
+
+
+        </table>
+
+
+
+
+    </div>
+
+
+
+
+
+}
+
+ const employeeReducer = (state,action) => {
+
+    if(action.type == 'delete') {
+        const updateFilter = state.filter((value,index) => {
+            return index != action.id
+        })
+
+        return updateFilter
+    }
+
+
+    return  state
+}

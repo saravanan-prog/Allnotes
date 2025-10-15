@@ -1,0 +1,50 @@
+Small History
+--------------
+    => intoduced by sun micro system on 1995
+    => 2025 Oracle is having a current ownerniship
+    => Java version Java 24
+
+
+JAVA
+-----
+   => it is a hight level programming language
+   => it is a platform independent.
+   => it is Pure object oriented programming.
+   => it is more secure reduce vulnerable.
+  
+
+JAVA Benefits
+-------------
+    => write once run anywhere [platform independent]
+    => Modularity.
+    => Easily understand.
+
+
+
+JDK => Java developement kit       => it is a java development kit helps to create soruce code.
+JIT =>  Just in Time compiler      => it is a compiler to convert source code to machine code.
+JVM => Java virtual machine.       => JVM is a virtual machine it is process to source code.
+JRE => Java runtime environment.   => it is a java run time environment the jre inside having libiaries it is
+                                      helps to run class file.
+
+
+Sample programming
+------------------
+    1. File name and Class should be Same
+    2. File name is first letter should be capital letter.
+
+
+class SampleProgram{
+    public static void main(String args[]){
+        System.out.println("Hello Java world !!!");
+        System.out.println("Hello Saravanan");
+    }
+}
+
+Explanation
+------------
+  1. every program should be start from main method.
+  2. class                  -  [package name]
+  3. public                 -  Access sepecifer [public, private, protected]
+  4. void                   -  no need return type.
+  5. System.out.println()   -  print the text.

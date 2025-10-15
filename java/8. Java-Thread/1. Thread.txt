@@ -1,0 +1,57 @@
+1. Thread:
+==========
+ 
+    - A thread is a lightweight subprocess that allows concurrent execution of two or more parts of a program. 
+    - Java supports multithreading through the java.lang.Thread class and the Runnable interface.
+
+ 2. Thread Lifecycle (States)
+=============================
+
+    A Java thread goes through several states:
+
+        New                 –   Thread is created but not started
+        Runnable            –   After calling start()
+        Running             –   When CPU picks it for execution
+        Blocked/Waiting     –   Waiting for resources or signal
+        Terminated          –   When run() completes or an exception occurs
+
+
+    
+    Creating a Thread in Java
+    ----------------------------------
+    Option 1: Extending the Thread class
+    ------------------------------------
+
+        class MyThread extends Thread {
+            public void run() {
+                Thread.sleep(2000);
+                System.out.println("Thread is running...");
+            }
+
+            public static void main(String[] args) {
+                MyThread t1 = new MyThread();
+                t1.start(); // Starts the thread
+            }
+        }
+
+
+    ----------------------------------------------
+    Option 2: Implementing the Runnable interface
+    ----------------------------------------------
+
+    class MyRunnable implements Runnable {
+        public void run() {
+            System.out.println("Runnable thread is running...");
+        }
+
+        public static void main(String[] args) {
+
+
+            MyRunnable r = new MyRunnable();
+            Thread t = new Thread(r); // Wrap Runnable in a Thread
+            t.start();
+          
+            Thread t1 = new Thread(new MyRunnable());
+            t1.start(); // Starts the thread
+        }
+    }

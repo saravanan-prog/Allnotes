@@ -1,0 +1,221 @@
+5. JS - Functions
+------------------
+
+    A JavaScript function is a block of code designed to perform a particular task.
+
+
+    5.1 Syntax:
+    -----------
+
+
+        A JavaScript function is defined with the function keyword, followed by a name, followed by parentheses ().
+
+
+            function name() {
+                // code to be executed
+
+            }
+
+
+        Example
+        ---------
+
+                function addtion() {
+
+                    let a = 10;
+                    let b = 5;
+                    let c = a + b                     // function defination
+                    
+                    console.log("C=====>",c)
+                }   
+
+                function subraction(){
+                    let a = 15;
+                    let b = 10;                       // function defination
+                    let c =  a - b
+                    
+                    console.log("c=====>",c)
+                }
+
+                addtion()       // Function call
+                subraction()    // Function call
+
+
+
+        The parentheses may include parameter names separated by commas: (parameter1, parameter2, ...)
+
+
+            function name(parameter1, parameter2, parameter3) {
+
+                // code to be executed
+            }
+
+
+            Example
+            -----------
+                function addtion( a , b) {
+
+                    let c = a + b
+                    
+                    console.log("C=====>",c)
+                }
+
+                function subraction( a, b){
+
+                    let c =  a - b
+                    console.log("c=====>",c)
+                }
+
+                addtion(10,5)
+                subraction(15,10)
+
+
+        Function Call : FunctionName()
+        -------------
+    
+    5.2 Return statement
+    ----------------------
+
+        When JavaScript reaches a return statement, the function will stop executing.
+        If the function was invoked from a statement, JavaScript will "return" to execute the code after the invoking statement.
+
+
+
+        Example : 
+        ----------   
+
+           function addtion( a , b) {
+            
+                let c = a + b
+                return c
+                                
+           }
+
+            function subraction( a, b){
+
+                let c =  a - b
+                return c
+            
+            }
+
+            let additionResult = addtion(10,5)
+
+            let subractionResult = subraction(15,10)
+
+
+    
+
+    5.3 Anonymous Function 
+    -------------------------
+
+          -  It is a function that does not have any name associated with it
+          -  in anonymous functions in JavaScript, we use only the function keyword without the function name
+
+
+            Syntax:
+            -------
+
+                function() {
+
+                    // Function Body
+
+                }
+
+    
+                Example
+                --------
+                    var greet = function () { 
+
+                        console.log("Welcome to GeeksforGeeks!"); 
+                    }; 
+      
+                    greet(); 
+
+
+                    const employee = {
+
+                        firstName : 'Saravanan',
+                        lastName  : 'Durai',
+                        fullName  : function(){
+                            
+                            return this.firstName + ' ' + this.lastName
+                        }
+                    }
+
+                    const {firstName,lastName,fullName} = employee
+
+                    console.log(fullName())
+
+
+     5.5 Timmer functions
+    ----------------------
+
+                - setTimeout        -  Delaying action
+                - setInterval       -  during action whenever timming
+                - setImmediate      -  immediate action
+
+         
+            syntax:
+                
+                setTimeout(function(){
+                    console.log('welcome to js')
+                },500)
+            
+
+    
+
+    5.6 Function closure
+    ---------------------
+
+       Closures are a powerful and fundamental concept in JavaScript. 
+       They allow inner functions to access variables from their outer scope,
+       In simpler terms, a closure “closes over” its lexical scope, preserving the variables and scope of the outer function.  
+
+
+       Example
+       ---------
+            function foo() {
+
+                let b = 1;
+                
+                function inner() {
+                    return b;
+                }
+
+                let result =inner()
+                
+
+                return result;
+
+            }
+
+            let get_func_inner = foo();
+
+            console.log(get_func_inner);
+            console.log(get_func_inner);
+            console.log(get_func_inner);
+
+    
+
+    5.7 Arrow functions
+    --------------------
+
+
+        var print = () => console.log('addtion executting')
+
+        var add = (a,b) => a + b
+
+        var sum = () => {
+           let a = 10
+           let b = 5
+           let c =  a + b
+
+           return c
+
+        }
+
+        Function call
+        --------------
+        print()
+        let result = add (10,5)
+        let sumResult = sum()

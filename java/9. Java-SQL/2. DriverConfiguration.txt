@@ -1,0 +1,24 @@
+How to Add MySQL Driver (mysql-connector-java.jar) in IntelliJ IDEA
+====================================================================
+
+    Step 1: Download MySQL Connector/J (JDBC Driver)
+
+            Go to MySQL Connector/J Download Page
+            Download the latest Platform Independent ZIP
+            Extract it and find the mysql-connector-java-8.x.x.jar file
+
+    Step 2: Open Your IntelliJ Project
+    Step 3: Add the JAR as a Library
+
+           - In IntelliJ, go to File > Project Structure (or press Ctrl+Alt+Shift+S)
+           - Select Modules from the left sidebar
+           - Select your module (usually your project name)
+           - Go to the Dependencies tab
+           - Click the + button (top right)
+           - Choose JARs or directories
+           - Navigate to where you saved mysql-connector-java-8.x.x.jar and select it
+           -  Click OK to add it
+
+    Step 4: Apply and Close
+
+    Click Apply and then OK to save changes

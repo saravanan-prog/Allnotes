@@ -1,0 +1,70 @@
+1. if Statement 
+  -------------
+    The if statement in Java is used for conditional execution.
+
+    Syntax :-
+
+        if (condition) {
+            // code to run if condition is true
+        }
+
+    Example
+
+        int x = 5;
+        if (x > 3) {
+            System.out.println("x is greater than 3");
+        }
+
+
+2. if-else Statement
+    -----------------
+    if-else statement lets you execute one block of code if a condition is true and another block if it's false.
+
+
+    Syntax :-
+
+        if (condition) {
+            // code if true
+        } else {
+            // code if false
+        }
+
+3. if-else if-else Chain
+    ---------------------
+    For multiple conditions:
+    
+        if (x > 10) {
+            // ...
+        } else if (x > 5) {
+            // ...
+        } else {
+            // ...
+        }
+4. Switch Statement in Java
+----------------------------
+
+    The switch statement lets you execute different code based on the value of a variable.
+
+    switch (day) {
+        case 1:
+            System.out.println("Monday");
+            break;
+        case 2:
+            System.out.println("Tuesday");
+            break;
+        default:
+            System.out.println("Other day");
+    }
+
+    New code:
+    ---------
+
+    switch (day) {
+        case 1 -> System.out.println("Monday");
+        case 2 -> System.out.println("Tuesday");
+        default -> System.out.println("Other day");
+    }
+
+
+
+

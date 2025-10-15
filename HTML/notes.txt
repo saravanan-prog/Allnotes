@@ -1,0 +1,49 @@
+1. Block level - [new line]
+2. inline      - [Same line]
+3. void        - [no closing type]
+4. semmantic   - [ meaningfull Tags ]
+
+Block level - p, h1...h6, li, div, table, forms, video, audio
+inline      - a, img, span,input
+void        - br, hr input img 
+semmantic   - header, footer, article, aside, section, main, table, form, button
+
+Forms:
+------
+   1. input tags =  text  / email / number / range / file / password / button /radio /checkbox ... etc
+
+   2. select box = <select> <option> ....</option></select>
+
+   2. Labels     =  caption.
+   
+   3. attributes =  id class name, method, enctype\
+
+HTML Events
+-----------
+    button                  = onclick  
+    selectbox / input box   = onchange
+    submit                  = onsubmit
+    mouse                   = onmouseover
+
+
+CSS
+---
+    <h1> Welcome to CSS world </h1>
+
+    h1 {
+          color : red
+    }
+
+    <p> Hello JAvascript </p>
+
+    p {
+        color : red
+    }
+
+
+    id class name style 
+
+     
+    ID class
+
+    unique not-unique

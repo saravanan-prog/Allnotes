@@ -1,0 +1,24 @@
+7. JS String Functions
+--------------------------
+
+       -----------------------------------
+        var text = "Hello javascript is a good course javascript" 
+      -------------------------------------
+
+                    toUpperCase()               -   text.toUpperCase();                         -   Catilaize                      
+                    toLowerCase()               -   text.toLowerCase();                         -   small letter           
+                    length                      -   text.length;                                -   word count 
+                    charAt()                    -   text.charAt(0);                             -   char possion value
+                    slice(startpos,endpos) ->   -   text.slice(5,18)                            -   reduce the string     
+                    substring(start, end)       -   text.substring(7, 13);                      -   reduce the string
+                    substr(start, length)       -   text.substr(2,3);                           -   reduce the string
+                    trim()                      -   text.trim();                                -   reduce white spaces
+                    repeat(item)                -   text.repeat(2)                              -   clone the text metioned time
+                    replace(oldstr,newstr)      -   text.replace("Javascript", "React JS");     -   Replace the word
+                    split()                     -   text.split("");                             -   Type conversion string to array
+
+        7.1 string search Function
+        ------------------------------
+                    indexOf()                   -  text.indexOf("locate");              // if search string found posstive string possion or else return -1
+                    lastIndexOf()               -  text.lastIndexOf("John");            // Searching to last index of value 
+                    includes()                  -  text.includes("John");             // if string found means return TRUE otherwise False

@@ -1,0 +1,72 @@
+                        Hooks - 2
+                       -------------
+                        
+USE EFFECT 
+----------
+
+      The useEffect hook is one of the most important hooks in React. 
+      It lets you perform side effects in function components, such as:
+
+          Fetching data
+          Updating the DOM
+          Setting up subscriptions or timers
+          Cleaning up on component unmount
+
+Basic Syntax -  
+--------------
+         
+          import { useEffect } from 'react';
+
+          useEffect(() => {
+              // Code to run on mount (and possibly on updates)
+
+            return () => {
+
+              // Optional cleanup function (runs on unmount or before re-running the effect)
+
+            };
+          }, [dependencies]);
+
+
+            
+        - The first argument is a function that runs after the component renders.
+        - The second argument is a dependency array:
+        [] → effect runs only once after the initial render (componentDidMount).
+        [someVar] → effect runs on mount and when someVar changes.(componentDidUpdate)
+        Omit it → effect runs after every render (not recommended unless necessary).
+
+
+        
+        Example1 -  Run on Mount (ComponentDidMount)
+        ----------------------------------------
+        useEffect(() => {
+          console.log('Component mounted');
+        }, []);
+
+        Example 2: Run on Update 
+        ------------------------
+          useEffect(() => {
+              console.log('Value changed:', count);
+          }, [count]);
+        
+        Example 3: Cleanup (ComponentWillUnmount)
+        -----------------------------------------
+
+        useEffect(() => {
+            const timer = setInterval(() => {
+              console.log('Running...');
+            }, 1000);
+
+            return () => {
+              clearInterval(timer); // Cleanup when component unmounts or effect re-runs
+              console.log('Cleanup');
+            };
+        }, []);
+
+
+
+
+
+
+
+

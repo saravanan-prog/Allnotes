@@ -1,0 +1,14 @@
+
+
+https://docs.expo.dev/get-started/create-a-project/
+
+
+1. npx create-expo-app@latest
+
+
+
+- cd my-app
+- npm run android
+- npm run ios # you need to use macOS to build the iOS project - use the Expo app if you need to do iOS development without a Mac
+- npm run web
+

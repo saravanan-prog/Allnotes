@@ -1,0 +1,26 @@
+String
+    => A string is a class type
+    => it is a collection sequence of character.
+    => it is immutable.
+
+
+String pool  
+   => it is a string maintain place in heap memeory optimization
+   => if any new string comes it will update otherwise it is take reference.
+
+String Function
+
+   => length() - it is returns to size of string 
+   => charAt(index) - it is returns to specfied index substring.
+   => substring(startPos,endPos) - it is returns to specfied substring.
+   => toLowerCase() => it is convert the string lower case.
+   => toUpperCase() => it is convert the string uppercase.
+   => trim() => it is remove unwanted white spaces starting and ending.
+   => contains() - to check any string is present or not. if present it returns to 
+   => equals() - to check two string is equal or not.    
+   => equalsIgnoreCase() - to check two string is equal or not. it is ignore case.  
+   => replace(oldChar,newChar) - to replace old character with new character.
+   =>indexOf(char) - to find the index of character.
+   => lastIndexOf(char) - to find the last index of character.
+   => split(regex) - to split the string based on regex.
+

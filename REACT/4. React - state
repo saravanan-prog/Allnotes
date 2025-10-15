@@ -1,0 +1,66 @@
+1. React state
+-----------------
+   -  State generally refers to data or properties that need to be tracking in an application.
+   -  The React useState Hook allows us to track state in a function component.
+
+
+useState()
+----------- 
+
+    Syntax :
+    -------
+        const [currentState, setterState] = useState(initalValue);
+
+            - currentState   =  Storage container  
+            - setterState   =  Modifier method.
+
+        useState accepts an initial state and returns two values:
+
+           
+
+
+     Example:
+     -------
+        function FC() { 
+            const [count, setCount] = useState(0);
+
+            return <div>
+                <h1> Your count is  {count} </h1>
+            </div>
+
+
+        }
+
+Note :-
+--------
+
+
+        -  State is focued on anything update current item only 
+        -  If you trying to update any array or object that time facing this problem
+
+        Solution : - When you have try to update object or state first you need to copy existing state after you can modify
+        Current state.
+
+
+      
+Example
+--------
+
+         function FC() { 
+            const [fruits, setFruits] = useState(['apple','orange','stabery']);
+
+            const addFruit = () => {
+                setFruits([...fruits,'pineapple'])
+            }
+
+            return <div>
+                <h1> Your fruits is  {fruits} </h1>
+                <button onClick = {addFruit}> Add Fruit </button>
+            </div>
+
+
+        }
+
+
+
+

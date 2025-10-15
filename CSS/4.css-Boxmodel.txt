@@ -1,0 +1,54 @@
+
+1. CSS - Size Measurment
+------------------------
+
+    auto        -   the browser calculates the margin
+    length      -   specifies a margin in px, pt, cm, rem, etc.
+    %           -   specifies a margin in % of the width of the containing element
+    inherit     -   specifies that the margin should be inherited from the parent element
+
+
+
+
+CSS box modal
+-------------------
+    - In CSS, the term "box model" is used when talking about design and layout.
+
+        Content     -   The content of the box, where text and images appear
+        Padding     -   Clears an area around the content. The padding is transparent
+        Border      -   A border that goes around the padding and content
+        Margin      -   Clears an area outside the border. The margin is transparent
+
+
+Content                   
+-------
+      <h1> hello world </h1>
+
+Border Propeties [wcs]
+----------------
+    border-width  : 2px
+    border-color  :  red  | green  | blue
+    border-style  : solid | dotted | dashed
+
+Margin Propeties
+-----------------
+    margin-top  : 2px
+    margin-right : 2px
+    margin-bottom : 2px
+    margin-left   : 2px
+
+padding Propeties
+-----------------
+    padding-top : 2px
+    padding-right : 2px
+    padding-bottom : 2px
+    padding-left : 2px
+ 
+Shorthand
+---------
+    border            : 2cm solid  red      | 2px  dotted green    |    20%   double  yellow   |  2rem  orange                 |   auto pink
+    margin (TRBL)     : 10cm 5cm 10cm 5cm   | 10px 5px 10px 12px   |    25% 25% 25% 25%        |  10rem 5rem 2rem 2rem         |   auto
+    Padding (TRBL)    : 5cm                 | 10px 5px 10px 12px   |    25% 25% 25% 25%        |  10rem 5rem 2rem 2rem         |   auto                            |   inherit
+
+
+   

@@ -1,0 +1,25 @@
+1. HEIGHT and WIDTH
+-------------------------
+    - The height and width properties are used to set the height and width of an element.
+
+
+    Example :
+
+      div {
+            height: 200px;
+            width: 50%;
+            background-color: powderblue;
+        }
+    
+2. MAX-WIDHT AND MAX-HEIGHT
+------------------------------
+        The CSS max-width property is used to set the maximum width of an element.
+
+    Example
+    ----------
+        div {
+
+            max-width: 500px;
+            max-height: 100px;
+            background-color: powderblue;
+        }

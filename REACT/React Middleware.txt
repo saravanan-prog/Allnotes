@@ -1,0 +1,17 @@
+React Middleware 
+
+   => A middleware is a function it is return to another function
+   => like examples middleware is
+        - Logger middleware
+        - Thunk middleware
+        - Saga middle ware
+
+
+What is Logger middleware ?
+    A logger middleware is a function it is helps to print the logs of dispatch actions.
+
+What is thunk and Saga ?
+   => A thunk and Saga is both Api middlewares. it is helps to handle api centeraized.
+   => it is effiecent to return data RTA Query.
+
+

@@ -1,0 +1,17 @@
+Polymorphism 
+=============
+    - Polymorphism: Polymorphism means "many forms".
+    - In programming, it means one function or method can behave differently depending on the object calling it.
+
+Types
+=====
+1. Compile-time Polymorphism  [ Method Overloading ]  :-
+        - Same method name, but different parameters
+        - Decided at compile time
+
+
+2. Run-time Polymorphism  [ Method Overriding ]
+     
+    - Same method name and parameters in parent and child class
+    - Decided at runtime
+    - Uses inheritance and overriding

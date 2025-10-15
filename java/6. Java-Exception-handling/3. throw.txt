@@ -1,0 +1,44 @@
+throw Keyword :- 
+================
+
+    The throw keyword in Java is used to explicitly throw an exception from your code, 
+    either built-in or custom.
+
+    Why Use throw?
+    --------------
+
+        - You use throw when you want to manually trigger an exception under certain conditions.
+        - For example, if someone enters a negative age, you might throw an IllegalArgumentException.
+
+    Syntax :-
+    --------
+        throw new ExceptionType("Custom error message");
+
+
+    Example 1:- Throwing a Built-in Exception
+    ----------------------------------------
+
+        public class ThrowExample1 {
+
+            public static void main(String[] args) {
+
+                int age = -5;
+
+                if (age < 0) {
+                    throw new IllegalArgumentException("Age cannot be negative");
+                }
+
+                System.out.println("Age is: " + age);
+            }
+        }
+    
+    Example 2: Throwing a Checked Exception
+    ---------------------------------------
+    
+        import java.io.IOException;
+
+        public class ThrowExample2 {
+            public static void main(String[] args) throws IOException {
+                throw new IOException("This is a checked exception");
+            }
+        }

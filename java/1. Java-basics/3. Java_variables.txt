@@ -1,0 +1,109 @@
+1. JAVA VARIABLES 
+   ==============
+
+      => it is holding an inforamtion
+
+         - LOCAL VARIABLES     => it is appear in method inside.
+         - INSTANCE VARIABLES  => it is appear in class
+         - STATIC VARIABLES    => No need to create  any object reference.
+         - FINAL VARIABLES     => the final variable is immutable.
+
+   1.1 LOCAL VARIABLES :- 
+   ----------------------
+  
+      => A method inside declared variables is called local variables.
+
+         Example :
+
+            class VoterProgram{
+               public static void main(){
+                  int age = 18;
+                  System.out.println(age) // 18
+               }
+            }
+
+   1.2 INSTANCE VARIABLES :-
+   -------------------------
+
+      => A class inside declared data members is called instance variables.
+
+         Example :
+
+            class VoterProgram {
+               int age = 18;
+               public static void main(String args[]){
+                  VoterProgram vp = new VoterProgram();
+                  System.out.println(vp.age) //18
+               }
+            }
+   
+   1.3 STATIC VARIABLES :-
+   -----------------------
+      => static variable is defined to static keyword no need to create object refece of instance varibles
+       Example :
+       
+      class VoterProgram{
+
+            static int age = 18;
+
+            public static void main(){
+               System.out.println(age)
+            }
+         }
+   
+   1.4 FINAL variable :- 
+   ---------------------
+      => final variable is reffered to final keyword it is immutable
+      => generally it will be caps.
+
+   Example 1:
+   ---------
+   
+      class FinalVariableExample{
+
+         public static void main(String args[]){
+
+            final int FIXEDPRICE  = 500;
+            final int TAXPERCENTAGE = 10;
+
+            int actualTax = TAXPERCENTAGE + 2;
+
+            System.out.println("Our product fixed Price is = " + FIXEDPRICE);
+            System.out.println("Tax percentage is = " + TAXPERCENTAGE);
+            System.out.println("actualTax is = " + actualTax);
+
+
+         }
+      }
+   Example 2 Final + static [Instance Variable]
+   -----------------------------------------------
+
+   class FinalVariableExample{
+
+    final static int FIXEDPRICE  = 500;
+    final static int TAXPERCENTAGE = 10;
+
+      public static void main(String args[]){
+
+         int actualTax = TAXPERCENTAGE + 2;
+
+         System.out.println("Our product fixed Price is = " + FIXEDPRICE);
+         System.out.println("Tax percentage is = " + TAXPERCENTAGE);
+         System.out.println("actualTax is = " + actualTax);
+
+
+      }
+   }
+
+
+2. Java, literals
+-----------------
+
+    => In Java, literals are fixed values assigned directly to variables.
+    => Here are the main types of Java literals:
+
+            Integer                   :  literals: Whole numbers (e.g., 10, -25, 0)
+            Floating-point literals   :  Decimal numbers (e.g., 3.14, -0.5, 2.0f)
+            Character literals        :  Single characters in single quotes (e.g., 'A', 'z', '9')
+            String literals           :  Text in double quotes (e.g., "Hello", "Java123")
+            Boolean literals          :  true or false

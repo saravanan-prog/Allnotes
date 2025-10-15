@@ -1,0 +1,70 @@
+1. Single Inheritance :- 
+-------------------------
+   -  A subclass inherits from one superclass.
+   -  Direct parent-child relationship.
+   -  Benefit is Code reuse from parent class.
+
+        Example :-
+
+            class Vehicle {
+                void drive() {}
+            }
+
+            class Car extends Vehicle {
+                void honk() {}
+            }
+
+            Car obj = new Car();
+            obj.dirve()
+            obj.honk()
+
+2. Multilevel inheritance:-
+---------------------------
+    -  A class inherits from a class which itself inherits from another class.
+    - Chain of inheritance.
+
+    Example:
+
+        class Animal {
+            void eat() {}
+        }
+        class Dog extends Animal {
+            void bark() {}
+        }
+        class Labrador extends Dog {
+            void color() {}
+        }
+
+
+    Explanation:-
+
+        - Labrador inherits from Dog, which inherits from Animal.
+        - Labrador can use eat(), bark(), color().
+
+
+3. Hierarchical Inheritance :-
+-----------------------------
+
+    - Hierarchical inheritance: One class is extended by multiple subclasses.
+    - Multiple classes inherit from a single parent.
+
+    Example :- 
+    --------
+        Hierarchical Inheritance Example (Java)
+
+        class Shape {
+            void draw() {}
+        }
+        class Circle extends Shape {
+            void radius() {}
+        }
+        class Rectangle extends Shape {
+            void sides() {}
+        }
+
+
+        Explanation:-
+            - Both Circle and Rectangle inherit from Shape.
+            - Both can use draw() plus their own methods.
+
+

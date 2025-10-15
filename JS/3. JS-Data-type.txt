@@ -1,0 +1,75 @@
+3.  DATA TYPES
+-----------------
+
+    3.1 Primitives Data types
+    ------------------------------------------------------------------------------------------------------
+        Types                       Example
+    ------------------------------------------------------------------------------------------------------- 
+    
+
+    1. String               -       var name = "Saravanan" /  '' or  " "
+    2. Number               -       var a = 10  // 10.5 // 5.5 
+    3. Boolean              -       var a = true // false
+    4. Undefined            -       var a  
+                            -        console.log(a)  // output Undefined
+    5. Null                 -       var a = null
+    6. Symbol               -       var c = ( a == b ) //  output  true / False
+   
+    
+
+
+
+    3.2 Non Primitive Data Types
+   ------------------------------------------------------------------------------------------------------
+        Types                       Example
+    -------------------------------------------------------------------------------------------------------  
+
+        1. Array  []           -      var fruits = ['Apple', 'Orane','Grapes'] 
+
+                                           0 -> Apple
+                                           1 -> Orange
+                                           2 -> Grapes
+
+
+
+
+        2. Array_list []         -    var carryBag = [10,"apple","carrot",false,10.5]
+
+
+
+        2. Object {}           -      var person = {
+                                                name :  'Saravanan',
+                                                age  :  27,
+                                                work : 'Tcs'
+
+                                            }
+
+
+
+
+
+                                            
+                                Multiple Object
+                                ----------------
+                                - var person  = [
+                                        {
+                                                name :  'Saravanan',
+                                                age  :  25,
+                                                work : 'wipro'
+
+                                        },
+                                        {
+                                                name :  'Sajitha',
+                                                age  :  23,
+                                                work : 'infosys'
+
+                                        },
+                                        {
+                                                name :  'sweetha',
+                                                age  :  26,
+                                                work : 'cts'
+
+                                         }
+                                  ]
+
+       3. Date                 -       var date = new Date() //3245525588525811

@@ -1,0 +1,61 @@
+Java Encapsulation
+===================
+    - Encapsulation is Wrapping data members and methods together in a class.
+    - generally it is hides the data members like us priviate mode, 
+    - exposes that data members getter and setter methods.
+
+    Why we using Encapsulation
+    --------------------------
+        - Protects data.
+        - Controls access.
+
+    Benefits :-
+    ----------
+        - Hiding internal implementation.
+        - Exposing controlled interfaces.
+
+Example :- 
+-------
+
+    
+    class Student{
+        private String studentName;
+        private int studentAge;
+
+        public void setStudentName(String studentName){
+            this.studentName = studentName;
+        }
+        public String getStudentName(){
+            return this.studentName;
+        }
+
+        public void setAge(int studentAge){
+            this.studentAge = studentAge;
+        }
+        public int getAge(){
+            return studentAge;
+        }
+    }
+
+public class ExampleEncapsulation {
+    public static void main(String[] args) {
+        Student obj = new Student();
+
+        obj.setStudentName("KaruppuSamy");
+        obj.setAge(27);
+
+        String getStudentName  = obj.getStudentName();
+        int getStudentAge      = obj.getAge();
+
+        System.out.println("Student name ===>" + getStudentName);
+        System.out.println("Student Age ===>" + getStudentAge);
+
+    }
+}
+
+
+
+
+
+
+

@@ -1,0 +1,57 @@
+Array Types
+===========
+
+  => an array is a collection of similar data types
+  => it is a fixed size data structure
+  => it can store multiple values of the same type
+
+    => One dimesinal array
+    => Two dimensional array
+    => Multi dimensional array
+    => Jagged array
+
+ 1.  One dimesinal array :-
+   -----------------------
+
+    byte bytenumber = new byte[5];
+    short shortnumber = new short[5];
+    long longnumber = new long[5];
+    int a[] = new int[5];   
+    float b[] = new float[5];
+    double c[] = new decimal[5];
+    string name[] = new String[5];
+    char initalLetter[] = new char[5];
+    boolean flag[] = new boolean[5];
+
+
+   Syntax:
+   -------
+      datatType arrayName[] = new datatType[size];
+      int a[] = new int[10]
+
+
+2. Two dimensional array syntax:
+--------------------------------
+
+   dataType arrayName[][] = new dataType[row][col];
+   int arr[][] = new int[5][5]
+
+
+3. Multi-dimensional array syntax:
+----------------------------------
+
+      dataType arrayName[][][] = new dataType[row1][row2][co1];
+      int arr[][][] = new int[5][5][5]
+
+Jagged Array Syntax:
+-------------------
+ A jagged array is defined to in balanced sub array.
+
+   dataType arrayName[][] =  new dataType[size][];
+   int matrix[][] = new int[5][];
+
+   Example
+   -------
+      matrix[0] = new int[3];
+      matrix[1] = new int[5];
+      matrix[2] = new int[20];

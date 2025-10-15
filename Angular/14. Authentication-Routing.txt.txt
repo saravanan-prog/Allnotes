@@ -1,0 +1,106 @@
+
+
+                            1. AuthGuard
+                            -------------
+
+canActivate
+-----------
+
+canActivate is a guard in Angular that determines whether a route can be activated.
+It's a way to control access to certain routes based on conditions such as user authentication or authorization.
+
+How does canActivate work?
+---------------------------
+    - When a route is navigated to, the canActivate guard is called.
+    - The guard returns a boolean value indicating whether the route can be activated.
+    - If the guard returns true, the route is activated. 
+    - If the guard returns false, the route is not activated.
+
+
+
+
+Sapmple code
+-------------
+
+
+canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+
+    const token = localStorage.getItem('token');
+    
+    if (token) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+AuthGuard.ts
+-------------
+
+import { Injectable } from '@angular/core';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { AuthService } from './auth.service';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AuthGuard implements CanActivate {
+
+  constructor(private authService: AuthService) { }
+
+  canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+
+    return this.authService.isAuthenticated();
+
+  }
+}
+
+app-routing.module.ts
+----------------------
+
+const routes: Routes = [
+  {
+    path: 'admin',
+    component: AdminComponent,
+    canActivate: [AuthGuard]
+  }
+];
+
+
+Live Example
+-------------
+
+import { inject, Injectable } from "@angular/core";
+import { ActivatedRoute, ActivatedRouteSnapshot, CanActivate, GuardResult, MaybeAsync, Router, RouterStateSnapshot } from "@angular/router";
+
+@Injectable({
+    providedIn:'root'
+})
+
+export class Authguard implements CanActivate {
+
+    token:any
+
+    constructor(    
+            private router:Router, 
+            private activateRoute:ActivatedRoute
+    ){
+
+        this.token = localStorage.getItem('token')
+    }
+    
+    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) : boolean {
+
+        if(this.token !=null){
+            
+            return true
+        }
+        else{
+            this.router.navigateByUrl('/login')
+            return false;
+        }
+    }
+        
+        
+
+}

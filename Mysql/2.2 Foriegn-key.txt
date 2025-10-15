@@ -1,0 +1,31 @@
+What is a Foreign Key?
+======================
+
+    A foreign key is a column in one table that links to the primary key in another table.
+
+        It creates a relationship between two tables.
+        Helps to maintain data integrity (no invalid or unrelated data).
+
+
+    Step 1: Create the parent table (with primary key)
+
+        CREATE TABLE Students (
+            id INT PRIMARY KEY,
+            Name VARCHAR(100),
+            Class VARCHAR(10)
+        );
+
+
+    Step 2: Create the child table (with foreign key)
+
+        CREATE TABLE Marks (
+            id INT PRIMARY KEY,
+            StudentID INT,
+            Subject VARCHAR(50),
+            Marks INT,
+            FOREIGN KEY (StudentID) REFERENCES Students(id)
+            ON DELETE CASCADE 
+        );
+
+
+

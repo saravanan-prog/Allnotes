@@ -1,0 +1,60 @@
+1. Class and Object
+===================
+
+    Class: 
+        A blueprint for creating objects. 
+        Defines properties and behaviors.
+
+    Object: 
+        An instance of a class.
+        Has its own values for properties.
+
+        Example class :-
+
+            class Car {
+                String color;         ------> properties
+                void drive() {
+                                      ---> behaviors
+                }
+            }
+
+
+        Example Object creation :-
+
+            Car myCar = new Car();
+            myCar.color = "Red";
+
+
+
+2. Real Time Example
+====================
+
+    Example 1: Banking System
+
+        - Classes: Account, Customer, Transaction.
+        - Objects: SB (Account), Saravanan (Customer) NFET(Transaction).
+        - Methods: deposit(), withdraw().
+
+    Example 2: Online Shopping System
+
+        - Classes: Customer, Product, Order.
+        - Objects: john (Customer), laptop (Product).
+        - Methods: addToCart(), placeOrder().
+
+    Example in Java
+
+    class Customer {
+        String name;
+        void addToCart(Product p) {}
+    }
+
+    class Product {
+        String name;
+    }
+
+
+    Benefits in Real-Time
+    - Model real-world entities.
+    - Manage complexity.
+
+

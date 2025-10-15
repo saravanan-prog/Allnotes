@@ -1,0 +1,25 @@
+<form action="" onsubmit="forsubmit()">
+    <div>
+        <lable for="username">username</lable>
+       <input type="text" id="username">
+      
+    </div>
+    <div>
+        <lable for="password">username</lable>
+       <input type="password" id="password">
+    </div>"
+    <div>
+        <input type="submit" />
+        <input type="button" value="cancel" onclick="cancel()"/>
+    </div>
+</form>
+
+<script>
+    function forsubmit(){
+        var username = document.getElementById('username').value
+        var password = document.getElementById('password').value
+
+        if(username=='' || user==null)
+
+    }
+</script>

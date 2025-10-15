@@ -1,0 +1,29 @@
+Java Exception Handling:-
+===========================
+
+    Java Exception Handling is a powerful mechanism used to handle runtime errors, 
+    allowing a program to continue its execution or fail gracefully. 
+
+Types of Exceptions:
+====================
+
+    Checked Exceptions – Checked at compile-time (e.g., IOException, SQLException)
+
+    Unchecked Exceptions – Checked at runtime (e.g., ArithmeticException, NullPointerException)
+
+    Errors – Serious problems not intended to be caught by applications (e.g., OutOfMemoryError, StackOverflowError)
+
+
+How to handle Exceptions
+=======================
+
+
+                        Exceptions (Hanlding)
+                             |
+            ----------------------------------
+            |                |                |
+          try & catch        throw           throws
+              
+
+
+  
