@@ -147,20 +147,7 @@
                     console.log(fullName())
 
 
-     5.5 Timmer functions
-    ----------------------
-
-                - setTimeout        -  Delaying action
-                - setInterval       -  during action whenever timming
-                - setImmediate      -  immediate action
-
-         
-            syntax:
-                
-                setTimeout(function(){
-                    console.log('welcome to js')
-                },500)
-            
+     
 
     
 
@@ -182,7 +169,7 @@
                     return b;
                 }
 
-                let result =inner()
+                let result = inner()
                 
 
                 return result;
@@ -219,3 +206,20 @@
         print()
         let result = add (10,5)
         let sumResult = sum()
+
+
+
+5.5 Timmer functions
+    ----------------------
+
+        - setTimeout        -  Delaying action
+        - setInterval       -  during action whenever timming
+        - setImmediate      -  immediate action
+
+         
+            syntax:
+                
+                setTimeout(function(){
+                    console.log('welcome to js')
+                },500)
+            
