@@ -3,7 +3,7 @@ Context :-
 ---------- 
 
         - reduce the work props dirlling
-        - Sharing date between more than components.
+        - Sharing data between more than components.
 
 
  Context Methods:

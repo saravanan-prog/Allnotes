@@ -14,14 +14,11 @@
         6. pop (remove element in end)                              ->      fruits.pop()  
         7. unshift (add ele in front)                               ->      fruits.unshift("grapes")
         8. shift (remove ele in front)                              ->      fruits.shift()
-
-
-        9.  delete                                                  ->      delete fruits[2]
         
-        10. concat (combine two array called)                      ->       fruits.concat(veg);
-        11. copywithin (paste,copy)                                ->      fruits.copyWithin( 0, 2);
-        12 . slice                                                  ->      fruits.slice(1)
-        13. Splice                                                  ->      fruits.splice(1, 2, "Lemon", "Kiwi"); 
+        9. concat (combine two array called)                      ->       fruits.concat(veg);
+        10. copywithin (paste,copy)                                ->      fruits.copyWithin( 0, 2);
+        11 . slice                                                  ->      fruits.slice(1)
+        12. Splice                                                  ->      fruits.splice(1, 2, "Lemon", "Kiwi"); 
 
      
    8.1 Array Search Functions

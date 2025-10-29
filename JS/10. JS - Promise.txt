@@ -1,0 +1,43 @@
+What are Promises?
+--------------------
+    - A Promise is an object that represents the eventual completion or failure of an asynchronous operation.
+    - Promises are a way to handle asynchronous operations in JavaScript.
+    - Promises have three states: 
+        pending, 
+        fulfilled, 
+        and rejected.
+
+Types of Promises
+-----------------
+Pending – initial state, neither fulfilled nor rejected.
+
+Fulfilled – operation completed successfully.
+
+Rejected – operation failed.
+
+
+
+
+Syntax
+------
+
+let promise = new Promise(function(resolve, reject) {
+  // Do something asynchronous
+  if (success) {
+    resolve("Operation successful!");
+  } else {
+    reject("Something went wrong.");
+  }
+});
+
+
+|----------------------------------------------------------------------------------------------------------- 
+| Method                               | Description                                                        |
+| ------------------------------------ | ------------------------------------------------------------------ |
+| **`Promise.resolve(value)`**         | Returns a Promise that resolves with the given value.              |
+| **`Promise.reject(reason)`**         | Returns a Promise that rejects with the given reason.              |
+| **`Promise.all([promises])`**        | Waits for all promises to resolve (or rejects if any fail).        |
+| **`Promise.allSettled([promises])`** | Waits for all promises to finish (fulfilled or rejected).          |
+| **`Promise.race([promises])`**       | Resolves/rejects as soon as **one** promise settles.               |
+| **`Promise.any([promises])`**        | Resolves as soon as **one** promise fulfills (ignores rejections). |
+|------------------------------------------------------------------------------------------------------------

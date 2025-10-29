@@ -9,12 +9,12 @@
                     toLowerCase()               -   text.toLowerCase();                         -   small letter           
                     length                      -   text.length;                                -   word count 
                     charAt()                    -   text.charAt(0);                             -   char possion value
-                    slice(startpos,endpos) ->   -   text.slice(5,18)                            -   reduce the string     
+                    slice(startpos,endpos) ->   -   text.slice(22,33)                            -   reduce the string     
                     substring(start, end)       -   text.substring(7, 13);                      -   reduce the string
-                    substr(start, length)       -   text.substr(2,3);                           -   reduce the string
+                    substr(start, length)       -   text.substr(22,10);                           -   reduce the string
                     trim()                      -   text.trim();                                -   reduce white spaces
                     repeat(item)                -   text.repeat(2)                              -   clone the text metioned time
-                    replace(oldstr,newstr)      -   text.replace("Javascript", "React JS");     -   Replace the word
+                    replace(oldstr,newstr)      -   text.replace("javascript", "React JS");     -   Replace the word
                     split()                     -   text.split("");                             -   Type conversion string to array
 
         7.1 string search Function

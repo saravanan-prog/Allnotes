@@ -1,0 +1,30 @@
+React Hooks:-
+---------------
+  1. State Management hook    -   useState()
+                              -   useReducer()
+
+  
+  2. Side Effect              -   useEffect
+                                  useLayoutEffect
+
+
+  3. ContextApi               -   createContext
+                                  useContext()   
+
+
+  4. Referencehook            -    useRef()                             
+
+  5. Memoization              -    useMemo()
+                                   useCallback()
+
+  
+  6. Routing Hooks            -    usePrams()
+                              -    useNavigate()
+
+
+  7. Redux Hooks              -    useSelector()
+                              -    useDispatch()
+
+  8. custom Hooks             -    useSaravanan()
+                              -    useAsima()
+                              -    useOtp()
