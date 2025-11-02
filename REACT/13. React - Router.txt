@@ -95,6 +95,8 @@ Protection Routing
    
 Router Hooks
 -------------
+
+
     1. useParams() -> To get the route parametter values
 
                     <Route path="viewProfile/:id"           element={<ViewProfile />} />
@@ -106,6 +108,31 @@ Router Hooks
 
                 }
 
+
+
+
+
+    2. useLocation() -> it is helps read query Params
+
+    
+    
+    
+            import { useLocation } from "react-router-dom";
+
+            function ViewProduct() {
+            const { search } = useLocation();
+            const query = new URLSearchParams(search);
+            const productId = query.get("productid");
+
+            return (
+                <div>
+                <h1>Product ID: {productId}</h1>
+                {/* You can now fetch product data here */}
+                </div>
+            );
+            }
+
+            export default ViewProduct;
 
 
 

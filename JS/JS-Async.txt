@@ -89,15 +89,12 @@
     ----------------------
         - Promise method is invoked when a promise is either resolved or rejected. 
 
-            .then(function(result){
+            .then(
+                function(result){
 
-                //handle success
+                    //handle success
 
-            }, function(error){
-
-                //handle error
-
-            })
+                })
     
     1.2.2 catch()
     --------------
