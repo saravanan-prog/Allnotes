@@ -7,7 +7,7 @@
     -   React allows us to create reusable UI components.
 
      
-    1.3 DOM
+    1.2 DOM
     ---------
 
         DOM stands for ‘Document Object Model’. In simple terms, 
@@ -22,13 +22,13 @@
         React's Virtual DOM (a lightweight in-memory representation of the real DOM) is a key feature that enables efficient and fast rendering of components.
 
         
-    What is reconciliation?
+    1.4 What is reconciliation?
     -------------------------
 
         Reconciliation is the process by which React compares the new Virtual DOM tree with the previous one to determine the minimum number of changes needed to update the actual DOM
 
 
-    1.4 Babel
+    1.5 Babel
     ----------
        Babel is a JavaScript transpiler that converts modern JavaScript code (ES6+, JSX)
        into older syntax that can be executed by older browsers or environments.
@@ -38,7 +38,10 @@
             2. ES6+ support: Babel transpiles modern JavaScript features (e.g., classes, arrow functions) into compatible code.
             3. Browser compatibility: Babel ensures your React application works in older browsers.
 
-    1.5 webpack 
+
+
+
+    1.6 webpack 
     -------------
     
         1. Module bundling: Webpack bundles React code and dependencies into a single file.
@@ -53,7 +56,16 @@
        Step 1   Install the node js software version v24. https://nodejs.org/dist/v24/
        Step 2   create one workspace in local c or D drive example: c:/development/react-project
        Step 3   open that folder command prompt.
-       Step 4   npx create-react-app my-react-app
+       Step 4   npx create-react-app my-react-app  
+
+            Explanation:
+            
+                   npx               ->     node package extensation
+                   create-react-app  ->     react basic strcture.
+                   my-react-app      ->     [project_name]
+
+
+
        Step 5   cd my-react-app
        Step 6   npm start
       
