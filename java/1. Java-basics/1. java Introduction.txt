@@ -1,9 +1,3 @@
-Small History
---------------
-    => intoduced by sun micro system on 1995
-    => 2025 Oracle is having a current ownerniship
-    => Java version Java 24
-
 
 JAVA
 -----
@@ -11,6 +5,18 @@ JAVA
    => it is a platform independent.
    => it is Pure object oriented programming.
    => it is more secure reduce vulnerable.
+
+
+
+
+Small History
+--------------
+
+    => intoduced by sun micro system on 1995
+    => 2025 Oracle is having a current ownerniship
+    => Java version Java 24
+
+
   
 
 JAVA Benefits

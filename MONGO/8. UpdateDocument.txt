@@ -8,7 +8,7 @@ To update an existing document we can use the
     
     Syntax
     --------
-        db.collection_name.updateOne({ test_ondtions },{ update data})
+        db.collection_name.updateOne({ test_condtions },{ update data})
  
 set Operator
 ------------

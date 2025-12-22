@@ -1,0 +1,95 @@
+Primitive Data Types
+--------------------
+    => These are the basic building blocks for storing simple values like numbers, characters, and logical values.
+    => They are divided into:
+
+        Integer types           – store whole numbers
+        Floating-point types    – store decimal numbers
+        Character type          – store a single character
+        Boolean type            – store true/false
+
+
+|------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Data Type | Size    | Bits | Range                                                    | Explanation of Range                                         |
+|-----------|---------|------|----------------------------------------------------------|--------------------------------------------------------------|
+| byte      | 1 byte  | 8    | -128 to 127                                              | 2⁸ = 256 values → half negative, half positive               |
+| short     | 2 bytes | 16   | -32,768 to 32,767                                        | 2¹⁶ values → signed integers                                 |
+| int       | 4 bytes | 32   | -2,147,483,648 to 2,147,483,647                          | Default integer type                                         |
+| long      | 8 bytes | 64   | -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807  | Very large whole numbers                                     |
+| float     | 4 bytes | 32   | ~ ±3.4 × 10³⁸ (6–7 digits precision)                     | IEEE 754 floating-point                                      |
+| double    | 8 bytes | 64   | ~ ±1.7 × 10³⁰⁸ (15–16 digits precision)                  | High-precision decimals                                      |
+| char      | 2 bytes | 16   | 0 to 65,535                                              | Unicode characters                                           |
+| boolean   | 1 bit*  | —    | true or false                                            | Logical values                                               |
+|------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+
+
+Integer Data Types
+----------------------------------------------------------------------------------------------------------------------------------------------
+| Type  | Size    | Range                                                   | Example             | Notes                                    |
+| ----- | ------- | ------------------------------------------------------- | ------------------- | ---------------------------------------- |
+| byte  | 1 byte  | -128 to 127                                             | `byte b = 10;`      | Very small numbers, memory-efficient     |
+| short | 2 bytes | -32,768 to 32,767                                       | `short s = 100;`    | Small numbers, rarely used               |
+| int   | 4 bytes | -2,147,483,648 to 2,147,483,647                         | `int i = 1000;`     | Most commonly used integer type          |
+| long  | 8 bytes | -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 | `long l = 100000L;` | Very large numbers, use `L` for literals |
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Floating-Point Data Types
+------------------------------------------------------------------------------------------------------
+| Type   | Size    | Precision             | Example             | Notes                              |
+| ------ | ------- | --------------------- | ------------------- | ---------------------------------- |
+| float  | 4 bytes | ~6–7 decimal digits   | `float f = 10.5f;`  | Less precise, `f` required         |
+| double | 8 bytes | ~15–16 decimal digits | `double d = 20.99;` | More precise, default decimal type |
+-------------------------------------------------------------------------------------------------------
+
+
+Character Type
+-----------------------------------------------------------------------------------------------------
+| Type | Size    | Range                 | Example         | Notes                                   |
+| ---- | ------- | --------------------- | --------------- | --------------------------------------- |
+| char | 2 bytes | 0 to 65,535 (Unicode) | `char c = 'A';` | Stores a single character, uses Unicode |
+------------------------------------------------------------------------------------------------------
+
+Boolean Type
+-------------------------------------------------------------------------------------------------------------
+| Type    | Size   | Values       | Example                | Notes                                          |
+| ------- | ------ | ------------ | ---------------------- | ---------------------------------------------- |
+| boolean | 1 bit* | true / false | `boolean flag = true;` | Used for logical operations, conditions, loops |
+-------------------------------------------------------------------------------------------------------------
+
+
+
+Important Points for Beginners
+
+   1. int is the default type for integer numbers.
+   2. double is the default type for decimal numbers.
+   3. Always use L for long literals and f for float literals.
+   4. char uses 2 bytes and supports Unicode.
+   5. boolean is used for decision-making and loops.
+
+
+
+Example Program
+---------------
+public class Main {
+    public static void main(String[] args) {
+        byte b = 10;
+        short s = 100;
+        int i = 1000;
+        long l = 100000L;
+        float f = 10.5f;
+        double d = 20.99;
+        char c = 'A';
+        boolean flag = true;
+
+        System.out.println(b);
+        System.out.println(s);
+        System.out.println(i);
+        System.out.println(l);
+        System.out.println(f);
+        System.out.println(d);
+        System.out.println(c);
+        System.out.println(flag);
+    }
+}

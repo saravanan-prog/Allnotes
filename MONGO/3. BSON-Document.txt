@@ -34,7 +34,7 @@ Embeded document.
                     Apartment : 'Gayathiri Apartments'
                     location  : 'Velachery'
                     city      :'chennai'
-                 }
+                 },
                  permanant_address: {
                     street_no: '2nd cross st',
                     Apartment : 'Gayathiri Apartments'

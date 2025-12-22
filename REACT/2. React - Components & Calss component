@@ -1,9 +1,13 @@
 React Components :
 ---------------------
+    
+
+
+
     Two types of react components
 
-        1. Class components  - [oops concepts]
-        2. Function components. [React Team preffered this FC component]
+        1. class component  - [oops concepts]
+        2. Function component. [React Team preffered this FC component]
         
 
     1. Class components
@@ -14,7 +18,7 @@ React Components :
 
         import { Component } from "react";
         
-          export class [Comp_name] extends Component {
+          export class ExampleCompName extends Component {
 
                 render(){
 
