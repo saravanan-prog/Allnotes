@@ -1,7 +1,7 @@
 OOPs (Object-Oriented Programming)
 ===================================
 
-    OOPs is a programming paradigm based on "objects" that contain data and methods. 
+    OOPs is a programming paradigm [model or pattern] based on "objects" that contain data and methods. 
     It helps organize code for reusability and modularity.
 
 Benefits of OOP

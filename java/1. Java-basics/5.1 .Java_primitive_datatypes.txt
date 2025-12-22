@@ -3,10 +3,10 @@ Primitive Data Types
     => These are the basic building blocks for storing simple values like numbers, characters, and logical values.
     => They are divided into:
 
-        Integer types           – store whole numbers
-        Floating-point types    – store decimal numbers
-        Character type          – store a single character
-        Boolean type            – store true/false
+        Integer types           – store whole numbers       (25,45)
+        Floating-point types    – store decimal numbers     (500.25,600.25)
+        Character type          – store a single character ('A' || 'a')
+        Boolean type            – store true/false          (true, false)
 
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------|
